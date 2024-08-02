@@ -1,0 +1,101 @@
+.top_section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.fi-rr-brightness ,.fi-rr-moon{
+    font-size: 1.14rem;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    margin: 0 0.36rem;
+    border-radius: 4.28rem;
+    border: 0.07rem var(--white-color-text) solid;
+}
+.switch > span {
+    position: absolute;
+    top: 0.74rem;
+    pointer-events: none;
+    font-size: 0.857rem;
+    width: 50%;
+    text-align: center;
+}
+input.check-toggle-round-flat:checked ~ .off {
+    color: var(--black-color-text);
+}
+input.check-toggle-round-flat:checked ~ .on {
+    color: var(--white-color-text);
+}
+.switch > span.on {
+    left: 0;
+    padding-left: 0.14rem;
+    color: var(--black-color-text);
+}
+.switch > span.off {
+    right: 0;
+    padding-right: 0.28rem;
+    color: var(--white-color-text);
+}
+.check-toggle {
+    position: absolute;
+    margin-left: -800rem;
+    visibility: hidden;
+}
+.check-toggle + label {
+    display: block;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+input.check-toggle-round-flat + label {
+    padding: 0.14rem;
+    width: 6.93rem;
+    height: 2.5rem;
+    background-color: var(--main-bg-color);
+    -webkit-border-radius: 4.285rem;
+    -moz-border-radius: 4.285rem;
+    -ms-border-radius: 4.285rem;
+    -o-border-radius: 4.285rem;
+    border-radius: 4.285rem;
+}
+input.check-toggle-round-flat + label:before, input.check-toggle-round-flat + label:after {
+    display: block;
+    position: absolute;
+    content: "";
+}
+input.check-toggle-round-flat + label:before {
+    top: 0.143rem;
+    left: 0.143rem;
+    bottom: 0.143rem;
+    right: 0.143rem;
+    background-color: var(--main-bg-color);
+    -webkit--moz-border-radius: 4.285rem;
+    -ms-border-radius: 4.285rem;
+    -o-border-radius: 4.285rem;
+    border-radius: 4.285rem;
+}
+input.check-toggle-round-flat + label:after {
+    top: 0.286rem;
+    left: 0.286rem;
+    bottom: 0.286rem;
+    width: 3.285rem;
+    background-color: var(--white-color-text);
+    -webkit-border-radius: 3.714rem;
+    -moz-border-radius: 3.714rem;
+    -ms-border-radius: 3.714rem;
+    -o-border-radius: 3.714rem;
+    border-radius: 3.714rem;
+    -webkit-transition: margin 0.2s;
+    -moz-transition: margin 0.2s;
+    -o-transition: margin 0.2s;
+    transition: margin 0.2s;
+}
+input.check-toggle-round-flat:checked + label:after {
+    margin-left: 3.07rem;
+}

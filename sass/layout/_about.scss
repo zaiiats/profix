@@ -1,0 +1,158 @@
+.about{
+    padding: 0 0 3rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    justify-content: space-evenly;
+}
+.slideshow_container {
+    width: 100%;
+    position: relative;
+    margin: 0;
+ }
+.about > img{
+    position: absolute;
+    min-width: 100%;
+    max-height: 100%;
+}
+.img_transition {
+    transition: all 5s ease;
+}
+.card_list{
+    height: 15rem;
+    z-index: 1;
+    padding: 3rem 4rem;
+}
+.card_list_main{
+    font-size: 2rem;
+    font-weight: 600;
+}
+.card_list_main_divider{
+    position: relative;
+    margin: 1rem 0;
+    width: 70%;
+    height: 2px;
+    background-color: var(--white-color-text);
+}
+.mySlides.second .down_card{
+    padding: 0 4rem 3rem;
+}
+.card_element{
+    flex-direction: column;
+    flex: 1 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.card_list.down_card{
+    gap: 3rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+
+
+
+.mySlides.first{
+    background: url(../img/construction_image_1.jpg) content-box no-repeat center;
+    background-size: cover;
+}
+.mySlides.second{
+    width: 100%;
+    background: url(../img/delivery_image.jpg) content-box no-repeat center;
+    background-size: cover;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+}
+.mySlides.second > .card_list{
+    width: 100%;
+}
+.mySlides.second .card_list_sec{
+    text-align: center;
+}
+.mySlides.third{
+    background: url(../img/construction_image_2.jpg) content-box no-repeat center;
+    background-size: cover;
+}
+.mySlides > .background{
+    background-color: var(--background);
+    z-index: 1;
+}
+.mySlides {
+    background-size: cover;
+    vertical-align: middle;
+    overflow: hidden;
+    display: none
+  }
+
+.delivery_img{
+    max-height: 100%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    position: relative;
+    -webkit-animation-name: delivery_img;
+    -webkit-animation-duration: 1s;
+    animation-name: delivery_img;
+    animation-duration: 1s;
+}
+.prev,
+.next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    cursor: pointer;
+    position: absolute;
+    top: 0%;
+    width: auto;
+    height: 100%;
+    padding: 1rem;
+    color: var(--white-color-text);
+    font-size: 1.3rem;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+  
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+  
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+  
+ 
+.dot {
+    cursor: pointer;
+    height: 4px;
+    width: 45px;
+    margin: 0 2px;
+    background-color: var(--fourth-bg-color);
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+  
+.active,
+.dot:hover {
+    background-color: var(--fifth-bg-color);
+}
+ 
+.fade {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    height: 100%;
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: .5s;
+    animation-name: fade;
+    animation-duration: .5s;
+}
