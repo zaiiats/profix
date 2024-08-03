@@ -15,6 +15,20 @@ li {list-style-type: none;}
 img {vertical-align: top;}
 h1,h2,h3,h4,h5,h6 {font-size: inherit;font-weight: inherit;}
 
+.icon__item--svg{
+    height: 1.5rem;
+    fill: none;
+    stroke: rgb(255, 255, 255);
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    stroke-width:0.1rem;
+    stroke-linejoin:round;
+}
+
+html{
+    font-size: 62.5%;
+}
+
 body {
     letter-spacing: 1px;
     font-family: 'Montserrat', sans-serif;
@@ -29,23 +43,20 @@ body {
     background:url(../img/black_pattern.png) repeat;
     background-size: 13rem auto;
 }
-.site {
-    position: relative;
-    height: auto;
-    width: 100%;
-}
 .site_wrapper {
     width: 80%;
     margin: 0 auto;
 }
-a{
-    text-decoration: none !important;
+a:link,
+a:visited{
+    text-decoration: none;
+    color: #fff;
 }
 .site{
     position: relative;
     height: auto;
     width: 100%;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 .site_wrapper{

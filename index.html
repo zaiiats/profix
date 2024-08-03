@@ -7,7 +7,15 @@
 2. Rename colors;
 3. Remake a{text-decoration: none !important;}
 4. Switch fron cdn to own svg's
+5. Hexagons needed to rotate towards us not in some fuckin way
+6. clear base.scss
+7. find all 5.714rem!
+8.
 
+
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
+	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 -->
 <head>
     <meta charset="UTF-8">
@@ -17,75 +25,85 @@
     <link rel="shortcut icon" href="/img/logo_no_border.png" type="image/png">
     <script type="module" src="/js/controler.js"></script>
     <link rel="stylesheet" href="css/style.css">
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
-	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-solid-rounded/css/uicons-solid-rounded.css'>
 </head>
 <body>
 	<div class="wrapper">
-		<nav id="nav">
-			<div class="logo_section">
-				<a href="#">
-					<img src="img/logo_border.png" alt="logo" class="logo_image">
-				</a>
-			</div>
-			<div class="wrapper_nav">
-				<form hidden class="search_form" action="" method="get" enctype="multipart/form-data">
-					<div class="input_div">
-						<input type="search" placeholder="Пошук...">
-						<button type="submit"><i class="fi fi-rr-search"></i></button>
+		<nav class="nav">
+			<a href="#" class="nav__logo">
+				<img src="img/logo_border.png" alt="logo image" class="nav__logo--img">
+			</a>
+			<div class="nav__wrapper">
+
+				<div class="nav__item">
+					<div class="nav__item--top">
+					    <span>Меню</span> 
+					    <svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
 					</div>
-				</form>
+					<div class="nav__item--dropdown">
+						<span class="nav__item--divider"></span>
+					    <a href="#" class="nav__link nav__link--assortment">Асортимент</a>
+						<a href="#" class="nav__link nav__link--about">Про нас</a>
+						<a href="#" class="nav__link nav__link--contacts">Контакти</a>
+						<a href="#" class="nav__link nav__link--support">Підтримка</a>
+					</div>
+				</div>
+			
 
-				<div class="button_nav button_1">
-					<button class="top_menu">
-					    Меню 
-					    <svg class="svg_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
-					</button>
-					<span class="divider_menu"></span>
-					<button class="dropdown_menu">
-					    <div><a href="#">Асортимент</a></div>
-					    <div><a href="#">Про нас</a></div>
-					    <div><a href="#">Контакти</a></div>
-					    <div><a href="#">Підтримка</a></div>
-					</button>
+				<div class="nav__item">
+					<div class="nav__item--top">
+					    <span>Ua</span>  
+					    <svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+					</div>
+					<div class="nav__item--dropdown">
+						<span class="nav__item--divider"></span>
+					    <a href="#" class="nav__link nav__link--en">En</a>
+					</div>
+
 				</div>
-			
-				<div class="button_nav button_2">
-					<button class="top_menu">
-					    Ua 
-					    <svg class="svg_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
-					</button>
-					<span class="divider_menu"></span>
-					<button class="dropdown_menu">
-					    <div><a href="#">En</a></div>
-					</button>
-				</div>
-			
-				<div class="button_nav button_3">
-					<button class="top_menu account">
-					    <div class="wrapper_section">
-						    <div class="account_icon"></div>
-							<svg class="svg_dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
-					    </div> 
-					</button>
-					<button class="dropdown_menu account">
-					    <div><a href="#">Георгій Судаков</a></div>
-					    <div><a style="text-decoration: underline;" href="#">Ваші дані</a></div>
-					    <div class="icon_container_section">
-							<div class="icon_container">
-							    <a href="#" rel="noopener noreferrer"><i class="fi fi-sr-heart account_section_element button_nav_text text_nav"></i></a>
-							    <div class="information_indicator"></div>
-							</div> 
-							<div class="icon_container">
-								<a href="#" rel="noopener noreferrer"><i class="fi fi-rr-shopping-cart account_section_element button_nav_text text_nav"></i></a>
-						 	   <div class="information_indicator"></div>
-							</div>
+
+
+				<div class="nav__item">
+					<div class="nav__item--top nav__account">
+						<div class="account__icon"></div>
+						<svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+					</div>
+					<div class="nav__item--dropdown account">
+					    <div><a href="#" class="nav__link nav__link--userName">Георгій Судаков</a></div>
+					    <div class="icon__wrapper">
+							<a class="icon__item" href="#" rel="noopener noreferrer">
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--heart">
+									<path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>
+								</svg>
+							    <div class="information__indicator"></div>
+							</a>
+							<a class="icon__item" href="#" rel="noopener noreferrer">
+								<svg viewBox="0 0 24 24" w xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--bookmark">
+									<path d="m4 17.9808v-8.27327c0-3.63337 0-5.45005 1.17157-6.57879 1.17158-1.12874 3.05719-1.12874 6.82843-1.12874 3.7712 0 5.6569 0 6.8284 1.12874 1.1716 1.12874 1.1716 2.94542 1.1716 6.57879v8.27327c0 2.3059 0 3.4588-.7728 3.8715-1.4967.7991-4.304-1.8671-5.6372-2.6699-.7732-.4656-1.1598-.6984-1.59-.6984s-.8168.2328-1.59.6984c-1.3332.8028-4.14053 3.469-5.63715 2.6699-.77285-.4127-.77285-1.5656-.77285-3.8715z"/>
+								</svg>
+								<div class="information__indicator"></div>
+							</a>
 					    </div>
-					    <div class="wrapper_section"><i class="fi fi-rr-exit"></i><a href="#">Вийти</a></div>
-					</button>
+					    <a class="icon__item icon__item--exit" href="#">
+							<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--exit">
+								<g>
+									<path d="m11 3-.6626.23384c-2.57873.91016-3.86812 1.36524-4.60276 2.40358s-.73464 2.40568-.73464 5.14038v2.4444c0 2.7347 0 4.102.73464 5.1404.73464 1.0383 2.02403 1.4934 4.60276 2.4036l.6626.2338"/>
+									<path d="m21 12h-10m10 0c0-.7002-1.9943-2.00847-2.5-2.5m2.5 2.5c0 .7002-1.9943 2.0085-2.5 2.5" stroke-linejoin="round"/>
+								</g>
+							</svg>
+							<span>Вийти</span> 
+						</a>
+					</div>
 				</div>
 
+
+
+
+
+
+
+
+
+				
 				<div class="hamburger_menu">
 					<div class="responsive_container">
 						<input class="checkbox" type="checkbox" name="" id="" />
@@ -104,7 +122,7 @@
 				</div>
 				<div class="account_small_icon">
 					<a href="#" class="account_button_responsive">
-						<div class="account_icon account_section_element"></div>
+						<div class="account__icon account_section_element"></div>
 					</a>
 				</div>
 			</div>
@@ -467,3 +485,91 @@
 </html>
 
 
+<!--class NavLinkFunctionality {
+  constructor() {
+    this.navWrapper = document.querySelector(".nav__wrapper");
+    this.items = Array.from(document.querySelectorAll(".nav__item"));
+    this.isOpenedMenu = false;
+    this.hoverTracker();
+    this.clickTracker(); // Initialize click tracking
+    this.prevH = 'c';
+    this.currH = 'c';
+  }
+
+  hoverTracker() {
+    // Adding mouseenter and mouseleave event listeners
+    this.navWrapper.addEventListener(
+      "mouseenter",
+      this.callbackForHover.bind(this),
+      true
+    );
+    this.navWrapper.addEventListener(
+      "mouseleave",
+      this.callbackForLeave.bind(this),
+      true
+    );
+  }
+
+  clickTracker() {
+    // Adding click event listeners to each nav item
+    this.items.forEach((item) => {
+      item.addEventListener("click", this.toggleItem.bind(this, item));
+    });
+  }
+
+  callbackForHover(e) {
+    const targetItem = e.target.closest(".nav__item");
+    if (!this.items.includes(targetItem)) return;
+    this.linkFunct(targetItem);
+  }
+
+  callbackForLeave(e) {
+    const targetItem = e.target.closest(".nav__item");
+    if (!this.items.includes(targetItem)) return;
+    this.closeItem(targetItem);
+  }
+
+  toggleItem(item, e) {
+    e.stopPropagation(); // Prevent event bubbling
+    this.linkFunct(item);
+  }
+
+  linkFunct(item) {
+    
+    if (item.classList.contains("opened_button") && this.prevH !== this.currH) {
+      this.closeItem(item); // Close item if already opened
+    } 
+    if (!item.classList.contains("opened_button") && this.prevH !== this.currH) {
+      this.openItem(item); // Open item
+    }
+  }
+
+  openItem(item) {
+    item.classList.add("opened_button");
+    item.querySelector(".nav__item--dropdown").classList.add("show_dropdown");
+    item.querySelector(".nav__svg--dropdown").classList.add("show_svg");
+    item.querySelector(".nav__item--top").classList.add("show_top_menu");
+
+    this.isOpenedMenu = true;
+    this.prevH = this.currH;
+    this.currH = 'o'
+    console.log("Item opened:", this.prevH, this.currH);
+  }
+
+  closeItem(item) {
+    item.classList.remove("opened_button");
+    item
+      .querySelector(".nav__item--dropdown")
+      .classList.remove("show_dropdown");
+    item.querySelector(".nav__svg--dropdown").classList.remove("show_svg");
+    item.querySelector(".nav__item--top").classList.remove("show_top_menu");
+
+    this.isOpenedMenu = false;
+    this.prevH = this.currH;
+    this.currH = "c";
+    console.log("Item closed:", this.prevH, this.currH);
+  }
+}
+
+// Create an instance of NavLinkFunctionality
+const navFunctionality = new NavLinkFunctionality();-->

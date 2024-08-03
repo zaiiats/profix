@@ -2,10 +2,10 @@
     justify-content: space-between;
     flex-direction: row;
     display: flex;
-    padding: 5.714rem 0;
+    padding: 5rem 0;
     width: 100%;
 	height: 100vh;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.2s ease-in-out;
 }
 .secondary_section{
@@ -212,4 +212,12 @@
 
 .hex_group:hover .hex_text{
     transform: rotate(120deg);
+}
+/*////////////////////////////////////////*/
+button{
+    font-size: 1.2rem;
+    position: relative;
+    display: flex;
+    background-color: transparent;
+    color: var(--white-color-text);
 }
