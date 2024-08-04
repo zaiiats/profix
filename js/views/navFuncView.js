@@ -1,19 +1,20 @@
 class NavFunctionality {
-  constructor(parameters) {
-    this.nav = document.querySelector("nav");
-    this.checkScroll();
+  #nav;
+  constructor() {
+    this.#nav = document.querySelector("nav");
+    this.#checkScroll();
   }
 
-  checkScroll() {
+  #checkScroll() {
     const options = {
       rootMargin: "0px",
       threshold: 1,
     };
     const observerCallback = ([entry]) => {
       if (entry.isIntersecting) {
-        this.nav.classList.remove("nav--closed");
+        this.#nav.classList.remove("nav--closed");
       } else {
-        this.nav.classList.add("nav--closed");
+        this.#nav.classList.add("nav--closed");
       }
     };
     const observer = new IntersectionObserver(observerCallback, options);

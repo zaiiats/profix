@@ -1,43 +1,72 @@
 class NavLinkFunctionality {
+  #isOpenedMenu;
+  #previousItem;
+  #items;
   constructor() {
-    this.navWrapper = document.querySelector(".nav__wrapper");
-    this.items = Array.from(document.querySelectorAll(".nav__item"));
-    this.isOpenedMenu = false;
-    this.trackEvent();
+    this.#items = Array.from(document.querySelectorAll(".nav-item"));
+    this.#isOpenedMenu = false;
+    this.#previousItem = false;
+    this.#trackEvent();
   }
-  trackEvent() {
-    this.items.forEach((item) => {
-      this.addListeners(item, "mouseenter", "mouseleave", "click");
+  #trackEvent() {
+    this.#items.forEach(item => {
+      this.#addListeners(item, "click", "mouseenter", "mouseleave");
+      
     });
   }
 
-  addListeners(el, ...event) {
+  #addListeners(el, ...event) {
     event.forEach((e) =>
-      el.addEventListener(e, this.linkFunct.bind(this, e, el))
-    );
+      el.addEventListener(e, this.#linkFunct.bind(this, e, el))
+    )
   }
 
-  linkFunct(e, el) {
-    if (e === "mouseenter") this.openItem(el);
-    if (e === "mouseleave") this.closeItem(el);
+  #linkFunct(e, el) {
+    console.log(el.classList.contains("nav-item--opened"),e);
+    console.log(window.navigator.userAgent);
+    
     if (e === "click") {
-      if (this.isOpenedMenu === true) this.closeItem(el);
-      else this.openItem(el);
+      this.#handleClick(el);
+      
+    }
+    if (e === "mouseenter") this.#openItem(el);
+    if (e === "mouseleave") this.#closeItem(el);
+  }
+  #handleClick(el) {
+    if (!el.classList.contains("nav-item--opened")) {
+      this.#items.forEach((item) => this.#closeItem(item));
+      this.#openItem(el);
+    } else if (el.classList.contains("nav-item--opened")) {
+      this.#closeItem(el);
+      
     }
   }
-  openItem(item) {
-    item.classList.add("nav__item--opened");
-    item.querySelector(".nav__item--dropdown").classList.add("show_dropdown");
-    item.querySelector(".nav__svg--dropdown").classList.add("show_svg");
-    item.querySelector(".nav__item--top").classList.add("show_top_menu");
-    this.isOpenedMenu = true;
+  #openItem(item) {
+    item.classList.add("nav-item--opened");
+    item
+      .querySelector(".nav-item__dropdown")
+      .classList.add("nav-item__dropdown--shown");
+    item
+      .querySelector(".nav-item__svg-dropdown")
+      .classList.add("nav-item__svg-dropdown--shown");
+    item.querySelector(".nav-item__top").classList.add("nav-item__top--shown");
+    let linksAccount = item.querySelector(".nav-item__links--top.account");
+    linksAccount && linksAccount.classList.add("nav-item__links--top-opened");
   }
-  closeItem(item) {
-    item.classList.remove("nav__item--opened");
-    item.querySelector(".nav__item--dropdown").classList.remove("show_dropdown");
-    item.querySelector(".nav__svg--dropdown").classList.remove("show_svg");
-    item.querySelector(".nav__item--top").classList.remove("show_top_menu");
-    this.isOpenedMenu = false;
+  #closeItem(item) {
+    item.classList.remove("nav-item--opened");
+    item
+      .querySelector(".nav-item__dropdown")
+      .classList.remove("nav-item__dropdown--shown");
+    item
+      .querySelector(".nav-item__svg-dropdown")
+      .classList.remove("nav-item__svg-dropdown--shown");
+    item
+      .querySelector(".nav-item__top")
+      .classList.remove("nav-item__top--shown");
+    let linksAccount = item.querySelector(".nav-item__links--top.account");
+    linksAccount &&
+      linksAccount.classList.remove("nav-item__links--top-opened");
   }
 }
 

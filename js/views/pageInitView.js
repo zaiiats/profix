@@ -1,9 +1,9 @@
 class PageInitialisation {
   constructor() {
-    this.initPage();
+    this.#initPage();
   }
 
-  initPage() {
+  #initPage() {
     document.addEventListener("DOMContentLoaded", function () {
       let hexagonSection = document.querySelector(".hexagon_section");
       document.querySelector(".main_page").style.setProperty("opacity", "1");

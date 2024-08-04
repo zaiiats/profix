@@ -10,8 +10,8 @@
 5. Hexagons needed to rotate towards us not in some fuckin way
 6. clear base.scss
 7. find all 5.714rem!
-8.
-
+8. Make containers for images in assortment section in order to by default make there some space
+9. when nav is closed then it weirdly shines when we scroll
 
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -29,104 +29,108 @@
 <body>
 	<div class="wrapper">
 		<nav class="nav">
-			<a href="#" class="nav__logo">
-				<img src="img/logo_border.png" alt="logo image" class="nav__logo--img">
+			
+			<a href="#" class="nav__logo-box">
+				<img src="img/logo_border.png" alt="logo image" class="nav__logo">
 			</a>
 			<div class="nav__wrapper">
 
-				<div class="nav__item">
-					<div class="nav__item--top">
-					    <span>Меню</span> 
-					    <svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+				<div class="nav-item nav-item__menu">
+					<div class="nav-item__top">
+						<div class="nav-item__links--top">
+							<span>Меню</span> 
+					   		<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+						</div>
 					</div>
-					<div class="nav__item--dropdown">
-						<span class="nav__item--divider"></span>
-					    <a href="#" class="nav__link nav__link--assortment">Асортимент</a>
-						<a href="#" class="nav__link nav__link--about">Про нас</a>
-						<a href="#" class="nav__link nav__link--contacts">Контакти</a>
-						<a href="#" class="nav__link nav__link--support">Підтримка</a>
+					<div class="nav-item__dropdown">
+						<span class="nav-item--divider"></span>
+						<div class="nav-item__links--dropdown">
+							<a href="#" class="nav-item__link nav-item__link--assortment">Асортимент</a>
+							<a href="#" class="nav-item__link nav-item__link--about">Про нас</a>
+							<a href="#" class="nav-item__link nav-item__link--contacts">Контакти</a>
+							<a href="#" class="nav-item__link nav-item__link--support">Підтримка</a>
+						</div>
 					</div>
 				</div>
 			
-
-				<div class="nav__item">
-					<div class="nav__item--top">
-					    <span>Ua</span>  
-					    <svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+				<div class="nav-item nav-item__language">
+					<div class="nav-item__top">
+						<div class="nav-item__links--top">
+							<span>Ua</span>  
+					    	<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+						</div>
 					</div>
-					<div class="nav__item--dropdown">
-						<span class="nav__item--divider"></span>
-					    <a href="#" class="nav__link nav__link--en">En</a>
-					</div>
-
-				</div>
-
-
-				<div class="nav__item">
-					<div class="nav__item--top nav__account">
-						<div class="account__icon"></div>
-						<svg class="nav__svg--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
-					</div>
-					<div class="nav__item--dropdown account">
-					    <div><a href="#" class="nav__link nav__link--userName">Георгій Судаков</a></div>
-					    <div class="icon__wrapper">
-							<a class="icon__item" href="#" rel="noopener noreferrer">
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--heart">
-									<path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>
-								</svg>
-							    <div class="information__indicator"></div>
-							</a>
-							<a class="icon__item" href="#" rel="noopener noreferrer">
-								<svg viewBox="0 0 24 24" w xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--bookmark">
-									<path d="m4 17.9808v-8.27327c0-3.63337 0-5.45005 1.17157-6.57879 1.17158-1.12874 3.05719-1.12874 6.82843-1.12874 3.7712 0 5.6569 0 6.8284 1.12874 1.1716 1.12874 1.1716 2.94542 1.1716 6.57879v8.27327c0 2.3059 0 3.4588-.7728 3.8715-1.4967.7991-4.304-1.8671-5.6372-2.6699-.7732-.4656-1.1598-.6984-1.59-.6984s-.8168.2328-1.59.6984c-1.3332.8028-4.14053 3.469-5.63715 2.6699-.77285-.4127-.77285-1.5656-.77285-3.8715z"/>
-								</svg>
-								<div class="information__indicator"></div>
-							</a>
-					    </div>
-					    <a class="icon__item icon__item--exit" href="#">
-							<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon__item--svg icon__item--exit">
-								<g>
-									<path d="m11 3-.6626.23384c-2.57873.91016-3.86812 1.36524-4.60276 2.40358s-.73464 2.40568-.73464 5.14038v2.4444c0 2.7347 0 4.102.73464 5.1404.73464 1.0383 2.02403 1.4934 4.60276 2.4036l.6626.2338"/>
-									<path d="m21 12h-10m10 0c0-.7002-1.9943-2.00847-2.5-2.5m2.5 2.5c0 .7002-1.9943 2.0085-2.5 2.5" stroke-linejoin="round"/>
-								</g>
-							</svg>
-							<span>Вийти</span> 
-						</a>
+					<div class="nav-item__dropdown">
+						<span class="nav-item--divider"></span>
+						<div class="nav-item__links--dropdown">
+					    	<a href="#" class="nav-item__link nav-item__link--en">En</a>
+						</div>
 					</div>
 				</div>
 
+				<div class="nav-item nav-item__account">
+					<div class="nav-item__top account">
+						<div class="nav-item__links--top account">
+							<a class="account-icon"></a>
+							<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+						</div>
+					</div>
+					<div class="nav-item__dropdown">
+						<div class="nav-item__links--dropdown">
+							<a href="#" class="nav-item__link nav-item__link--userName">Георгій Судаков</a>
+							<div class="icon__wrapper">
+								<a class="icon-item" href="#" rel="noopener noreferrer">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--svg icon-item--heart">
+										<path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>
+									</svg>
+									<div class="icon-item__indicator"></div>
+								</a>
+								<a class="icon-item" href="#" rel="noopener noreferrer">
+									<svg viewBox="0 0 24 24" w xmlns="http://www.w3.org/2000/svg" class="icon-item--svg icon-item--bookmark">
+										<path d="m4 17.9808v-8.27327c0-3.63337 0-5.45005 1.17157-6.57879 1.17158-1.12874 3.05719-1.12874 6.82843-1.12874 3.7712 0 5.6569 0 6.8284 1.12874 1.1716 1.12874 1.1716 2.94542 1.1716 6.57879v8.27327c0 2.3059 0 3.4588-.7728 3.8715-1.4967.7991-4.304-1.8671-5.6372-2.6699-.7732-.4656-1.1598-.6984-1.59-.6984s-.8168.2328-1.59.6984c-1.3332.8028-4.14053 3.469-5.63715 2.6699-.77285-.4127-.77285-1.5656-.77285-3.8715z"/>
+									</svg>
+									<div class="icon-item__indicator"></div>
+								</a>
+							</div>
+							<a class="icon-item icon-item__exit" href="#">
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--svg">
+									<g>
+										<path d="m11 3-.6626.23384c-2.57873.91016-3.86812 1.36524-4.60276 2.40358s-.73464 2.40568-.73464 5.14038v2.4444c0 2.7347 0 4.102.73464 5.1404.73464 1.0383 2.02403 1.4934 4.60276 2.4036l.6626.2338"/>
+										<path d="m21 12h-10m10 0c0-.7002-1.9943-2.00847-2.5-2.5m2.5 2.5c0 .7002-1.9943 2.0085-2.5 2.5" stroke-linejoin="round"/>
+									</g>
+								</svg>
+								<span>Вийти</span> 
+							</a>
+						</div>
+					</div>
+				</div>
 
-
-
-
-
-
-
-
+				<a href="#" class="account-icon__wrapper">
+					<div class="account-icon"></div>
+				</a>
 				
-				<div class="hamburger_menu">
-					<div class="responsive_container">
-						<input class="checkbox" type="checkbox" name="" id="" />
-						<div class="hamburger_lines">
-							<span class="line line1"></span>
-							<span class="line line2"></span>
-							<span class="line line3"></span>
+				<div class="hamburger-menu">
+					<div class="hamburger-menu__wrapper">
+						<input class="hamburger-menu__checkbox" type="checkbox" name="" id=""/>
+						<div class="hamburger-menu__line-box">
+							<div class="hamburger-menu__line hamburger-menu__line-1"></div>
+							<div class="hamburger-menu__line hamburger-menu__line-2"></div>
+							<div class="hamburger-menu__line hamburger-menu__line-3"></div>
 						</div>
-						<div class="menu_items">
-							<li><a href="#">Асортимент</a></li>
-							<li><a href="#">Про нас</a></li>
-							<li><a href="#">Контакти</a></li>
-							<li><a href="#">Новини</a></li>
-						</div>
+						<div class="hamburger-menu__background"></div>
+						<ul class="hamburger-menu__link-box">
+							<li><a class="hamburger-menu__link" href="#">Асортимент</a></li>
+							<li><a class="hamburger-menu__link" href="#">Про нас</a></li>
+							<li><a class="hamburger-menu__link" href="#">Контакти</a></li>
+							<li><a class="hamburger-menu__link" href="#">Новини</a></li>
+						</ul>
 					</div>
 				</div>
-				<div class="account_small_icon">
-					<a href="#" class="account_button_responsive">
-						<div class="account__icon account_section_element"></div>
-					</a>
-				</div>
+
 			</div>
 		</nav>
+
+		
 		<section class="main_page">
 			<div class="main_section">
 				<div class="text_main_section">
@@ -547,7 +551,7 @@
   openItem(item) {
     item.classList.add("opened_button");
     item.querySelector(".nav__item--dropdown").classList.add("show_dropdown");
-    item.querySelector(".nav__svg--dropdown").classList.add("show_svg");
+    item.querySelector(".nav__svg-dropdown").classList.add("show_svg");
     item.querySelector(".nav__item--top").classList.add("show_top_menu");
 
     this.isOpenedMenu = true;
@@ -561,7 +565,7 @@
     item
       .querySelector(".nav__item--dropdown")
       .classList.remove("show_dropdown");
-    item.querySelector(".nav__svg--dropdown").classList.remove("show_svg");
+    item.querySelector(".nav__svg-dropdown").classList.remove("show_svg");
     item.querySelector(".nav__item--top").classList.remove("show_top_menu");
 
     this.isOpenedMenu = false;
@@ -573,3 +577,28 @@
 
 // Create an instance of NavLinkFunctionality
 const navFunctionality = new NavLinkFunctionality();-->
+<!--
+/////////////////////////////
+/*
+.nav__item--dropdown {
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    top: calc(100% - 1px);
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    border: 1px solid transparent;
+    border-top: 0;
+}  
+.show_dropdown {
+    background-color: var(--main-bg-color);
+    max-height: 15rem;
+    border: 1px solid var(--white-color-text);
+    border-top: 0;
+    padding: 0 0 0.6rem;
+}
+-->

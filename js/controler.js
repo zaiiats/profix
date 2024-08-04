@@ -2,11 +2,13 @@
 import navInit from "./views/navInitView.js";
 import pageInit from "./views/pageInitView.js";
 import navFunc from "./views/navFuncView.js";
+import hamburgerFuncView from "./views/hamburgerFuncView.js";
 
 const startPage = function(){
   pageInit();
   navInit();
   navFunc();
+  hamburgerFuncView();
 };
 
 
