@@ -8,26 +8,33 @@ class NavLinkFunctionality {
     this.#previousItem = false;
     this.#trackEvent();
   }
+
   #trackEvent() {
-    this.#items.forEach(item => {
-      this.#addListeners(item, "click", "mouseenter", "mouseleave");
-      
-    });
+    if (!this.#isTouchDevice()) {
+      this.#items.forEach((item) => {
+        this.#addListeners(item, "click", "mouseenter", "mouseleave");
+      });
+    }
+    if (this.#isTouchDevice()) {
+      this.#items.forEach((item) => {
+        this.#addListeners(item, "click");
+      });
+    }
+  }
+
+  #isTouchDevice() {
+    return "ontouchstart" in window || navigator.maxTouchPoints > 0;
   }
 
   #addListeners(el, ...event) {
     event.forEach((e) =>
       el.addEventListener(e, this.#linkFunct.bind(this, e, el))
-    )
+    );
   }
 
   #linkFunct(e, el) {
-    console.log(el.classList.contains("nav-item--opened"),e);
-    console.log(window.navigator.userAgent);
-    
     if (e === "click") {
       this.#handleClick(el);
-      
     }
     if (e === "mouseenter") this.#openItem(el);
     if (e === "mouseleave") this.#closeItem(el);
@@ -38,7 +45,6 @@ class NavLinkFunctionality {
       this.#openItem(el);
     } else if (el.classList.contains("nav-item--opened")) {
       this.#closeItem(el);
-      
     }
   }
   #openItem(item) {
