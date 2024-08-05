@@ -3,13 +3,26 @@ import navInit from "./views/navInitView.js";
 import pageInit from "./views/pageInitView.js";
 import navFunc from "./views/navFuncView.js";
 import hamburgerFuncView from "./views/hamburgerFuncView.js";
+import createTextWriter from "./views/textWriterView.js";
 
 const startPage = function(){
   pageInit();
   navInit();
   navFunc();
   hamburgerFuncView();
+  createTextWriter();
 };
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Switch button (checkbox)
