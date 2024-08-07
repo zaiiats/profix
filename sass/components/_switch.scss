@@ -1,16 +1,19 @@
 .theme-switch {
-  font-size: 2.7rem;
-  width: 10rem;
-  min-height: 3rem;
+  font-size: 2rem;
+  width: 12rem;
+  min-height: 3.5rem;
   color: black;
   margin: 2rem 4rem;
   align-self: self-end;
   position: relative;
-  border-radius: 0.2rem;
-  border: var(--accent-color) 0.17rem solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   &__options-wrapper {
-    background-color: var(--accent-color);
+    
+    border-radius: 0.2rem;
+    border: var(--white-color-text) 0.1rem solid;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -29,8 +32,8 @@
   }
 
   &__svg {
-    fill: rgb(0, 0, 0);
-    stroke: rgb(0, 0, 0);
+    fill: white;
+    stroke: white;
     stroke-width: 0.15rem;
 
     &--active {
@@ -55,11 +58,12 @@
     width: 50%;
     height: 100%;
     z-index: 1;
-    background-color: var(--main-bg-color);
     border-radius: 0.2rem;
     transform: translateX(0);
     transition: all 0.15s ease-in-out;
-
+    border: var(--accent-color) 0.2rem solid;
+    background-color: var(--accent-color-3);
+    left: -0.005rem;
     &--active {
         transform: translateX(100%);
     }

@@ -2,14 +2,15 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 7rem 0;
+  padding: 7rem 0 0;
   height: 100vh;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
+  
 
   &__main-section {
     color: var(--white-color-text);
-    padding: 4rem 5rem 3rem 8rem;
+    padding: 4rem 5rem 4rem 7rem;
     width: 70%;
     height: 100%;
     position: relative;
@@ -17,12 +18,16 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+    }
   }
   &__text--secondary {
     margin: 2.5rem 0 0;
     max-width: 80%;
   }
   &__buttons-wrapper {
+    margin: 9rem 0 0;
     display: flex;
     flex-direction: row;
   }
@@ -40,6 +45,9 @@
     width: 30%;
     display: flex;
     flex-direction: column;
+    @media only screen and (max-width: 800px) {
+      width: 00%;
+    }
   }
 }
 
@@ -55,6 +63,9 @@
   &__placeholder {
     visibility: hidden;
     display: inline-block;
+    @media only screen and (max-width: 1200px) {
+      font-size: 5.5rem;
+    }
   }
   &__cursor {
     display: inline-block;
@@ -64,95 +75,105 @@
     height: 6rem;
     width: 0.4rem;
     background-color: #fff;
+    @media only screen and (max-width: 1200px) {
+      height: 5rem;
+    }
   }
 }
 
-
-
-
-
-
-
-
-
-.hexagon_section {
+.hex-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  left: 30rem;
   padding: 2.857rem 0;
   height: 100%;
   transition: all 0.4s ease-in-out;
-}
-.hex-row {
-  clear: left;
-  height: 10.57rem;
-}
-.hex-row.first {
-  margin-left: 5.3928rem;
-}
-.hex-row.second {
-  margin-left: -0.678rem;
-}
-.hex-row.third {
-  margin-left: -6.6428rem;
+  @media only screen and (max-width: 801px) {
+    display: none;
+  }
+
+  &__row {
+    min-height: 13rem;
+    display: flex;
+    gap: 1rem;
+
+    &--first {
+      margin-left: 5rem;
+    }
+
+    &--second {
+      margin-left: -2.5rem;
+    }
+
+    &--third {
+      margin-left: -10rem;
+    }
+  }
 }
 
 .hex {
-  -webkit-user-select: none;
-  user-select: none;
-  color: var(--white-color-text);
+  width: 14em;
+  height: 8.083rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.1rem;
+  border-left: #ff4747 0.5rem solid;
+  border-right: #ff4747 0.5rem solid;
+  color: var(--white-color-text);
+  user-select: none;
   transition: all 0.5s ease-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 1px;
-  width: 11rem;
-  height: 6.351rem;
-  border-left: #ff4747 5px solid;
-  border-right: #ff4747 5px solid;
-}
-.hex_second {
-  position: absolute;
-  transform: rotate(60deg);
-}
-.hex_third {
-  position: absolute;
-  transform: rotate(-60deg);
-}
-.hex_group {
-  transition: all 0.5s ease-in-out;
-  width: 11.7857rem;
-  display: inline-block;
-  position: relative;
-  opacity: 0.8;
-}
-.hex_group:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  transform: scale(1.1);
-  opacity: 1;
-}
-.hex_group:hover > .hex_main {
-  transform: rotate(-120deg);
-}
-.hex_group:hover > .hex_second {
-  transform: rotate(-60deg);
-}
-.hex_group:hover > .hex_third {
-  transform: rotate(-180deg);
-}
-.hex_text {
-  transition: all 0.5s ease-out;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
 
-.hex_group:hover .hex_text {
-  transform: rotate(120deg);
+  &__text {
+    transition: all 0.5s ease-out;
+    font-size: 1.3rem;
+    backface-visibility: hidden;
+    font-weight: 500;
+  }
+
+  &--second {
+    position: absolute;
+    transform: rotate(60deg);
+  }
+
+  &--third {
+    position: absolute;
+    transform: rotate(-60deg);
+  }
+
+  &-box {
+    transition: all 0.5s ease-in-out;
+    width: 14rem;
+    display: inline-block;
+    position: relative;
+    opacity: 0.8;
+    height: 8.083rem;
+
+    &:hover {
+      transform-origin: 50% 50%;
+      transform: scale(120%);
+      opacity: 1;
+    }
+
+    &:hover .hex--main {
+      transform: rotate(-120deg);
+    }
+
+    &:hover .hex--second {
+      transform: rotate(-60deg);
+    }
+
+    &:hover .hex--third {
+      transform: rotate(-180deg);
+    }
+
+    &:hover .hex__text {
+      transform: rotate(120deg);
+    }
+  }
 }
-/*////////////////////////////////////////*/

@@ -6,6 +6,7 @@
   --third-bg-color:#111c39;
   --fourth-bg-color:#292929;
   --fifth-bg-color:#b5b5b5;
+  --sixth-bg-color:#33426b;
   --background:rgba(3, 3, 7, 0.85);
   --background2:rgba(0,0,0,0.4);
   --background3:rgba(0,0,0,0.9);
@@ -164,6 +165,11 @@ h1, h2, h3, h4, h5, h6 {
 @media only screen and (max-width: 1600px) {
   html {
     font-size: 62.5%;
+  }
+}
+@media only screen and (max-width: 1200px) {
+  html {
+    font-size: 50%;
   }
 }
 @media only screen and (max-width: 900px) {
@@ -382,11 +388,21 @@ a:visited {
   font-weight: 500;
   letter-spacing: 0.15rem;
 }
+@media only screen and (max-width: 1200px) {
+  .heading--primary {
+    font-size: 4rem;
+  }
+}
 
 .heading--highlited {
   color: #d7deee;
   font-size: 6.5rem;
   font-weight: 700;
+}
+@media only screen and (max-width: 1200px) {
+  .heading--highlited {
+    font-size: 5.5rem;
+  }
 }
 
 .text--secondary {
@@ -407,6 +423,7 @@ a:visited {
 }
 
 .button {
+  font-weight: 500;
   font-size: 1.5rem;
   border-radius: 0.2rem;
   display: flex;
@@ -431,18 +448,20 @@ a:visited {
 }
 
 .theme-switch {
-  font-size: 2.7rem;
-  width: 10rem;
-  min-height: 3rem;
+  font-size: 2rem;
+  width: 12rem;
+  min-height: 3.5rem;
   color: black;
   margin: 2rem 4rem;
   align-self: self-end;
   position: relative;
-  border-radius: 0.2rem;
-  border: var(--accent-color) 0.17rem solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .theme-switch__options-wrapper {
-  background-color: var(--accent-color);
+  border-radius: 0.2rem;
+  border: var(--white-color-text) 0.1rem solid;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -459,8 +478,8 @@ a:visited {
   z-index: 2;
 }
 .theme-switch__svg {
-  fill: rgb(0, 0, 0);
-  stroke: rgb(0, 0, 0);
+  fill: white;
+  stroke: white;
   stroke-width: 0.15rem;
 }
 .theme-switch__svg--active {
@@ -482,10 +501,12 @@ a:visited {
   width: 50%;
   height: 100%;
   z-index: 1;
-  background-color: var(--main-bg-color);
   border-radius: 0.2rem;
   transform: translateX(0);
   transition: all 0.15s ease-in-out;
+  border: var(--accent-color) 0.2rem solid;
+  background-color: var(--accent-color-3);
+  left: -0.005rem;
 }
 .theme-switch__oval--active {
   transform: translateX(100%);
@@ -982,6 +1003,9 @@ footer {
 .nav-item__svg-dropdown--shown {
   transform: rotate(270deg);
 }
+.nav-item__link--userName {
+  text-decoration: underline !important;
+}
 
 .icon__wrapper {
   display: flex;
@@ -1146,14 +1170,14 @@ footer {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 7rem 0;
+  padding: 7rem 0 0;
   height: 100vh;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
 .welcome-page__main-section {
   color: var(--white-color-text);
-  padding: 4rem 5rem 3rem 8rem;
+  padding: 4rem 5rem 4rem 7rem;
   width: 70%;
   height: 100%;
   position: relative;
@@ -1162,11 +1186,17 @@ footer {
   flex-direction: column;
   justify-content: space-around;
 }
+@media only screen and (max-width: 800px) {
+  .welcome-page__main-section {
+    width: 100%;
+  }
+}
 .welcome-page__text--secondary {
   margin: 2.5rem 0 0;
   max-width: 80%;
 }
 .welcome-page__buttons-wrapper {
+  margin: 9rem 0 0;
   display: flex;
   flex-direction: row;
 }
@@ -1184,6 +1214,11 @@ footer {
   display: flex;
   flex-direction: column;
 }
+@media only screen and (max-width: 800px) {
+  .welcome-page__secondary-section {
+    width: 0%;
+  }
+}
 
 .text-writer {
   position: relative;
@@ -1197,6 +1232,11 @@ footer {
   visibility: hidden;
   display: inline-block;
 }
+@media only screen and (max-width: 1200px) {
+  .text-writer__placeholder {
+    font-size: 5.5rem;
+  }
+}
 .text-writer__cursor {
   display: inline-block;
   left: 0.1rem;
@@ -1206,100 +1246,96 @@ footer {
   width: 0.4rem;
   background-color: #fff;
 }
+@media only screen and (max-width: 1200px) {
+  .text-writer__cursor {
+    height: 5rem;
+  }
+}
 
-.hexagon_section {
+.hex-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
-  left: 30rem;
   padding: 2.857rem 0;
   height: 100%;
   transition: all 0.4s ease-in-out;
 }
-
-.hex-row {
-  clear: left;
-  height: 10.57rem;
+@media only screen and (max-width: 801px) {
+  .hex-wrapper {
+    display: none;
+  }
 }
-
-.hex-row.first {
-  margin-left: 5.3928rem;
+.hex-wrapper__row {
+  min-height: 13rem;
+  display: flex;
+  gap: 1rem;
 }
-
-.hex-row.second {
-  margin-left: -0.678rem;
+.hex-wrapper__row--first {
+  margin-left: 5rem;
 }
-
-.hex-row.third {
-  margin-left: -6.6428rem;
+.hex-wrapper__row--second {
+  margin-left: -2.5rem;
+}
+.hex-wrapper__row--third {
+  margin-left: -10rem;
 }
 
 .hex {
-  -webkit-user-select: none;
-  user-select: none;
-  color: var(--white-color-text);
+  width: 14em;
+  height: 8.083rem;
+  position: absolute;
+  top: 0;
+  left: 0;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 0.1rem;
+  border-left: #ff4747 0.5rem solid;
+  border-right: #ff4747 0.5rem solid;
+  color: var(--white-color-text);
+  user-select: none;
   transition: all 0.5s ease-out;
-  position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: 1px;
-  width: 11rem;
-  height: 6.351rem;
-  border-left: #ff4747 5px solid;
-  border-right: #ff4747 5px solid;
 }
-
-.hex_second {
+.hex__text {
+  transition: all 0.5s ease-out;
+  font-size: 1.3rem;
+  backface-visibility: hidden;
+  font-weight: 500;
+}
+.hex--second {
   position: absolute;
   transform: rotate(60deg);
 }
-
-.hex_third {
+.hex--third {
   position: absolute;
   transform: rotate(-60deg);
 }
-
-.hex_group {
+.hex-box {
   transition: all 0.5s ease-in-out;
-  width: 11.7857rem;
+  width: 14rem;
   display: inline-block;
   position: relative;
   opacity: 0.8;
+  height: 8.083rem;
 }
-
-.hex_group:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  transform: scale(1.1);
+.hex-box:hover {
+  transform-origin: 50% 50%;
+  transform: scale(120%);
   opacity: 1;
 }
-
-.hex_group:hover > .hex_main {
+.hex-box:hover .hex--main {
   transform: rotate(-120deg);
 }
-
-.hex_group:hover > .hex_second {
+.hex-box:hover .hex--second {
   transform: rotate(-60deg);
 }
-
-.hex_group:hover > .hex_third {
+.hex-box:hover .hex--third {
   transform: rotate(-180deg);
 }
-
-.hex_text {
-  transition: all 0.5s ease-out;
-  font-size: 1.1rem;
-  font-weight: 700;
-}
-
-.hex_group:hover .hex_text {
+.hex-box:hover .hex__text {
   transform: rotate(120deg);
 }
-
-/*////////////////////////////////////////*/
 
 /*# sourceMappingURL=style.css.map */

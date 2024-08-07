@@ -6,14 +6,16 @@ class TextWriter {
   #typingTimeout = 200;
   #waitTimeout = 3000;
   #i = 0;
+  #heightOfCursor;
 
   constructor() {
     this.listOfWords = ["будівництва", "оселі", "продажу"];
     this.#heading = document.querySelector(".text-writer__heading--highlited");
     this.#cursor = document.querySelector(".text-writer__cursor");
     this.#mainFunc();
+
   }
-  async #mainFunc() {
+  async #mainFunc() {    
     try {
       for (let i = 0; i < this.listOfWords.length; i++) {
         await this.#changeWord(i);
@@ -105,7 +107,7 @@ class TextWriter {
 
   #stopCursor() {
     this.#isBlinking = false;
-    this.#cursor.style.setProperty("width", "0.3rem");
+    this.#cursor.style.setProperty("width", "0.4rem");
   }
 }
 
