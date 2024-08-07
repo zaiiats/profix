@@ -9,35 +9,33 @@ class TextWriter {
 
   constructor() {
     this.listOfWords = ["будівництва", "оселі", "продажу"];
-    this.#heading = document.querySelector(".heading--highlited__text-writer");
-    this.#cursor = document.querySelector(".cursor");
+    this.#heading = document.querySelector(".text-writer__heading--highlited");
+    this.#cursor = document.querySelector(".text-writer__cursor");
     this.#mainFunc();
   }
-
   async #mainFunc() {
     try {
-      console.log("\nStart");
-      await this.changeWord(0);
-      await this.changeWord(1);
-      await this.changeWord(2);
+      for (let i = 0; i < this.listOfWords.length; i++) {
+        await this.#changeWord(i);
+      }
       this.#mainFunc();
     } catch (error) {
       console.log(error);
     }
   }
 
-  async changeWord(wordIndex) {
+  async #changeWord(wordIndex) {
     try {
-      await this.letterAdd(wordIndex);
-      await this.cursorStart();
-      await this.cursorStop();
-      await this.letterMinus(wordIndex);
+      await this.#letterAdd(wordIndex);
+      await this.#cursorStart();
+      await this.#cursorStop();
+      await this.#letterMinus(wordIndex);
     } catch (error) {
       console.log(error);
     }
   }
 
-  async letterAdd(wordIndex) {
+  async #letterAdd(wordIndex) {
     return new Promise((resolve) => {
       const addLetter = () => {
         setTimeout(() => {
@@ -47,7 +45,7 @@ class TextWriter {
           if (this.#i < this.listOfWords[wordIndex].length) {
             addLetter();
           } else {
-            this.#i=0;
+            this.#i = 0;
             resolve();
           }
         }, this.#typingTimeout);
@@ -56,27 +54,25 @@ class TextWriter {
     });
   }
 
-  async cursorStart() {
+  async #cursorStart() {
     return new Promise((resolve) => {
       setTimeout(() => {
         this.#blinkCursor();
-        console.log("cursorStart");
         resolve();
-      },0);
+      }, 0);
     });
   }
 
-  async cursorStop() {
+  async #cursorStop() {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log("cursorStop");
         this.#stopCursor();
         resolve();
       }, this.#waitTimeout);
     });
   }
 
-  async letterMinus(wordIndex) {
+  async #letterMinus(wordIndex) {
     return new Promise((resolve) => {
       const addMinus = () => {
         setTimeout(() => {
@@ -100,7 +96,7 @@ class TextWriter {
     this.#isBlinking = true;
     const blink = () => {
       if (!this.#isBlinking) return;
-      this.#cursor.style.setProperty("width", isVisible ? "0.3rem" : "0");
+      this.#cursor.style.setProperty("width", isVisible ? "0.4rem" : "0");
       isVisible = !isVisible;
       setTimeout(() => requestAnimationFrame(blink), 600);
     };
@@ -110,16 +106,7 @@ class TextWriter {
   #stopCursor() {
     this.#isBlinking = false;
     this.#cursor.style.setProperty("width", "0.3rem");
-    console.log("cursor stopped");
   }
-
-  /*this.index = {
-      letter: 0,
-      word: 0,
-      action: "add",
-    };*/
-
-  
 }
 
-export default new TextWriter()
+export default new TextWriter();

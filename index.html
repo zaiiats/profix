@@ -12,6 +12,7 @@
 7. find all 5.714rem!
 8. Make containers for images in assortment section in order to by default make there some space
 9. when nav is closed then it weirdly shines when we scroll
+10. close nav when we click not in nav (e.g. body)
 
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-brands/css/uicons-brands.css'>
 	<link rel='stylesheet' href='https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css'>
@@ -38,7 +39,7 @@
 					<div class="nav-item__top">
 						<div class="nav-item__links--top">
 							<span>Меню</span> 
-					   		<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+					   		<svg class="nav-item__svg-dropdown svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
 						</div>
 					</div>
 					<div class="nav-item__dropdown">
@@ -56,7 +57,7 @@
 					<div class="nav-item__top">
 						<div class="nav-item__links--top">
 							<span>Ua</span>  
-					    	<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+					    	<svg class="nav-item__svg-dropdown svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
 						</div>
 					</div>
 					<div class="nav-item__dropdown">
@@ -71,7 +72,7 @@
 					<div class="nav-item__top account">
 						<div class="nav-item__links--top account">
 							<a class="account-icon"></a>
-							<svg class="nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
+							<svg class="svg nav-item__svg-dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18"><polygon points="6.145 3.985 7.559 2.57 13.859 9 7.559 15.43 6.145 14.015 10.03 9"/></svg>
 						</div>
 					</div>
 					<div class="nav-item__dropdown">
@@ -79,20 +80,20 @@
 							<a href="#" class="nav-item__link nav-item__link--userName">Георгій Судаков</a>
 							<div class="icon__wrapper">
 								<a class="icon-item" href="#" rel="noopener noreferrer">
-									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--svg icon-item--heart">
+									<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--heart svg">
 										<path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>
 									</svg>
 									<div class="icon-item__indicator"></div>
 								</a>
 								<a class="icon-item" href="#" rel="noopener noreferrer">
-									<svg viewBox="0 0 24 24" w xmlns="http://www.w3.org/2000/svg" class="icon-item--svg icon-item--bookmark">
+									<svg viewBox="0 0 24 24" w xmlns="http://www.w3.org/2000/svg" class="icon-item--bookmark svg">
 										<path d="m4 17.9808v-8.27327c0-3.63337 0-5.45005 1.17157-6.57879 1.17158-1.12874 3.05719-1.12874 6.82843-1.12874 3.7712 0 5.6569 0 6.8284 1.12874 1.1716 1.12874 1.1716 2.94542 1.1716 6.57879v8.27327c0 2.3059 0 3.4588-.7728 3.8715-1.4967.7991-4.304-1.8671-5.6372-2.6699-.7732-.4656-1.1598-.6984-1.59-.6984s-.8168.2328-1.59.6984c-1.3332.8028-4.14053 3.469-5.63715 2.6699-.77285-.4127-.77285-1.5656-.77285-3.8715z"/>
 									</svg>
 									<div class="icon-item__indicator"></div>
 								</a>
 							</div>
 							<a class="icon-item icon-item__exit" href="#">
-								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--svg">
+								<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="svg">
 									<g>
 										<path d="m11 3-.6626.23384c-2.57873.91016-3.86812 1.36524-4.60276 2.40358s-.73464 2.40568-.73464 5.14038v2.4444c0 2.7347 0 4.102.73464 5.1404.73464 1.0383 2.02403 1.4934 4.60276 2.4036l.6626.2338"/>
 										<path d="m21 12h-10m10 0c0-.7002-1.9943-2.00847-2.5-2.5m2.5 2.5c0 .7002-1.9943 2.0085-2.5 2.5" stroke-linejoin="round"/>
@@ -134,49 +135,54 @@
 			<div class="welcome-page__main-section">
 
 				<div class="welcome-page__text-wrapper">
-					<div class="heading--primary">
+					<h1 class="heading--primary">
 					  <span class="heading--highlited">Profix</span>
 						<span> - сучасний бренд з продажу комплектуючих для </span>
-						<span class="heading--highlited heading--highlited__text-writer">	
-							</span><div class="cursor"></div>
-				  </div>
+						<span class="text-writer">
+							<div class="text-writer__wrapper">
+								<span class="heading--highlited text-writer__heading--highlited"></span><div class="text-writer__cursor"></div>
+							</div>
+							<span class="heading--highlited text-writer__placeholder">будівництва|</span>
+						</span>
+				  </h1>
 
-				  <h1 class="secondary_text_main_section thin">
+				  <h3 class="welcome-page__text--secondary text--secondary">
 					  Відкрийте для себе наші системи кріплення, які забезпечують міцність,
 					  що виходить за рамки звичайних можливостей. Приєднуйтесь до наших
 					  клієнтів і відчуйте переваги на власному досвіді.
-				  </h1>
+				  </h3>
 				</div>
 
-				<div class="bottom_main_section">
-					<div class="button_main_section">
-						<a href="#" class="button">
-							замовити
-						</a>
-						<a href="#" class="tel_section">
-							<i class="fi fi-sr-phone-flip"></i>
-							<span>+38 945 789 3001</span>
-						</a>
-					</div>
+				<div class="welcome-page__buttons-wrapper">
+					<a href="#" class="button button--filled welcome-page__button--order">
+						замовити
+					</a>
+					<a href="#" class="button button--not-filled welcome-page__button--phone">
+						<svg class="svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m3.77762 11.9424c-.94802-1.6531-1.40577-3.00292-1.68178-4.37119-.40822-2.02363.52597-4.0004 2.07354-5.26174.65407-.53309 1.40385-.35095 1.79062.34293l.87318 1.56651c.69211 1.24166 1.03816 1.86248.96952 2.52068-.06863.6582-.53533 1.19427-1.46873 2.26642zm0 0c1.91889 3.3459 4.93022 6.3589 8.27998 8.28m0 0c1.6531.948 3.0029 1.4058 4.3712 1.6818 2.0236.4082 4.0004-.526 5.2617-2.0736.5331-.654.351-1.4038-.3429-1.7906l-1.5665-.8732c-1.2417-.6921-1.8625-1.0381-2.5207-.9695s-1.1943.5353-2.2664 1.4687z" /></svg>
+						<span>+38 945 789 3001</span>
+					</a>
 				</div>
 
 			</div>
 
 
-			<div class="secondary_section">
+			<div class="welcome-page__secondary-section">
 				<div class="button_language">
 					<label class="switch">
 						<input id="language-toggle" class="check-toggle check-toggle-round-flat" type="checkbox">
 						<label for="language-toggle"></label>
-						<span class="on"><i class="fi fi-rr-moon"></i></span>
-						<span class="off"><i class="fi fi-rr-brightness"></i></span>
+						<span class="on">
+							<i class="fi fi-rr-moon"></i>
+						</span>
+						<span class="off">
+							<svg class="svg theme-switch__svg--sun" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g><path d="m17 12c0 2.7614-2.2386 5-5 5-2.76142 0-5-2.2386-5-5 0-2.76142 2.23858-5 5-5 2.7614 0 5 2.23858 5 5z"/><path d="m12 2v1.5m0 17v1.5m7.0708-2.9287-1.0607-1.0607m-12.02084-12.02134-1.06066-1.06066m17.0714 7.0714h-1.5m-17 0h-1.5m17.0713-7.07129-1.0607 1.06066m-12.02085 12.02133-1.06066 1.0607" /></g></svg>
+						</span>
 					</label>
 				</div>
 
 				<div class="hexagon_section">
 					<div class="hex-row first">
-						<a class="hex_group" href="#">
-							
+						<a class="hex_group" href="#">	
 							<div class="hex hex_main hex__main--screw">
 								<div class="hex_text">асортимент</div>
 							</div>

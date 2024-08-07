@@ -127,13 +127,15 @@
         padding: 1.6rem 0;
       }
     }
-    &__svg-dropdown {
-      position: relative;
-      transition: transform 0.3s linear;
-      display: inline;
-      fill: var(--white-color-text);
-      height: 1.4rem;
-      transform: rotate(90deg);
+    &__svg-dropdown{
+      & {
+        transition: transform 0.3s linear;
+        fill: var(--white-color-text);
+        height: 1.2rem;
+        stroke-width: 0.05rem;
+        transform: rotate(90deg);
+      }
+      
       &--shown {
         transform: rotate(270deg);
       }

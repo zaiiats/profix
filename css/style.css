@@ -9,6 +9,9 @@
   --background:rgba(3, 3, 7, 0.85);
   --background2:rgba(0,0,0,0.4);
   --background3:rgba(0,0,0,0.9);
+  --accent-color:rgb(186, 42, 42);
+  --accent-color-2:rgb(147, 28, 28);
+  --accent-color-3:rgba(182, 72, 72,0.1);
   /*--white-color-text:#fff;
   --black-color-text:#000;
   --main-bg-color:#04070E;
@@ -373,6 +376,60 @@ a:visited {
   font-family: "Raleway";
   src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
 }
+.heading--primary {
+  color: #c6ccdb;
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+}
+
+.heading--highlited {
+  color: #d7deee;
+  font-size: 6.5rem;
+  font-weight: 700;
+}
+
+.text--secondary {
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
+  color: #c6ccdb;
+  font-weight: 400;
+}
+
+.svg {
+  height: 2rem;
+  fill: none;
+  stroke: rgb(255, 255, 255);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.15rem;
+}
+
+.button {
+  font-size: 1.5rem;
+  border-radius: 0.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.2s ease-in-out;
+  padding: 1.2rem 3.5rem;
+}
+.button--filled {
+  text-transform: uppercase;
+  background-color: var(--accent-color);
+}
+.button--filled:hover {
+  background-color: var(--accent-color-2);
+}
+.button--not-filled {
+  border: 0.1rem var(--accent-color) solid;
+  background-color: transparent;
+}
+.button--not-filled:hover {
+  background-color: var(--accent-color-3);
+}
+
 .top_section {
   display: flex;
   flex-direction: row;
@@ -971,11 +1028,10 @@ footer {
   padding: 1.6rem 0;
 }
 .nav-item__svg-dropdown {
-  position: relative;
   transition: transform 0.3s linear;
-  display: inline;
   fill: var(--white-color-text);
-  height: 1.4rem;
+  height: 1.2rem;
+  stroke-width: 0.05rem;
   transform: rotate(90deg);
 }
 .nav-item__svg-dropdown--shown {
@@ -1150,7 +1206,6 @@ footer {
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 }
-
 .welcome-page__main-section {
   margin: 1rem 0 0 3rem;
   color: var(--white-color-text);
@@ -1163,98 +1218,51 @@ footer {
   flex-direction: column;
   justify-content: space-around;
 }
-
-.heading--primary {
-  color: #c6ccdb;
-  font-size: 4.5rem;
-  font-weight: 500;
-  letter-spacing: 0.15rem;
+.welcome-page__text--secondary {
+  margin: 2.5rem 0 0;
+  max-width: 80%;
+}
+.welcome-page__buttons-wrapper {
+  display: flex;
+  flex-direction: row;
+  margin: 3rem 0 0;
+}
+.welcome-page__button--order {
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+}
+.welcome-page__button--phone {
+  gap: 0.5rem;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
 }
 
-.heading--highlited {
-  color: #d7deee;
-  font-size: 5.5rem;
-  font-weight: 700;
+.text-writer {
   position: relative;
+  display: inline-block;
+  width: max-content;
 }
-
-.cursor {
+.text-writer__wrapper {
+  position: absolute;
+}
+.text-writer__placeholder {
+  visibility: hidden;
+  display: inline-block;
+}
+.text-writer__cursor {
   display: inline-block;
   left: 0.1rem;
   top: 0.6rem;
   position: relative;
-  height: 4.5rem;
-  width: 0.3rem;
+  height: 6rem;
+  width: 0.4rem;
   background-color: #fff;
 }
 
-.secondary_section {
+.welcome-page__secondary-section {
   width: 30%;
   display: flex;
   flex-direction: column;
-}
-
-.secondary_text_main_section {
-  margin: 2rem 0 0;
-  max-width: 80%;
-  font-size: 1.2rem;
-  letter-spacing: 0.1rem;
-  line-height: 110%;
-  color: #c6ccdb;
-}
-
-.thin {
-  font-weight: 400;
-}
-
-.bottom_main_section {
-  display: flex;
-  flex-direction: column;
-  margin: 3rem 0 0;
-}
-
-.button_main_section {
-  display: flex;
-  flex-direction: row;
-}
-
-.button_main_section > a {
-  font-family: "Montserrat";
-  align-self: flex-start;
-  font-size: 1.2rem;
-  letter-spacing: 0.7px;
-  position: relative;
-  color: var(--white-color-text);
-  text-transform: uppercase;
-}
-
-.button_main_section > a.button {
-  height: 100%;
-  transition: all 0.2s ease-in-out;
-  border: 0.17rem var(--white-color-text) solid;
-  background-color: #ff4747;
-  padding: 1.2rem 3.5rem;
-  /*background-color: var(--secondary-bg-color);*/
-}
-
-.button_main_section > a.button:hover {
-  background-color: var(--third-bg-color);
-}
-
-.button_main_section > .tel_section {
-  height: 100%;
-  transition: all 0.2s ease-in-out;
-  padding: 1.2rem 2.5rem;
-  background-color: transparent;
-}
-
-.tel_section:hover {
-  background-color: rgba(0, 0, 0, 0.2);
-}
-
-.bottom_main_section > img {
-  position: relative;
-  width: 1.5rem;
 }
 
 .button_language {
@@ -1361,12 +1369,5 @@ footer {
 }
 
 /*////////////////////////////////////////*/
-button {
-  font-size: 1.2rem;
-  position: relative;
-  display: flex;
-  background-color: transparent;
-  color: var(--white-color-text);
-}
 
 /*# sourceMappingURL=style.css.map */

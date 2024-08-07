@@ -1,12 +1,41 @@
 @font-face {
-    font-family: 'Imperial_Web';
-    src: url('../fonts/Webfont/Imperial_Web.ttf') format('truetype');
+  font-family: "Imperial_Web";
+  src: url("../fonts/Webfont/Imperial_Web.ttf") format("truetype");
 }
 @font-face {
-    font-family: 'Montserrat';
-    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+  font-family: "Montserrat";
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
+    format("truetype");
 }
 @font-face {
-    font-family: 'Raleway';
-    src: url('../fonts/Raleway/Raleway-VariableFont_wght.ttf') format('truetype');
+  font-family: "Raleway";
+  src: url("../fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+}
+
+.heading--primary {
+  color: #c6ccdb;
+  font-size: 5rem;
+  font-weight: 500;
+  letter-spacing: 0.15rem;
+}
+.heading--highlited {
+  color: #d7deee;
+  font-size: 6.5rem;
+  font-weight: 700;
+}
+
+.text--secondary {
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
+  color: #c6ccdb;
+  font-weight: 400;
+}
+.svg {
+  height: 2rem;
+  fill: none;
+  stroke: rgb(255, 255, 255);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.15rem;
 }

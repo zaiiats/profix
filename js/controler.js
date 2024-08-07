@@ -20,11 +20,6 @@ const startPage = function(){
 
 
 
-
-
-
-
-
 /* Switch button (checkbox)
 let baseUrl = window.location.origin;
 
