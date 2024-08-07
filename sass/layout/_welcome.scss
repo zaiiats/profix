@@ -2,15 +2,14 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  padding: 5rem 0;
+  padding: 7rem 0;
   height: 100vh;
   opacity: 0;
   transition: opacity 0.2s ease-in-out;
 
   &__main-section {
-    margin: 1rem 0 0 3rem;
     color: var(--white-color-text);
-    padding: 3rem 5rem;
+    padding: 4rem 5rem 3rem 8rem;
     width: 70%;
     height: 100%;
     position: relative;
@@ -26,7 +25,6 @@
   &__buttons-wrapper {
     display: flex;
     flex-direction: row;
-    margin: 3rem 0 0;
   }
   &__button--order {
     border-bottom-right-radius: 0;
@@ -36,6 +34,12 @@
     gap: 0.5rem;
     border-bottom-left-radius: 0;
     border-top-left-radius: 0;
+  }
+
+  &__secondary-section {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
   }
 }
 
@@ -68,20 +72,8 @@
 
 
 
-.welcome-page__secondary-section {
-  width: 30%;
-  display: flex;
-  flex-direction: column;
-}
-.button_language {
-  align-self: flex-end;
-  padding: 1.2rem 2.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  align-items: center;
-  justify-content: space-around;
-}
+
+
 
 .hexagon_section {
   display: flex;

@@ -2,15 +2,17 @@
 import navInit from "./views/navInitView.js";
 import pageInit from "./views/pageInitView.js";
 import navFunc from "./views/navFuncView.js";
-import hamburgerFuncView from "./views/hamburgerFuncView.js";
+import hamburgerFunc from "./views/hamburgerFuncView.js";
 import createTextWriter from "./views/textWriterView.js";
+import themeSwitchFunc from "./views/themeSwitchFuncView.js";
 
 const startPage = function(){
   pageInit();
   navInit();
   navFunc();
-  hamburgerFuncView();
+  hamburgerFunc();
   createTextWriter();
+  themeSwitchFunc();
 };
 
 
