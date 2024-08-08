@@ -89,24 +89,6 @@ a:visited{
     }
 }
 @media only screen and (max-width: 900px) {
-    .main_section{
-        margin: 0;
-    }
-    .hexagon_section{
-        display: none;
-    }
-    .main_section{
-        width: 100%;
-    }
-    .button_language{
-        position: absolute;
-    }
-    .main_text_main_section{
-        font-size: 4rem;
-    }
-    .secondary_text_main_section{
-        font-size: 1.2rem;
-    }
     .card_list{
         padding: 1.5rem 2.3rem;
     }
@@ -123,43 +105,6 @@ a:visited{
     }
 }
 @media only screen and (max-width: 600px) {
-	.search_form, .button_1, .button_2{
-		display: none;
-	}
-    .search_icon{
-        padding: 0 1rem;
-    }
-    .text_main_section_container{
-        width: 100%;
-    }
-    .main_text_main_section{
-        text-align: center;
-        font-size: 2.9rem;
-    }
-    .secondary_section{
-        width: 0;
-    }
-    .secondary_text_main_section{
-        text-align: center;
-        max-width: 100%;
-        font-size: 1.2rem;
-    }
-    .bottom_main_section{
-        width: 100%;
-        align-items: center;
-        justify-content: center;
-    }
-    .button_main_section{
-        gap: 3rem;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    .button_main_section > a{
-        align-self:center
-    }
     .slideshow_container{
         height: 70vh;
     }
