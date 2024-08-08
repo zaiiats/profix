@@ -192,7 +192,7 @@
   }
 
   &-box {
-    transition: all 0.5s ease-in-out;
+    transition: all 0.5s ubic-bezier(0,1,1,0);
     width: 14rem;
     display: inline-block;
     position: relative;

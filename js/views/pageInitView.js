@@ -7,7 +7,7 @@ class PageInitialisation {
     document.addEventListener("DOMContentLoaded", function () {
       let hexagonSection = document.querySelector(".hex-wrapper");
       document.querySelector(".welcome-page").style.setProperty("opacity", "1");
-      document.querySelector(".site").style.setProperty("opacity", "1");
+      document.querySelector(".sections-wrapper").style.setProperty("opacity", "1");
       hexagonSection.style.setProperty("left", "0");
     });
   }

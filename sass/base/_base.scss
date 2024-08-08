@@ -15,7 +15,6 @@ li {list-style-type: none;}
 img {vertical-align: top;}
 h1,h2,h3,h4,h5,h6 {font-size: inherit;font-weight: inherit;}
 
-
 html{
     @media only screen and (min-width: 2800px) {
         font-size: 100%;
@@ -32,15 +31,11 @@ html{
     @media only screen and (max-width: 1200px) {
         font-size: 50%;
     }
-    @media only screen and (max-width: 900px) {
-        font-size: 50%;
-    }
-   
-
 }
 
 body {
-    
+    height: 100%;
+    width: 100%;
     letter-spacing: 0.1rem;
     font-family: 'Montserrat', sans-serif;
     background-color: var(--main-bg-color);
@@ -49,27 +44,23 @@ body {
 .wrapper {
     overflow: hidden;
     background:url(../img/black_pattern.png) repeat;
-    background-size: 13rem auto;
-}
-.site_wrapper {
-    width: 80%;
-    margin: 0 auto;
+    background-size: 20rem auto;
 }
 a:link,
 a:visited{
     text-decoration: none;
     color: #fff;
 }
-.site{
-    position: relative;
-    height: auto;
-    width: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-}
-.site_wrapper{
+.sections-wrapper{
     width: 80%;
     margin: 0 auto;
+    position: relative;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    @media only screen and (max-width: 800px) {
+       width: 95%;
+    }
 }
 
 /*@media only screen and (max-width: 2000px) {

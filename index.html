@@ -12,6 +12,7 @@
 8. close nav when we click not in nav (e.g. body)
 9. add screws throughout
 10. change themes on click
+11. make load page animations
 -->
 <head>
     <meta charset="UTF-8">
@@ -128,7 +129,6 @@
 		
 		<section class="welcome-page">
 			<div class="welcome-page__main-section">
-
 				<div class="welcome-page__text-wrapper">
 					<h1 class="heading--primary">
 					  <span class="heading--highlited">Profix</span>
@@ -160,9 +160,7 @@
 
 			</div>
 
-
 			<div class="welcome-page__secondary-section">
-
 				<div class="theme-switch">
 					<label for="theme-switch__options-wrapper" class="theme-switch__options-wrapper">
 						<div value="white-theme" class="theme-switch__box theme-switch__active">
@@ -175,7 +173,6 @@
 					</label>
 					<input type="checkbox" id="theme-switch" name="theme-switch" class="theme-switch__checkbox" />
 				</div>
-
 
 				<div class="hex-wrapper">
 					<div class="hex-wrapper__row hex-wrapper__row--first">
@@ -226,106 +223,99 @@
 		</section>
 
 
+		<section class="sections-wrapper">
+			<section class="assortment">
+				<div class="title">
+					<div class="title__triangle title__triangle--right"></div>
+					<div class="title__text">Асортимент</div>
+					<div class="title__triangle title__triangle--left"></div>
+				</div>
+				
+				<div class="assortment__card-wrapper">
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		<div class="site">
-			<div class="site_wrapper">
-				<section class="assortment">
-					<div class="assortment_container">
-						<div class="text_section">
-							<div class="menu_text_triangle right"></div>
-							<div class="menu_text_text">Асортимент</div>
-							<div class="menu_text_triangle left"></div>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/samoriz.png" alt="samoriz">
 						</div>
-						<ul class="grid_container">
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/samoriz.png" alt="samoriz">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Саморізи</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/nut.png" alt="nut">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Метричні вироби</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/anker.png" alt="anker">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Анкерне кріплення</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/dyubeli.png" alt="dyubeli">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Дюбелі</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/takelazh.png" alt="takelazh">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Такелаж</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/kutnyk.png" alt="kutnyk">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Столярне кріплення</div>
-								</div>
-							</a>
-							<a class="card" href="#">
-								<div class="card_container">
-									<img class="card_im" src="img/sverlo.png" alt="sverlo">
-								</div>
-								<div class="card_down">
-									<div class="card_divider"></div>
-									<div class="card_text">Інструменти</div>
-								</div>
-							</a>
-						</ul>
-					</div>
-				</section>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Саморізи</div>
+						</div>
+					</a>
+
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/nut.png" alt="nut">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Метричні вироби</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/anker.png" alt="anker">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Анкерне кріплення</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/dyubeli.png" alt="dyubeli">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Дюбелі</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/takelazh.png" alt="takelazh">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Такелаж</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/kutnyk.png" alt="kutnyk">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Столярне кріплення</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/sverlo.png" alt="sverlo">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Інструменти</div>
+						</div>
+					</a>
+					<a class="card" href="#">
+						<div class="card__img-box">
+							<img class="card__img" src="img/sverlo.png" alt="sverlo">
+						</div>
+						<div class="card__info">
+							<div class="card__divider"></div>
+							<div class="card__text">Інструменти</div>
+						</div>
+					</a>
+
+	   		</div>
+			</section>
+
 
 				<section id="about" class="about">
-					<div class="text_section">
-						<div class="menu_text_triangle right"></div>
-						<div class="menu_text_text">Чому саме ми?</div>
-						<div class="menu_text_triangle left"></div>
+					<div class="title">
+						<div class="title__triangle title__triangle--right"></div>
+						<div class="title__text">Чому саме ми?</div>
+						<div class="title__triangle title__triangle--left"></div>
 					</div>
 
 					<div class="slideshow_container">
@@ -480,10 +470,9 @@
 						<span class="dot" onclick="currentSlide(3)"></span>
 					</div>
 				</section>
+		</section>
 
 
-			</div>
-		</div>
 		<footer>
 			<div class="footer_logo">
 				<img class="footer_logo_img" src="img/logo_border.png" alt="logo">
@@ -513,118 +502,3 @@
 	</div>
 </body>
 </html>
-
-
-<!--class NavLinkFunctionality {
-  constructor() {
-    this.navWrapper = document.querySelector(".nav__wrapper");
-    this.items = Array.from(document.querySelectorAll(".nav__item"));
-    this.isOpenedMenu = false;
-    this.hoverTracker();
-    this.clickTracker(); // Initialize click tracking
-    this.prevH = 'c';
-    this.currH = 'c';
-  }
-
-  hoverTracker() {
-    // Adding mouseenter and mouseleave event listeners
-    this.navWrapper.addEventListener(
-      "mouseenter",
-      this.callbackForHover.bind(this),
-      true
-    );
-    this.navWrapper.addEventListener(
-      "mouseleave",
-      this.callbackForLeave.bind(this),
-      true
-    );
-  }
-
-  clickTracker() {
-    // Adding click event listeners to each nav item
-    this.items.forEach((item) => {
-      item.addEventListener("click", this.toggleItem.bind(this, item));
-    });
-  }
-
-  callbackForHover(e) {
-    const targetItem = e.target.closest(".nav__item");
-    if (!this.items.includes(targetItem)) return;
-    this.linkFunct(targetItem);
-  }
-
-  callbackForLeave(e) {
-    const targetItem = e.target.closest(".nav__item");
-    if (!this.items.includes(targetItem)) return;
-    this.closeItem(targetItem);
-  }
-
-  toggleItem(item, e) {
-    e.stopPropagation(); // Prevent event bubbling
-    this.linkFunct(item);
-  }
-
-  linkFunct(item) {
-    
-    if (item.classList.contains("opened_button") && this.prevH !== this.currH) {
-      this.closeItem(item); // Close item if already opened
-    } 
-    if (!item.classList.contains("opened_button") && this.prevH !== this.currH) {
-      this.openItem(item); // Open item
-    }
-  }
-
-  openItem(item) {
-    item.classList.add("opened_button");
-    item.querySelector(".nav__item--dropdown").classList.add("show_dropdown");
-    item.querySelector(".nav__svg-dropdown").classList.add("show_svg");
-    item.querySelector(".nav__item--top").classList.add("show_top_menu");
-
-    this.isOpenedMenu = true;
-    this.prevH = this.currH;
-    this.currH = 'o'
-    console.log("Item opened:", this.prevH, this.currH);
-  }
-
-  closeItem(item) {
-    item.classList.remove("opened_button");
-    item
-      .querySelector(".nav__item--dropdown")
-      .classList.remove("show_dropdown");
-    item.querySelector(".nav__svg-dropdown").classList.remove("show_svg");
-    item.querySelector(".nav__item--top").classList.remove("show_top_menu");
-
-    this.isOpenedMenu = false;
-    this.prevH = this.currH;
-    this.currH = "c";
-    console.log("Item closed:", this.prevH, this.currH);
-  }
-}
-
-// Create an instance of NavLinkFunctionality
-const navFunctionality = new NavLinkFunctionality();-->
-<!--
-/////////////////////////////
-/*
-.nav__item--dropdown {
-    background-color: transparent;
-    position: absolute;
-    width: 100%;
-    top: calc(100% - 1px);
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.2s ease-in-out, background-color 0.2s ease-in-out;
-    border: 1px solid transparent;
-    border-top: 0;
-}  
-.show_dropdown {
-    background-color: var(--main-bg-color);
-    max-height: 15rem;
-    border: 1px solid var(--white-color-text);
-    border-top: 0;
-    padding: 0 0 0.6rem;
-}
--->
