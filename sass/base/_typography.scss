@@ -42,6 +42,12 @@
   }
 }
 
+a:link,
+a:visited{
+    text-decoration: none;
+    color: #fff;
+}
+
 .text--secondary {
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
@@ -68,4 +74,16 @@
   font-size: 1.4rem;
   letter-spacing: 0.1rem;
   line-height: 120%;
+}
+
+.footer__text {
+    padding: 1.4rem 0 0;
+    font-family: 'Imperial_Web';
+    font-size: 2rem;
+    text-transform: uppercase;
+}
+.footer__link {
+    font-size: 1.4rem;
+    color: var(--white-color-text);
+    background-color: transparent;
 }

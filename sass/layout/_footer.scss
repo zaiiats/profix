@@ -1,53 +1,44 @@
 footer {
-    padding: 3rem 10%;
-    display: flex;
-    flex-direction: row;
+    width: 70%;
+    margin: 3rem auto;
+    display: grid;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    @media only screen and (max-width: 800px) {
+       width: 95%;
+    }
 }
-.footer_logo {
+.footer__logo {
+    display: flex;
     flex-direction: column;
-    display: flex;
     align-items: center;
+    justify-self: center;
+    max-width: 40%;
 }
-.footer_logo {
-    width: 15%;
+.footer__img {
+    max-width: 100%;
 }
-.footer_logo>img {
-    width: 100%;
-}
-.footer_menu {
+.footer__links-wrapper {
     align-items: baseline;
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
 }
-.footer_text {
-    padding: 1rem 0 0;
-    font-family: 'Imperial_Web';
-    font-size: 1.5rem;
-    text-transform: uppercase;
-}
-.footer_container {
-
+.footer__menu-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
 }
-.footer_menu_text {
-    font-size: 1.2rem;
-    color: var(--white-color-text);
-    background-color: transparent;
-}
-.footer_social {
+.footer__svg-wrapper {
     align-self: flex-end;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 1rem;
+    gap: 1.4rem;
 }
-.footer_social_text>i {
-    font-size: 1.5rem;
-    color: var(--white-color-text);
+.footer__svg{
+    height: 3rem;
 }
