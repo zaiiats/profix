@@ -13,6 +13,7 @@
 9. add screws throughout
 10. change themes on click
 11. make load page animations
+12. remake scss files and delete all very nested styles
 -->
 <head>
     <meta charset="UTF-8">
@@ -242,7 +243,6 @@
 							<div class="card__text">Саморізи</div>
 						</div>
 					</a>
-
 					<a class="card" href="#">
 						<div class="card__img-box">
 							<img class="card__img" src="img/nut.png" alt="nut">
@@ -311,165 +311,147 @@
 			</section>
 
 
-				<section id="about" class="about">
-					<div class="title">
-						<div class="title__triangle title__triangle--right"></div>
-						<div class="title__text">Чому саме ми?</div>
-						<div class="title__triangle title__triangle--left"></div>
-					</div>
+			<section id="about" class="about">
+				<div class="title">
+					<div class="title__triangle title__triangle--right"></div>
+					<div class="title__text">Чому саме ми?</div>
+					<div class="title__triangle title__triangle--left"></div>
+				</div>
 
-					<div class="slideshow_container">
+				<div class="slideshow-wrapper">
 
-						<div class="mySlides first fade">
-							<div class="background"></div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Компетентна та професійна команда
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
-									фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
-								</div>
+					<div class="slide slide--first">
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Компетентна, професійна, творча та іноваційна команда
 							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Гнучкість та Швидкість обслуговування
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Ми розуміємо, що час – це ключовий ресурс. Наша команда
-									готова надавати швидкі та гнучкі рішення,
-									адаптовані до конкретних термінів та вимог клієнта.
-								</div>
-							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Якість на першому місці
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наша компанія відзначається високим стандартом якості.
-									Кожна система кріплення, яку ми постачаємо, проходить
-									ретельний контроль якості, гарантуючи
-									надійність та довговічність наших продуктів.
-								</div>
-							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Широкий асортимент продукції:
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наш вражаючий асортимент систем кріплення охоплює
-									всі сфери бізнесу та виробництва. Ми гордимося тим,
-									що можемо задовольнити потреби навіть найвимогливіших
-									клієнтів, надаючи відмінні та інноваційні рішення.
-								</div>
-							</div>
-
-						</div>
-
-						<div class="mySlides second fade">
-							<div class="background"></div>
-							<div class="card_list img_card_list">
-								<img src="img/delivery_white.png" class="delivery_img" alt="">
-							</div>
-							<div class="card_list down_card">
-								<div class="card_element">
-									<div class="card_list_main">
-										Доставка
-									</div>
-									<div class="card_list_main_divider"></div>
-									<div class="card_list_sec thin">
-										Наша компанія пропонує надійну та швидку доставку
-										товарів у м. Мукачево та по всьому Закарпаттю.
-									</div>
-								</div>
-								<div class="card_element">
-									<div class="card_list_main">
-										Доставка
-									</div>
-									<div class="card_list_main_divider"></div>
-									<div class="card_list_sec thin">
-										Наша компанія пропонує надійну та швидку доставку
-										товарів у м. Мукачево та по всьому Закарпаттю.
-									</div>
-								</div>
-								<div class="card_element">
-									<div class="card_list_main">
-										Доставка
-									</div>
-									<div class="card_list_main_divider"></div>
-									<div class="card_list_sec thin">
-										Наша компанія пропонує надійну та швидку доставку
-										товарів у м. Мукачево та по всьому Закарпаттю.
-									</div>
-								</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
+								фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
 							</div>
 						</div>
+						<div class="slide-item slide-item--double-row">
+							<div class="slide-item__label">
+								Гнучкість та Швидкість обслуговування
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Ми розуміємо, що час – це ключовий ресурс. Наша команда
+								готова надавати швидкі та гнучкі рішення,
+								адаптовані до конкретних термінів та вимог клієнта<br><br>
 
-						<div class="mySlides third fade">
-							<div class="background"></div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Компетентна та професійна команда
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
-									фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
-								</div>
-							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Гнучкість та Швидкість обслуговування
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Ми розуміємо, що час – це ключовий ресурс. Наша команда
-									готова надавати швидкі та гнучкі рішення,
-									адаптовані до конкретних термінів та вимог клієнта.
-								</div>
-							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Якість на першому місці
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наша компанія відзначається високим стандартом якості.
-									Кожна система кріплення, яку ми постачаємо, проходить
-									ретельний контроль якості, гарантуючи
-									надійність та довговічність наших продуктів.
-								</div>
-							</div>
-							<div class="card_list">
-								<div class="card_list_main">
-									Широкий асортимент продукції:
-								</div>
-								<div class="card_list_main_divider"></div>
-								<div class="card_list_sec thin">
-									Наш вражаючий асортимент систем кріплення охоплює
-									всі сфери бізнесу та виробництва. Ми гордимося тим,
-									що можемо задовольнити потреби навіть найвимогливіших
-									клієнтів, надаючи відмінні та інноваційні рішення.
-								</div>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto veniam ut aperiam incidunt, est dolorum! <br><br>
+
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit at nulla ipsum doloribus error nihil suscipit voluptatum ex voluptate incidunt, soluta quibusdam. Sint commodi ducimus incidunt dolore nulla, maiores quam!
 							</div>
 						</div>
-
-						<a class="prev" onclick="plusSlides(-1)">❮</a>
-						<a class="next" onclick="plusSlides(1)">❯</a>
-
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Якість на першому місці
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наша компанія відзначається високим стандартом якості.
+								Кожна система кріплення, яку ми постачаємо, проходить
+								ретельний контроль якості, гарантуючи
+								надійність та довговічність наших продуктів.
+							</div>
+						</div>
 					</div>
-					<br>
 
-					<div style="text-align:center">
-						<span class="dot" onclick="currentSlide(1)"></span>
-						<span class="dot" onclick="currentSlide(2)"></span>
-						<span class="dot" onclick="currentSlide(3)"></span>
+					<div class="slide slide--second slide--hidden">
+						<div class="slide-item slide-item__img-box">
+							<img src="img/delivery_white.png" class="slide-item__img--delivery" alt="">
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Доставка
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наша компанія пропонує надійну та швидку доставку
+								товарів у м. Мукачево та по всьому Закарпаттю.
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Доставка
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наша компанія пропонує надійну та швидку доставку
+								товарів у м. Мукачево та по всьому Закарпаттю.
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Доставка
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наша компанія пропонує надійну та швидку доставку
+								товарів у м. Мукачево та по всьому Закарпаттю.
+							</div>
+						</div>
 					</div>
-				</section>
+
+					<div class="slide slide--third slide--hidden">
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Компетентна та професійна команда
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
+								фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Гнучкість та Швидкість обслуговування
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Ми розуміємо, що час – це ключовий ресурс. Наша команда
+								готова надавати швидкі та гнучкі рішення,
+								адаптовані до конкретних термінів та вимог клієнта.
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Якість на першому місці
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наша компанія відзначається високим стандартом якості.
+								Кожна система кріплення, яку ми постачаємо, проходить
+								ретельний контроль якості, гарантуючи
+								надійність та довговічність наших продуктів.
+							</div>
+						</div>
+						<div class="slide-item">
+							<div class="slide-item__label">
+								Широкий асортимент продукції:
+							</div>
+							<div class="slide-item__divider"></div>
+							<div class="slide-item__text">
+								Наш вражаючий асортимент систем кріплення охоплює
+								всі сфери бізнесу та виробництва. Ми гордимося тим,
+								що можемо задовольнити потреби навіть найвимогливіших
+								клієнтів, надаючи відмінні та інноваційні рішення.
+							</div>
+						</div>
+					</div>
+
+					<a class="slideshow-wrapper__arrow--previous">❮</a>
+					<a class="slideshow-wrapper__arrow--next">❯</a>
+
+					<div class="dots-wrapper"></div>
+				</div>
+
+				
+			</section>
 		</section>
 
 

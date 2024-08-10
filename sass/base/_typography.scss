@@ -28,7 +28,7 @@
   }
 }
 .heading--highlited {
-  font-family: 'Imperial_Web';
+  font-family: "Imperial_Web";
   color: #d7deee;
   font-size: 6.5rem;
   @media only screen and (max-width: 1200px) {
@@ -56,4 +56,16 @@
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 0.15rem;
+}
+
+.slide-item__label {
+  font-size: 2.2rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
+.slide-item__text {
+  font-weight: 300;
+  font-size: 1.4rem;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
 }

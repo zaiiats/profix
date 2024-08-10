@@ -1,16 +1,16 @@
 // For controling model and views
-import navInit from "./views/navInitView.js";
+import hamburgerFunc from "./views/hamburgerView.js";
+import nav from "./views/navView.js";
 import pageInit from "./views/pageInitView.js";
-import navFunc from "./views/navFuncView.js";
-import hamburgerFunc from "./views/hamburgerFuncView.js";
+import slideshowFunc from "./views/slideshowView.js";
 import createTextWriter from "./views/textWriterView.js";
 import themeSwitchFunc from "./views/themeSwitchFuncView.js";
 
 const startPage = function(){
-  pageInit();
-  navInit();
-  navFunc();
   hamburgerFunc();
+  nav();
+  pageInit();
+  slideshowFunc();
   createTextWriter();
   themeSwitchFunc();
 };
