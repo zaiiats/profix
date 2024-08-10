@@ -1,12 +1,12 @@
 .button{
-  font-weight: 500;
-  font-size: 1.5rem;
-  border-radius: 0.2rem;
   display: flex;
-  justify-content: center;
   align-items: center;
-  transition: all 0.2s ease-in-out;
+  justify-content: center;
   padding: 1.2rem 3.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
   @media only screen and (max-width: 800px) {
     padding: 1.2rem 3rem;    
   }
@@ -16,17 +16,17 @@
   }
 
   &--filled{
-    text-transform: uppercase;
     background-color: var(--accent-color);
+    text-transform: uppercase;
     &:hover{
-      background-color:var(--accent-color-2) ;
+      background-color: var(--accent-color-darker);
     }
   }
   &--not-filled{
     border: 0.1rem var(--accent-color) solid;
     background-color: transparent;
     &:hover{
-      background-color:var(--accent-color-3) ;
+      background-color:var(--accent-color-translucent);
     }
   }
 

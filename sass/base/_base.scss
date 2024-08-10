@@ -36,10 +36,10 @@ html{
 body {
     height: 100%;
     width: 100%;
-    letter-spacing: 0.1rem;
-    font-family: 'Montserrat', sans-serif;
     background-color: var(--main-bg-color);
-    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--white-color-text);
+    letter-spacing: 0.1rem;
 }
 .wrapper {
     overflow: hidden;
@@ -47,12 +47,13 @@ body {
     background-size: 20rem auto;
 }
 .sections-wrapper{
-    width: 70%;
-    margin: 0 auto;
     position: relative;
     height: auto;
+    width: 70%;
+    margin: 0 auto;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
+    
     @media only screen and (max-width: 800px) {
        width: 95%;
     }

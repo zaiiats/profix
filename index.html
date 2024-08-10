@@ -3,17 +3,15 @@
 <!-- TASKS:
 
 1. Make icons for apple and android users
-2. Rename colors
-3. Remake a{text-decoration: none !important;}
-4. clear base.scss
-5. delete all weird rems 
-6. Make containers for images in assortment section in order to by default make there some space
-7. when nav is closed then it weirdly shines when we scroll
-8. close nav when we click not in nav (e.g. body)
-9. add screws throughout
-10. change themes on click
-11. make load page animations
-12. remake scss files and delete all very nested styles
+2. Remake a{text-decoration: none !important;}
+3. Make containers for images in assortment section in order to by default make there some space
+4. when nav is closed then it weirdly shines when we scroll
+5. close nav when we click not in nav (e.g. body)
+6. add screws throughout
+7. change themes on click
+8. make load page animations
+9. images responsible
+10. next pages
 -->
 <head>
     <meta charset="UTF-8">
@@ -327,7 +325,7 @@
 									Компетентна, професійна, творча та іноваційна команда
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
 									фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
 								</div>
@@ -337,7 +335,7 @@
 									Гнучкість та Швидкість обслуговування
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Ми розуміємо, що час – це ключовий ресурс. Наша команда
 									готова надавати швидкі та гнучкі рішення,
 									адаптовані до конкретних термінів та вимог клієнта<br><br>
@@ -352,7 +350,7 @@
 									Якість на першому місці
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наша компанія відзначається високим стандартом якості.
 									Кожна система кріплення, яку ми постачаємо, проходить
 									ретельний контроль якості, гарантуючи
@@ -370,7 +368,7 @@
 									Доставка
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наша компанія пропонує надійну та швидку доставку
 									товарів у м. Мукачево та по всьому Закарпаттю.
 								</div>
@@ -380,7 +378,7 @@
 									Доставка
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наша компанія пропонує надійну та швидку доставку
 									товарів у м. Мукачево та по всьому Закарпаттю.
 								</div>
@@ -390,7 +388,7 @@
 									Доставка
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наша компанія пропонує надійну та швидку доставку
 									товарів у м. Мукачево та по всьому Закарпаттю.
 								</div>
@@ -403,7 +401,7 @@
 									Компетентна та професійна команда
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наш успіх – у нашому колективі. Команда досвідчених та висококваліфікованих
 									фахівців готова надати консультації та підтримку на будь-якому етапі співпраці.
 								</div>
@@ -413,7 +411,7 @@
 									Гнучкість та Швидкість обслуговування
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Ми розуміємо, що час – це ключовий ресурс. Наша команда
 									готова надавати швидкі та гнучкі рішення,
 									адаптовані до конкретних термінів та вимог клієнта.
@@ -424,7 +422,7 @@
 									Якість на першому місці
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наша компанія відзначається високим стандартом якості.
 									Кожна система кріплення, яку ми постачаємо, проходить
 									ретельний контроль якості, гарантуючи
@@ -436,7 +434,7 @@
 									Широкий асортимент продукції:
 								</div>
 								<div class="slide-item__divider"></div>
-								<div class="slide-item__text">
+								<div class="slide-item__text text--secondary">
 									Наш вражаючий асортимент систем кріплення охоплює
 									всі сфери бізнесу та виробництва. Ми гордимося тим,
 									що можемо задовольнити потреби навіть найвимогливіших
@@ -447,10 +445,12 @@
 						
 					</div>
 
-
-
-					<a class="slideshow-wrapper__arrow--previous">❮</a>
-					<a class="slideshow-wrapper__arrow--next">❯</a>
+					<a class="slideshow-wrapper__arrow--previous">
+						<svg class="svg slideshow-wrapper__arrow-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7 4 8.3306 6.0405c2.2259 1.614 2.2259 2.305 0 3.919l-8.3306 6.0405"/></svg>
+					</a>
+					<a class="slideshow-wrapper__arrow--next">
+						<svg class="svg slideshow-wrapper__arrow-svg" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m7 4 8.3306 6.0405c2.2259 1.614 2.2259 2.305 0 3.919l-8.3306 6.0405"/></svg>
+					</a>
 
 					<div class="dots-wrapper"></div>
 				</div>
@@ -458,7 +458,7 @@
 		</section>
 
 
-		<footer>
+		<footer class="footer">
 			<div class="footer__logo">
 				<img class="footer__img" src="img/logo_border.png" alt="logo">
 				<div class="footer__text">
@@ -467,12 +467,12 @@
 			</div>
 			<div class="footer__menu-wrapper">
 				<div class="footer__links-wrapper">
-					<a href="#" class="footer__link">Політика конфіденційності</a>
-					<a href="#" class="footer__link">Контакти</a>
-					<a href="#" class="footer__link">Вакансії</a>
-					<a href="#" class="footer__link">Асортимент</a>
-					<a href="#" class="footer__link">Чому ми ?</a>
-					<a href="#" class="footer__link">Про компанію</a>
+					<a href="#" class="text--secondary">Політика конфіденційності</a>
+					<a href="#" class="text--secondary">Контакти</a>
+					<a href="#" class="text--secondary">Вакансії</a>
+					<a href="#" class="text--secondary">Асортимент</a>
+					<a href="#" class="text--secondary">Чому ми ?</a>
+					<a href="#" class="text--secondary">Про компанію</a>
 				</div>
 				<div class="footer__svg-wrapper">
 					<a href="https://www.instagram.com/profix.zak/">

@@ -3,49 +3,49 @@
   grid-template-columns: 1fr;
   grid-template-rows: 4fr min-content;
   align-items: center;
+  border: 0.1rem var(--white-color-text) solid;
+  padding: 1rem;
+  background-color: var(--main-bg-color);
   font-size: 1.4rem;
   color: var(--white-color-text);
-  background-color: var(--main-bg-color);
-  border: 0.1rem var(--white-color-text) solid;
   transition: all 0.15s ease-in-out;
-  padding: 1rem;
 
   &:hover {
-    box-shadow: 0 0 4rem var(--black-color-text);
-    background-color: var(--accent-color-3);
     border-color: var(--accent-color);
+    background-color: var(--accent-color-translucent);
+    box-shadow: 0 0 4rem var(--black-color-text);
     & .card__divider {
       background-color: var(--accent-color);
     }
   }
 
   &__img {
-    max-width: 80%;
     max-height: 80%;
+    max-width: 80%;
 
     &-box {
-      align-self: stretch;
-      justify-self: stretch;
       display: flex;
       align-items: center;
       justify-content: center;
+      align-self: stretch;
+      justify-self: stretch;
     }
   }
 
   &__info {
-    width: 100%;
     position: relative;
+    width: 100%;
     display: flex;
-    flex-direction: column;
     align-items: center;
     align-self: end;
+    flex-direction: column;
     padding: 1rem 0 0;
   }
   &__divider {
+    position: relative;
     width: 80%;
     height: 0.1rem;
     display: inline;
-    position: relative;
     margin: 0 0 1rem;
     background-color: var(--white-color-text);
     transition: all 0.15s ease-in-out;

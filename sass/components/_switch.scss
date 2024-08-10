@@ -1,69 +1,56 @@
 .theme-switch {
-  font-size: 2rem;
+  position: relative;
   width: 12rem;
   min-height: 3.5rem;
-  color: black;
-  margin: 0;
-  align-self: self-end;
-  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
+  align-self: self-end;
 
   &__options-wrapper {
     
-    border-radius: 0.2rem;
-    border: var(--white-color-text) 0.1rem solid;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
     min-height: 3.5rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: var(--white-color-text) 0.1rem solid;
+    border-radius: 0.2rem;
     overflow: hidden;
   }
 
   &__box {
+    z-index: 2;
+    min-height: 100%;
+    width: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    min-height: 100%;
-    z-index: 2;
-  }
-
-  &__svg {
-    fill: white;
-    stroke: white;
-    stroke-width: 0.15rem;
-
-    &--active {
-      fill: rgb(255, 255, 255);
-      stroke: rgb(255, 255, 255);
-    }
   }
 
   &__checkbox {
+    position: absolute;
     top: 0;
     left: 0;
-    position: absolute;
-    opacity: 0;
     z-index: 3;
     height: 100%;
     width: 100%;
+    opacity: 0;
     cursor: pointer;
   }
 
   &__oval {
     position: absolute;
-    width: 50%;
-    height: 100%;
+    left: -0.005rem;
     z-index: 1;
+    height: 100%;
+    width: 50%;
+    border: var(--accent-color) 0.2rem solid;
     border-radius: 0.2rem;
+    background-color: var(--accent-color-translucent);
     transform: translateX(0);
     transition: all 0.15s ease-in-out;
-    border: var(--accent-color) 0.2rem solid;
-    background-color: var(--accent-color-3);
-    left: -0.005rem;
+
     &--active {
         transform: translateX(100%);
     }

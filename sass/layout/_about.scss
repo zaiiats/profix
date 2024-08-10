@@ -1,56 +1,56 @@
 .about {
-  width: 100%;
-  margin: 10rem 0 5rem;
-  display: grid;
-  justify-content: center;
-  align-items: center;
   position: relative;
-  overflow: hidden;
+  width: 100%;
+  display: grid;
+  align-items: center;
+  justify-content: center;
   gap: 2rem;
+  margin: 10rem 0 5rem;
+  overflow: hidden;
 }
 
 .slideshow-wrapper {
-  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('/img/slideshow_img_2.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  display: grid;
+  position: relative;
   height: max-content;
   max-width: 100%;
-  position: relative;
+  display: grid;
   gap: 2rem;
+  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('/img/slideshow_img_2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &__arrow {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 2;
-    cursor: pointer;
     position: absolute;
     top: 0;
+    z-index: 2;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 1rem;
-    color: var(--white-color-text);
-    font-size: 1.3rem;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
+    transition: 0.3s ease-in-out;
+    cursor: pointer;
+
+    &-svg{
+      height: 1.6rem;
+    }
 
     &--previous {
       @extend .slideshow-wrapper__arrow;
+      transform: rotate(180deg);
 
       &:hover {
-        background-color: var(--background4);
+        background-color: var(--background-smaller);
       }
     }
 
     &--next {
       @extend .slideshow-wrapper__arrow;
-
       right: 0;
-      border-radius: 3px 0 0 3px;
 
       &:hover {
-        background-color: var(--background4);
+        background-color: var(--background-smaller);
       }
     }
   }
@@ -58,19 +58,17 @@
 
 .slides{
   display: grid;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .slide {
   position: relative;
-  background-size: cover;
-  vertical-align: middle;
-  overflow: hidden;
-  background-size: cover;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: max-content max-content;
+  overflow: hidden;
+  background-size: cover;
   transition: opacity 0.4s ease-in-out;
 
   @media only screen and (max-width: 600px) {
@@ -93,44 +91,45 @@
 }
 
 .slide-item {
+  z-index: 1;
   width: 100%;
-  padding: 3rem 4rem;
-  justify-content: center;
-  align-items: center;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: min-content min-content 1fr;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 4rem;
   animation-duration: 0.5s;
-  z-index: 1;
 
   &__divider {
-    margin: 2rem 0;
-    width: 70%;
     height: 0.1rem;
+    width: 70%;
+    margin: 2rem 0;
     background-color: var(--white-color-text);
   }
 
   &__img-box {
-    grid-column: span 3;
     display: flex;
-    justify-content: center;
+    grid-column: span 3;
     align-items: center;
+    justify-content: center;
+
     @media only screen and (max-width: 600px) {
       grid-column: span 1;
     }
   }
 
   &__img--delivery {
-    max-height: 10rem;
     position: relative;
-    transition: all .3s linear;
+    max-height: 10rem;
     opacity: 0;
+    transition: all .3s linear;
   }
 
   &--double-row{
-    grid-template-rows: min-content min-content 1fr;
-    grid-row: span 2;
     height: 100%;
+    grid-row: span 2;
+    grid-template-rows: min-content min-content 1fr;
     @media only screen and (max-width: 600px) {
       height: auto;
       grid-row: span 1;
@@ -145,27 +144,25 @@
 
 
 .dots-wrapper {
-  align-self: flex-end;
-  margin:  0 0 2rem;
   width: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  align-self: flex-end;
+  margin: 0 0 2rem;
 }
 
 .dot {
-  cursor: pointer;
-  height: 4px;
-  width: 45px;
-  margin: 0 2px;
-  transition: background-color 0.6s ease;
-  border-radius: 5px;
+  height: 0.4rem;
+  width: 4.5rem;
   display: inline-block;
-  background-color: rgba(255, 255, 255, 0.6);
+  margin: 0 0.2rem;
+  border-radius: 0.5rem;
+  background-color: var(--white-color-text);
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+
   &--hidden {
-    background-color: var(--fourth-bg-color);
-  }
-  &:hover{
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: var(--grey-color-translucent);
   }
 }
