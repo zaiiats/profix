@@ -1,8 +1,8 @@
 :root {
-  --white-color-text:#ffffff;
+  --white-color-text:#eee;
   --beige-color-text:#c6ccdb;
-  --black-color-text:#000000;
-  --grey-color-translucent:rgba(255, 255, 255, 0.1);
+  --black-color-text:#111;
+  --grey-color-translucent:rgba(130, 130, 130, 0.4);
   --main-bg-color:#04070E;
   --background-smaller:rgba(0,0,0,0.4);
   --background-bigger:rgba(0,0,0,0.9);
@@ -137,9 +137,6 @@ body {
   height: 100%;
   width: 100%;
   background-color: var(--main-bg-color);
-  font-family: "Montserrat", sans-serif;
-  color: var(--white-color-text);
-  letter-spacing: 0.1rem;
 }
 
 .wrapper {
@@ -170,6 +167,13 @@ body {
   font-family: "Montserrat";
   src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
+body {
+  font-family: "Montserrat", sans-serif;
+  color: var(--white-color-text);
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+}
+
 a:link,
 a:visited {
   color: var(--white-color-text);
@@ -200,13 +204,12 @@ a:visited {
 
 .hamburger-menu__link {
   color: var(--white-color-text);
-  font-weight: 500;
+  font-weight: bolder;
   font-size: 2rem;
 }
 
 .heading--primary {
   font-size: 5rem;
-  font-weight: 500;
   color: var(--beige-color-text);
   letter-spacing: 0.15rem;
 }
@@ -286,7 +289,7 @@ a:visited {
 
 .text--secondary {
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--beige-color-text);
   letter-spacing: 0.1rem;
   line-height: 120%;
@@ -296,16 +299,12 @@ a:visited {
   fill: var(--white-color-text);
   stroke-width: 0.15rem;
 }
-.theme-switch__svg--active {
-  fill: var(--white-color-text);
-  stroke: var(--white-color-text);
-}
 
 .hex__text {
   text-transform: uppercase;
   color: var(--white-color-text);
   font-size: 1.4rem;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .title__text {
@@ -393,6 +392,7 @@ a:visited {
   justify-content: center;
   align-self: stretch;
   justify-self: stretch;
+  min-height: 10rem;
 }
 .card__info {
   position: relative;
@@ -513,7 +513,7 @@ a:visited {
   max-width: 100%;
   display: grid;
   gap: 2rem;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.9)), url("/img/slideshow_img_2.jpg");
+  background-image: linear-gradient(var(--background-bigger), var(--background-bigger)), url("/img/slideshow_img_2.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -700,12 +700,24 @@ a:visited {
     width: 95%;
   }
 }
+@media only screen and (max-width: 500px) {
+  .footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+}
 .footer__logo {
   max-width: 40%;
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-self: center;
+}
+@media only screen and (max-width: 500px) {
+  .footer__logo {
+    max-width: 15rem;
+    margin: 0 0 4rem;
+  }
 }
 .footer__img {
   max-width: 100%;
@@ -716,10 +728,21 @@ a:visited {
   flex-direction: column;
   gap: 1.3rem;
 }
+@media only screen and (max-width: 500px) {
+  .footer__links-wrapper {
+    align-items: center;
+    margin: 0 0 2rem;
+  }
+}
 .footer__menu-wrapper {
   display: flex;
   align-items: center;
   flex-direction: row;
+}
+@media only screen and (max-width: 500px) {
+  .footer__menu-wrapper {
+    flex-direction: column;
+  }
 }
 .footer__svg-wrapper {
   display: flex;
@@ -728,6 +751,11 @@ a:visited {
   align-self: flex-end;
   flex-direction: row;
   gap: 1.4rem;
+}
+@media only screen and (max-width: 500px) {
+  .footer__svg-wrapper {
+    align-self: center;
+  }
 }
 .footer__svg {
   height: 3rem;
@@ -771,7 +799,7 @@ a:visited {
   align-items: center;
   justify-content: center;
   background-color: transparent;
-  transition: all 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
 }
 @media only screen and (max-width: 500px) {
   .nav-item__menu {
@@ -803,7 +831,7 @@ a:visited {
   padding: 1.5rem 4rem;
   border: 1px solid transparent;
   border-bottom: 0;
-  transition: all 0.2s ease-in-out;
+  transition: border-color 0.2s ease-in-out;
 }
 @media only screen and (max-width: 600px) {
   .nav-item__top {

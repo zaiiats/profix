@@ -8,7 +8,7 @@ class slideshowView {
   #slideshow;
   #slidesBox;
   constructor() {
-    this.#slides = Array.of(...document.querySelectorAll(".slide"));
+    this.#slides = Array.from(document.querySelectorAll(".slide"));
     this.#prev = document.querySelector(".slideshow-wrapper__arrow--previous");
     this.#next = document.querySelector(".slideshow-wrapper__arrow--next");
     this.#imgDelivery = document.querySelector(".slide-item__img--delivery");
@@ -55,8 +55,8 @@ class slideshowView {
   }
   #handleClick(e, i) {
     if (i + 1) this.#currentSlide = i;
-    if (e.target === this.#prev) this.#currentSlide--;
-    if (e.target === this.#next) this.#currentSlide++;
+    if (e.target?.closest('.slideshow-wrapper__arrow--previous') === this.#prev) this.#currentSlide--;
+    if (e.target?.closest('.slideshow-wrapper__arrow--next') === this.#next) this.#currentSlide++;
 
     if (this.#currentSlide === -1) this.#currentSlide = this.#slides.length - 1;
     if (this.#currentSlide === this.#slides.length) this.#currentSlide = 0;
@@ -85,10 +85,8 @@ class slideshowView {
   #setImg(i) {
     this.#slideshow.style.setProperty(
       "background-image",
-      `linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('/img/slideshow_img_${
-        i + 1
-      }.jpg')`
-    );
+      `linear-gradient(var(--background-bigger), var(--background-bigger)) ,url('/img/slideshow_img_${i+1}.jpg')`
+    );   
   }
 
   #addSwipeListener() {

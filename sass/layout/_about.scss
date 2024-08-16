@@ -15,7 +15,7 @@
   max-width: 100%;
   display: grid;
   gap: 2rem;
-  background-image: linear-gradient(rgba(0,0,0,0.9), rgba(0,0,0,0.9)) ,url('/img/slideshow_img_2.jpg');
+  background-image: linear-gradient(var(--background-bigger), var(--background-bigger)) ,url('/img/slideshow_img_2.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

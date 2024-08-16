@@ -35,6 +35,11 @@ class NavLinkFunctionality {
         this.#addListeners(item, "click");
       });
     }
+    document.querySelector('body').addEventListener('click',e=>{
+      if(!this.#items.includes(e.target.closest(".nav-item"))) {
+        this.#items.forEach(item=>this.#closeItem(item));
+      }
+    })
   }
 
   #isTouchDevice() {
@@ -53,6 +58,7 @@ class NavLinkFunctionality {
     }
     if (e === "mouseenter") this.#openItem(el);
     if (e === "mouseleave") this.#closeItem(el);
+    
   }
   #handleClick(el) {
     if (!el.classList.contains("nav-item--opened")) {

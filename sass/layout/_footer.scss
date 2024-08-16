@@ -10,6 +10,10 @@
   @media only screen and (max-width: 800px) {
     width: 95%;
   }
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
 
   &__logo {
     max-width: 40%;
@@ -17,6 +21,10 @@
     align-items: center;
     flex-direction: column;
     justify-self: center;
+    @media only screen and (max-width: 500px) {
+      max-width: 15rem;
+      margin:0 0 4rem;
+    }
   }
 
   &__img {
@@ -28,12 +36,19 @@
     align-items: baseline;
     flex-direction: column;
     gap: 1.3rem;
+    @media only screen and (max-width: 500px) {
+      align-items: center;
+      margin: 0 0 2rem;
+    }
   }
 
   &__menu-wrapper {
     display: flex;
     align-items: center;
     flex-direction: row;
+    @media only screen and (max-width: 500px) {
+      flex-direction: column;
+    }
   }
 
   &__svg-wrapper {
@@ -43,6 +58,9 @@
     align-self: flex-end;
     flex-direction: row;
     gap: 1.4rem;
+    @media only screen and (max-width: 500px) {
+      align-self: center;
+    }
   }
 
   &__svg {
