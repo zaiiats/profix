@@ -140,7 +140,10 @@ body {
 }
 
 .wrapper {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
+  min-height: 100vh;
   background: url(../img/black_pattern.png) repeat;
   background-size: 20rem auto;
 }
@@ -157,6 +160,11 @@ body {
   .sections-wrapper {
     width: 95%;
   }
+}
+
+.site {
+  padding-top: 7rem;
+  flex: 1;
 }
 
 @font-face {
@@ -769,6 +777,7 @@ a:visited {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex: 0;
   padding: 0 5%;
   font-size: 1.4rem;
   transition: backdrop-filter 0.3s ease, background-color 0.3s ease;

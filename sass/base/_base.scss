@@ -39,7 +39,10 @@ body {
     background-color: var(--main-bg-color);
 }
 .wrapper {
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
+    min-height: 100vh;
     background:url(../img/black_pattern.png) repeat;
     background-size: 20rem auto;
 }
@@ -54,4 +57,8 @@ body {
     @media only screen and (max-width: 800px) {
        width: 95%;
     }
+}
+.site{
+    padding-top: 7rem;
+    flex: 1;
 }
