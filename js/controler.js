@@ -1,4 +1,5 @@
 import HamburgerFunctionality from "./views/hamburgerView.js";
+import MapView from "./views/mapView.js";
 import NavLinkFunctionality from "./views/navView.js";
 import PageInitialisation from "./views/pageInitView.js";
 import SlideshowView from "./views/slideshowView.js";
@@ -15,6 +16,7 @@ const startPage = async function () {
 
     
     const hamburgerFunc = new HamburgerFunctionality();
+    const mapView = new MapView();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
