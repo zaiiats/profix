@@ -12,11 +12,9 @@ class PageInitialisation {
   async initNav() {
     try {
       const response = await fetch('../../elements/index.html');
-      console.log('Response URL:', response.url); // Logs the actual URL being fetched
       const data = await response.text();
-      console.log(data); // Check if it's really nav.html or index.html content
 
-      //document.querySelector('nav').innerHTML = data;
+      document.querySelector('nav').innerHTML = data;
     } catch (error) {
       console.error('Error loading navigation:', error);
     }
