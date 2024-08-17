@@ -111,4 +111,4 @@ class TextWriter {
   }
 }
 
-export default new TextWriter();
+export default TextWriter;

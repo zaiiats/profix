@@ -9,6 +9,8 @@ class HamburgerFunctionality {
   }
 
   #initHamburger() {
+    console.log(this.checkbox,document.querySelector(".hamburger-menu"));
+    
     this.checkbox.addEventListener("change", this.#checkboxCheck.bind(this));
   }
 
@@ -44,4 +46,4 @@ class HamburgerFunctionality {
   }
 }
 
-export default new HamburgerFunctionality();
+export default HamburgerFunctionality;

@@ -1,16 +1,40 @@
 class PageInitialisation {
   constructor() {
-    this.#initPage();
+    this.initNav();
   }
 
-  #initPage() {
-    document.addEventListener("DOMContentLoaded", function () {
-      let hexagonSection = document.querySelector(".hex-wrapper");
-      document.querySelector(".welcome-page").style.setProperty("opacity", "1");
-      document.querySelector(".sections-wrapper").style.setProperty("opacity", "1");
-      hexagonSection.style.setProperty("left", "0");
-    });
+  async init() {
+    await this.initNav()
+    await this.initFooter()
+    this.initAnimation()
+    console.log('Page initialization logic completed');
   }
+  async initNav() {
+    try {
+      const response = await fetch('../../elements/index.html');
+      console.log('Response URL:', response.url); // Logs the actual URL being fetched
+      const data = await response.text();
+      console.log(data); // Check if it's really nav.html or index.html content
+
+      //document.querySelector('nav').innerHTML = data;
+    } catch (error) {
+      console.error('Error loading navigation:', error);
+    }
+  }
+  
+  async initFooter(){
+    
+    
+  }
+  initAnimation() {
+    let hexagonSection = document.querySelector(".hex-wrapper");
+    document.querySelector(".welcome-page").style.setProperty("opacity", "1");
+    document
+      .querySelector(".sections-wrapper")
+      .style.setProperty("opacity", "1");
+    hexagonSection.style.setProperty("left", "0");
+  }
+
 }
 
-export default new PageInitialisation();
+export default PageInitialisation;

@@ -1,4 +1,4 @@
-class slideshowView {
+class SlideshowView {
   #slides;
   #dots;
   #currentSlide = 0;
@@ -114,4 +114,4 @@ class slideshowView {
   }
 }
 
-export default new slideshowView();
+export default SlideshowView;

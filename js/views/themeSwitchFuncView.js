@@ -71,4 +71,4 @@ class ThemeSwitchFunctionalityView {
 }
 
 
-export default new ThemeSwitchFunctionalityView();
+export default ThemeSwitchFunctionalityView;

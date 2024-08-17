@@ -97,4 +97,4 @@ class NavLinkFunctionality {
   }
 }
 
-export default new NavLinkFunctionality();
+export default NavLinkFunctionality;
