@@ -19,6 +19,7 @@ class ThemeSwitchFunctionalityView {
   }
   #changeTheme(state){
     this.#oval.classList.toggle("theme-switch__oval--active");
+    if (!document.querySelector(".slide-item__img--delivery")) return;
 
     if (state === 'open') {
       document.querySelector('body').style.fontWeight = '600';
