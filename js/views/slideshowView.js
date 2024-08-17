@@ -14,12 +14,17 @@ class SlideshowView {
     this.#imgDelivery = document.querySelector(".slide-item__img--delivery");
     this.#slideshow = document.querySelector(".slideshow-wrapper");
     this.#slidesBox = document.querySelector(".slides");
+    this.#initSlideshow();
+  }
+  #initSlideshow(){
+    if (!this.#slideshow) return;
     this.#createDots();
     this.#setHeight();
     this.#checkHeight();
     this.#initView();
     this.#addSwipeListener();
   }
+
   #createDots() {
     let html = "";
     this.#slides.forEach(

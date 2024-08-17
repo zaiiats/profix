@@ -16,6 +16,7 @@ class TextWriter {
 
   }
   async #mainFunc() {    
+    if (!this.#cursor) return;
     try {
       for (let i = 0; i < this.listOfWords.length; i++) {
         await this.#changeWord(i);
