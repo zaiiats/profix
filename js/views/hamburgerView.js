@@ -8,9 +8,7 @@ class HamburgerFunctionality {
     this.#initHamburger();
   }
 
-  #initHamburger() {
-    console.log(this.checkbox,document.querySelector(".hamburger-menu"));
-    
+  #initHamburger() {    
     this.checkbox.addEventListener("change", this.#checkboxCheck.bind(this));
   }
 

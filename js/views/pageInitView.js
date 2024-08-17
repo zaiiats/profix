@@ -1,19 +1,17 @@
 class PageInitialisation {
   constructor() {
-    this.initNav();
+    
   }
 
   async init() {
     await this.initNav()
     await this.initFooter()
     this.initAnimation()
-    console.log('Page initialization logic completed');
   }
   async initNav() {
     try {
-      const response = await fetch('../../elements/index.html');
+      const response = await fetch('../../elements/nav/index.html');
       const data = await response.text();
-
       document.querySelector('nav').innerHTML = data;
     } catch (error) {
       console.error('Error loading navigation:', error);
@@ -21,7 +19,13 @@ class PageInitialisation {
   }
   
   async initFooter(){
-    
+    try {
+      const response = await fetch("../../elements/footer/index.html");
+      const data = await response.text();
+      document.querySelector("footer").innerHTML = data;
+    } catch (error) {
+      console.error("Error loading footer:", error);
+    }
     
   }
   initAnimation() {
