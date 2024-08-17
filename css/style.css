@@ -163,8 +163,13 @@ body {
 }
 
 .site {
-  padding-top: 7rem;
+  width: 70%;
+  display: flex;
   flex: 1;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0 auto;
+  padding-top: 7rem;
 }
 
 @font-face {
@@ -332,6 +337,15 @@ a:visited {
   font-family: "Imperial_Web";
   font-size: 2rem;
   text-transform: uppercase;
+}
+
+.header {
+  font-size: 1.3rem;
+}
+
+.heading {
+  font-size: 4.5rem;
+  text-align: center;
 }
 
 .button {
@@ -1248,6 +1262,121 @@ a:visited {
 }
 .hex-box:hover .hex__text {
   transform: rotate(120deg);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0;
+  flex-direction: row;
+  padding-top: 4rem;
+}
+
+.header__links-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-direction: row;
+}
+
+.site__content {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+}
+
+.map_section {
+  height: 100%;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.map {
+  margin: 0 0 1rem;
+  display: flex;
+  width: 80%;
+  height: 80%;
+  background-color: var(--main-bg-color);
+}
+
+.my_map {
+  filter: grayscale(0%) invert(0%);
+}
+
+.map_text {
+  text-align: center;
+}
+
+.main_container {
+  height: 100%;
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+}
+
+.contacts_section {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.2rem;
+  gap: 1.5rem;
+}
+
+.schedule_section {
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.schedule_section > span {
+  margin: 0.4rem 0 0;
+}
+
+.schedule_section_sec {
+  font-size: 0.7rem;
+  text-align: center;
+}
+
+.social_text i {
+  height: 10px;
+  display: inline-block;
+}
+
+.social_text {
+  align-items: center;
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 800px) {
+  html {
+    font-size: 8px;
+  }
+  .content_container {
+    gap: 2rem;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+  .map_section {
+    margin: 2rem 0;
+    width: 90%;
+  }
+  .map {
+    width: 100%;
+  }
+  .main_container {
+    width: 100%;
+    justify-content: space-evenly;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
