@@ -1,18 +1,15 @@
 class ThemeSwitchFunctionalityView {
   #themeSwitchCheckbox;
-  #svgs;
   #oval;
-  #isSwitched;
   #wrapper;
   constructor() {
     this.#themeSwitchCheckbox = document.querySelector(".theme-switch__checkbox");
-    this.#svgs = document.querySelectorAll(".theme-switch__svg");
     this.#oval = document.querySelector(".theme-switch__oval");
     this.#wrapper = document.querySelector('.wrapper')
-    this.#isSwitched = false;
     this.#initSwitch();
   }
   #initSwitch(){
+    if (!this.#themeSwitchCheckbox) return;
     this.#themeSwitchCheckbox.addEventListener('change',(e)=>{
       
       if (e.target.checked) this.#changeTheme.apply(this,['open']);

@@ -1,24 +1,34 @@
 class PageInitialisation {
-  constructor() {
-
-  }
+  constructor() {}
 
   async init() {
-    await this.initNav()
-    await this.initFooter()
-    this.initAnimation()
+    await this.initNav();
+    await this.initThemeSwitch();
+    await this.initFooter();
+    this.initAnimation();
   }
   async initNav() {
     try {
-      const response = await fetch('../../elements/nav/index.html');
+      const response = await fetch("../../elements/nav/index.html");
       const data = await response.text();
-      document.querySelector('nav').innerHTML = data;
+      document.querySelector("nav").innerHTML = data;
     } catch (error) {
-      console.error('Error loading navigation:', error);
+      console.error("Error loading navigation:", error);
     }
   }
-  
-  async initFooter(){
+
+  async initThemeSwitch() {
+    if (!document.querySelector(".theme-switch")) return;
+    try {
+      const response = await fetch("../../elements/themeSwitch/index.html");
+      const data = await response.text();
+      document.querySelector(".theme-switch").innerHTML = data;
+    } catch (error) {
+      console.error("Error loading theme switch:", error);
+    }
+  }
+
+  async initFooter() {
     try {
       const response = await fetch("../../elements/footer/index.html");
       const data = await response.text();
@@ -26,8 +36,8 @@ class PageInitialisation {
     } catch (error) {
       console.error("Error loading footer:", error);
     }
-    
   }
+
   initAnimation() {
     let hexagonSection = document.querySelector(".hex-wrapper");
     document.querySelector(".welcome-page")?.style.setProperty("opacity", "1");
@@ -36,7 +46,6 @@ class PageInitialisation {
       ?.style.setProperty("opacity", "1");
     hexagonSection?.style.setProperty("left", "0");
   }
-
 }
 
 export default PageInitialisation;
