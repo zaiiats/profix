@@ -1,102 +1,73 @@
-.header{
+.header {
   display: flex;
-  align-items: center;  
+  align-items: center;
   justify-content: space-between;
   flex: 0;
   flex-direction: row;
-  padding-top: 4rem;
-}
+  padding: 2rem 0;
 
-.header__links-wrapper{
-  display: flex;
-  gap: 1rem;
-  flex-direction: row;
-}
-
-.site__content{
-  height: 100%;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  flex: 1;
-}
-
-.map_section{
-    height: 100%;
-    width: 60%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-.map{
-    margin: 0 0 1rem;
-    display: flex;
-    width: 30rem;
-    height: 30rem;
-    background-color: var(--main-bg-color);
-}
-.map_text{
-    text-align: center;
-}
-
-.main_container{
-    height: 100%;
-    justify-content: space-evenly;
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-}
-.contacts_section{
-    display: flex;
-    flex-direction: column;
-    font-size:1.2rem;
-    gap: 1.5rem;
-}
-.schedule_section{
-    font-size:1.2rem;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 0 0 1rem;
-}
-.schedule_section > span{
-    margin: 0.4rem 0 0;
-}
-.schedule_section_sec{
-    font-size: 0.7rem;
-    text-align: center;
-}
-.social_text i{
-    height: 10px;
-    display: inline-block;
-}
-.social_text{
-    align-items: center;
-    gap: 1rem;
+  &__links-wrapper {
     display: flex;
     flex-direction: row;
+    gap: 1rem;
+  }
 }
 
-@media only screen and (max-width: 800px) {
-    html{
-		font-size: 8px;
-	}
-    .content_container{
-        gap: 2rem;
-        justify-content: space-around;
-        flex-direction: column;
-    }
-    .map_section{
-        margin: 2rem 0;
-        width: 90%;
-    }
-    .map{
-        width: 100%;
-    }
-    .main_container{
-        width: 100%;
-        justify-content: space-evenly;
-    }
+.site__content {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  gap: 3rem;
+  @media only screen and (max-width: 500px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 3fr 2fr;
+  }
+}
+
+.map-wrapper {
+  height: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
+  gap: 1rem;
+}
+.map {
+  background-color: var(--main-bg-color);
+}
+
+.contacts-wrapper {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__item {
+    align-items: center;
+    flex-direction: row;
+    gap: 1rem;
+  }
+}
+
+.schedule {
+  &__main {
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 1rem;
+  }
+  &__item {
+    margin: 0.4rem 0 0;
+  }
+  &__sec {
+    text-align: center;
+  }
 }

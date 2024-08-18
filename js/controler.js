@@ -1,26 +1,22 @@
 import HamburgerFunctionality from "./views/hamburgerView.js";
-import MapView from "./views/mapView.js";
 import NavLinkFunctionality from "./views/navView.js";
 import PageInitialisation from "./views/pageInitView.js";
 import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
-
-
-import L from "leaflet";
-import "leaflet/dist/leaflet.css";
-
+/*import MapView from "./views/mapView.js";*/
 
 const startPage = async function () {
   try {
     const pageInit = new PageInitialisation();
     await pageInit.init();
-    const mapView = new MapView(); 
+
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
     const themeSwitchFunc = new ThemeSwitchFunctionalityView();
+    /*const mapView = new MapView();*/
     
   } catch (error) {
     console.error("Error during startPage execution:", error);
