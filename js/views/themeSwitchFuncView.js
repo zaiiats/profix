@@ -21,6 +21,9 @@ class ThemeSwitchFunctionalityView {
     this.#oval.classList.toggle("theme-switch__oval--active");
     if (!document.querySelector(".slide-item__img--delivery")) return;
 
+    console.log('switch');
+    
+
     if (state === 'open') {
       document.querySelector('body').style.fontWeight = '600';
       document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';

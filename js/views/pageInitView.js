@@ -9,7 +9,7 @@ class PageInitialisation {
   }
   async initNav() {
     try {
-      const response = await fetch("elements/nav.html");
+      const response = await fetch("/elements/nav.html");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.text();
       document.querySelector("nav").innerHTML = data;
@@ -21,7 +21,7 @@ class PageInitialisation {
   async initThemeSwitch() {
     if (!document.querySelector(".theme-switch")) return;
     try {
-      const response = await fetch("./elements/themeSwitch.html");
+      const response = await fetch("/elements/themeSwitch.html");
       const data = await response.text();
       document.querySelector(".theme-switch").innerHTML = data;
     } catch (error) {
@@ -31,7 +31,7 @@ class PageInitialisation {
 
   async initFooter() {
     try {
-      const response = await fetch("../elements/footer.html");
+      const response = await fetch("/elements/footer.html");
       const data = await response.text();
       document.querySelector("footer").innerHTML = data;
     } catch (error) {

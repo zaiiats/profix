@@ -44,3 +44,5 @@ const data = await response.text();
 document.querySelector("nav").innerHTML = data;
 
 it loads html of general index.html not the one i specified
+
+"copy-files": "copyfiles -u 1 public/elements/**/* dist/"
