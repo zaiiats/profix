@@ -1,22 +1,21 @@
 import HamburgerFunctionality from "./views/hamburgerView.js";
-/*import MapView from "./views/mapView.js";*/
+import MapView from "./views/mapView.js";
 import NavLinkFunctionality from "./views/navView.js";
 import PageInitialisation from "./views/pageInitView.js";
 import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 
-import forceInclude from './helpers.js'
-forceInclude();
-/*import L from "leaflet";
-import "leaflet/dist/leaflet.css";*/
+
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
 
 const startPage = async function () {
   try {
     const pageInit = new PageInitialisation();
     await pageInit.init();
-    /*const mapView = new MapView(); */
+    const mapView = new MapView(); 
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
