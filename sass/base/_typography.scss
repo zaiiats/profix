@@ -156,6 +156,9 @@ a:visited {
 .heading{
   font-size: 4.5rem;
   text-align: center;
+  @media only screen and (max-width: 500px) {
+    font-size: 3.5rem;
+  }
 }
 
 .map__text,.schedule__main{
@@ -164,4 +167,10 @@ a:visited {
 }
 .contacts{
   font-size:1.4rem;
+}
+
+.site__content--copyright{
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
 }

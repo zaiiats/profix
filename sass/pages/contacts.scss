@@ -1,27 +1,13 @@
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
 
-  &__links-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 1rem;
-  }
-}
 
-.site__content {
-  width: 100%;
+
+.site__content--account {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 1fr;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  gap: 3rem;
   @media only screen and (max-width: 500px) {
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 2fr;

@@ -177,6 +177,27 @@ body {
   }
 }
 
+.site__content {
+  width: 100%;
+  flex: 1;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+}
+.header__links-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 @font-face {
   font-family: "Imperial_Web";
   src: url("../fonts/Webfont/Imperial_Web.ttf") format("truetype");
@@ -352,6 +373,11 @@ a:visited {
   font-size: 4.5rem;
   text-align: center;
 }
+@media only screen and (max-width: 500px) {
+  .heading {
+    font-size: 3.5rem;
+  }
+}
 
 .map__text, .schedule__main {
   font-size: 1.3rem;
@@ -360,6 +386,12 @@ a:visited {
 
 .contacts {
   font-size: 1.4rem;
+}
+
+.site__content--copyright {
+  font-size: 1.6rem;
+  letter-spacing: 0.1rem;
+  line-height: 120%;
 }
 
 .button {
@@ -1278,32 +1310,16 @@ a:visited {
   transform: rotate(120deg);
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
-}
-.header__links-wrapper {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-}
-
-.site__content {
-  width: 100%;
+.site__content--account {
   display: grid;
   grid-template-columns: 3fr 2fr;
   grid-template-rows: 1fr;
+  gap: 3rem;
   align-items: center;
   justify-content: center;
-  flex: 1;
-  gap: 3rem;
 }
 @media only screen and (max-width: 500px) {
-  .site__content {
+  .site__content--account {
     grid-template-columns: 1fr;
     grid-template-rows: 3fr 2fr;
   }
@@ -1350,6 +1366,13 @@ a:visited {
 }
 .schedule__sec {
   text-align: center;
+}
+
+.site__content--copyright {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 4rem 0;
 }
 
 /*# sourceMappingURL=style.css.map */
