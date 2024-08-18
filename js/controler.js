@@ -16,14 +16,13 @@ const startPage1 = async function () {
 
 const startPage = async function () {
   try {
-    console.log(L);
 
     /*const mapView = new MapView(); */
-    const hamburgerFunc = new HamburgerFunctionality();
+    /*const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
-    const themeSwitchFunc = new ThemeSwitchFunctionalityView();
+    const themeSwitchFunc = new ThemeSwitchFunctionalityView();*/
     
   } catch (error) {
     console.error("Error during startPage execution:", error);
