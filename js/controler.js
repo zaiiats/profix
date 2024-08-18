@@ -6,29 +6,31 @@ import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 
-console.log(L);
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
 
+const startPage1 = async function () {
+  const pageInit = new PageInitialisation();
+  await pageInit.init();
+};
 
 const startPage = async function () {
-  
   try {
-    const pageInit = new PageInitialisation();
-    await pageInit.init();
-
     console.log(L);
-    
-    const mapView = new MapView();
+
+    const mapView = new MapView(); 
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
     const themeSwitchFunc = new ThemeSwitchFunctionalityView();
-
+    
   } catch (error) {
     console.error("Error during startPage execution:", error);
   }
 };
 
-document.addEventListener("DOMContentLoaded", () => {
-  startPage();
+document.addEventListener("DOMContentLoaded", async () => {
+  await startPage1();
+  startPage(); 
 });
