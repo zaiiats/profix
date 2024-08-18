@@ -9,10 +9,9 @@ class PageInitialisation {
   }
   async initNav() {
     try {
-      const response = await fetch("./elements/nav.html");
+      const response = await fetch("/elements/nav.html");
       if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
       const data = await response.text();
-      console.log(`nav => ${data}`);
       document.querySelector("nav").innerHTML = data;
     } catch (error) {
       console.error("Error fetching nav.html:", error);
@@ -25,7 +24,6 @@ class PageInitialisation {
       const response = await fetch("/elements/themeSwitch.html");
       const data = await response.text();
       document.querySelector(".theme-switch").innerHTML = data;
-      console.log(`themeSwitch => ${data}`);
     } catch (error) {
       console.error("Error loading theme switch:", error);
     }
@@ -33,10 +31,9 @@ class PageInitialisation {
 
   async initFooter() {
     try {
-      const response = await fetch("/static/elements/footer.html");
+      const response = await fetch("/elements/footer.html");
       const data = await response.text();
       document.querySelector("footer").innerHTML = data;
-      console.log(`footer => ${data}`);
     } catch (error) {
       console.error("Error loading footer:", error);
     }
