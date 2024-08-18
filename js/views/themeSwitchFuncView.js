@@ -9,26 +9,20 @@ class ThemeSwitchFunctionalityView {
     this.#initSwitch();
   }
   #initSwitch(){
-    if (!this.#themeSwitchCheckbox) return;
+    if (!document.querySelector(".theme-switch")) return;
     this.#themeSwitchCheckbox.addEventListener('change',(e)=>{
-      
       if (e.target.checked) this.#changeTheme.apply(this,['open']);
       if (!e.target.checked) this.#changeTheme.apply(this,['close']);
-      
     })
   }
   #changeTheme(state){
+
     this.#oval.classList.toggle("theme-switch__oval--active");
-    if (!document.querySelector(".slide-item__img--delivery")) return;
-
-    console.log('switch');
-    
-
     if (state === 'open') {
       document.querySelector('body').style.fontWeight = '600';
-      document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';
       this.#wrapper.style.setProperty('background','url(../img/white_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
+      if (document.querySelector(".slide-item__img--delivery")) document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';
 
       this.setMultipleProperties({
         "--white-color-text": "#000",
@@ -44,9 +38,9 @@ class ThemeSwitchFunctionalityView {
 
     } else {
       document.querySelector("body").style.fontWeight = "normal";
-      document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_white-1x.png 1x, img/delivery_white-2x.png 2x';
       this.#wrapper.style.setProperty('background','url(../img/black_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
+      if (document.querySelector(".slide-item__img--delivery")) document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_white-1x.png 1x, img/delivery_white-2x.png 2x';
 
       this.setMultipleProperties({
         "--white-color-text": "#eee",

@@ -6,17 +6,16 @@ import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 
+import forceInclude from './helpers.js'
+forceInclude();
 /*import L from "leaflet";
 import "leaflet/dist/leaflet.css";*/
 
-const startPage1 = async function () {
-  const pageInit = new PageInitialisation();
-  await pageInit.init();
-};
 
 const startPage = async function () {
   try {
-
+    const pageInit = new PageInitialisation();
+    await pageInit.init();
     /*const mapView = new MapView(); */
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
@@ -30,6 +29,5 @@ const startPage = async function () {
 };
 
 document.addEventListener("DOMContentLoaded", async () => {
-  await startPage1();
   startPage(); 
 });
