@@ -1300,13 +1300,9 @@ a:visited {
 .map {
   margin: 0 0 1rem;
   display: flex;
-  width: 80%;
-  height: 80%;
+  width: 30rem;
+  height: 30rem;
   background-color: var(--main-bg-color);
-}
-
-.my_map {
-  filter: grayscale(0%) invert(0%);
 }
 
 .map_text {

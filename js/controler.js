@@ -6,17 +6,19 @@ import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 
+console.log(L);
+
 
 const startPage = async function () {
   
   try {
-    console.log("Starting page initialization...");
     const pageInit = new PageInitialisation();
     await pageInit.init();
 
+    console.log(L);
     
-    const hamburgerFunc = new HamburgerFunctionality();
     const mapView = new MapView();
+    const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();

@@ -1,10 +1,12 @@
+import L from "leaflet";
+import "leaflet/dist/leaflet.css";
+
 class MapView {
-  
   constructor() {
     this.#initMap();
   }
 
-  #initMap(){
+  #initMap() {
     const map = L.map("map").setView([51.505, -0.09], 13);
 
     L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -17,8 +19,6 @@ class MapView {
       .bindPopup("A pretty CSS popup.<br> Easily customizable.")
       .openPopup();
   }
-
 }
-
 
 export default MapView;
