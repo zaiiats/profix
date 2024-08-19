@@ -1,4 +1,5 @@
 class ThemeSwitchFunctionalityView {
+  #theme;
   #themeSwitchCheckbox;
   #oval;
   #wrapper;
@@ -9,16 +10,22 @@ class ThemeSwitchFunctionalityView {
     this.#initSwitch();
   }
   #initSwitch(){
+    
+
     if (!document.querySelector(".theme-switch")) return;
+    this.#theme = localStorage.getItem("theme");
+    if (!this.#theme === 'black') {
+      this.#changeTheme(this.#theme);
+      this.#themeSwitchCheckbox.checked = true;
+    } 
     this.#themeSwitchCheckbox.addEventListener('change',(e)=>{
-      if (e.target.checked) this.#changeTheme.apply(this,['open']);
-      if (!e.target.checked) this.#changeTheme.apply(this,['close']);
+      if (e.target.checked) this.#changeTheme.apply(this,['white']);
+      if (!e.target.checked) this.#changeTheme.apply(this,['black']);
     })
   }
-  #changeTheme(state){
-
+  #changeTheme(theme){
     this.#oval.classList.toggle("theme-switch__oval--active");
-    if (state === 'open') {
+    if (theme === 'white') {
       document.querySelector('body').style.fontWeight = '500';
       this.#wrapper.style.setProperty('background','url(../img/white_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
@@ -54,6 +61,7 @@ class ThemeSwitchFunctionalityView {
         "--accent-color-translucent": "rgba(182, 72, 72,0.1)",
       });
     }
+    localStorage.setItem("theme", theme);
   }
 
   setMultipleProperties(properties) {
