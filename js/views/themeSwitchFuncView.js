@@ -19,7 +19,7 @@ class ThemeSwitchFunctionalityView {
 
     this.#oval.classList.toggle("theme-switch__oval--active");
     if (state === 'open') {
-      document.querySelector('body').style.fontWeight = '600';
+      document.querySelector('body').style.fontWeight = '500';
       this.#wrapper.style.setProperty('background','url(../img/white_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
       if (document.querySelector(".slide-item__img--delivery")) document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';

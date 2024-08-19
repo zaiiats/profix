@@ -38,6 +38,8 @@
   gap: 1.5rem;
 
   &__item {
+    display: flex;
+    
     align-items: center;
     flex-direction: row;
     gap: 1rem;
