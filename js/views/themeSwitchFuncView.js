@@ -10,14 +10,17 @@ class ThemeSwitchFunctionalityView {
     this.#initSwitch();
   }
   #initSwitch(){
-    
 
     if (!document.querySelector(".theme-switch")) return;
     this.#theme = localStorage.getItem("theme");
-    if (!this.#theme === 'black') {
+    
+    if (this.#theme != 'black') {
+      console.log(5);
+      
       this.#changeTheme(this.#theme);
       this.#themeSwitchCheckbox.checked = true;
     } 
+
     this.#themeSwitchCheckbox.addEventListener('change',(e)=>{
       if (e.target.checked) this.#changeTheme.apply(this,['white']);
       if (!e.target.checked) this.#changeTheme.apply(this,['black']);
