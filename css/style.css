@@ -394,6 +394,11 @@ a:visited {
   line-height: 120%;
 }
 
+.copyright__text--main {
+  font-size: 2.6rem;
+  text-align: center;
+}
+
 .button {
   display: flex;
   align-items: center;
