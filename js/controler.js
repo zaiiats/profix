@@ -1,3 +1,4 @@
+import AssortmentView from "./views/assortmentView.js";
 import HamburgerFunctionality from "./views/hamburgerView.js";
 import NavLinkFunctionality from "./views/navView.js";
 import PageInitialisation from "./views/pageInitView.js";
@@ -10,12 +11,14 @@ const startPage = async function () {
   try {
     const pageInit = new PageInitialisation();
     await pageInit.init();
-
+    
+    const themeSwitchFunc = new ThemeSwitchFunctionalityView();
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
-    const themeSwitchFunc = new ThemeSwitchFunctionalityView();
+    const assortmentView = new AssortmentView();
+
     /*const mapView = new MapView();*/
     
   } catch (error) {

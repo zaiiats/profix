@@ -131,13 +131,14 @@ a:visited {
 .title__text {
   font-family: "Imperial_Web";
   font-size: 2.2rem;
-  letter-spacing: 0.1rem;
+}
+.card{
+  font-size: 1.4rem;
 }
 
 .slide-item__label {
   font-size: 2.2rem;
   font-weight: 600;
-  letter-spacing: 0.1rem;
 }
 
 .footer__text {
@@ -174,7 +175,7 @@ a:visited {
   letter-spacing: 0.1rem;
   line-height: 120%;
 }
-.copyright__text--main{
-  font-size: 2.6rem;
+.copyright__text--main,.carousel__heading{
+  font-size: 2.2rem;
   text-align: center;
 }
