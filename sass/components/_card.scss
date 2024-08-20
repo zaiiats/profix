@@ -1,13 +1,14 @@
 .card {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 4fr min-content;
+  grid-template-rows: 1fr min-content;
   align-items: center;
   border: 0.1rem var(--white-color-text) solid;
   padding: 1rem;
   background-color: var(--main-bg-color);
   color: var(--white-color-text);
   transition: all 0.15s ease-in-out;
+  overflow: hidden;
 
   &:hover {
     border-color: var(--accent-color);

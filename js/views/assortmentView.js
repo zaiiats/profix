@@ -68,18 +68,15 @@ class AssortmentView {
 
     this.#carousel.addEventListener("click", this.#handleClick.bind(this));
     this.slides.forEach((slide) => {
-      slide.style.setProperty(
-        "transform",
-        `translateX(-${this.#activeWidth / 2}px)`
-      );
-      slide.addEventListener(
-        "mouseenter",
+      slide.style.setProperty("transform",`translateX(-${this.#activeWidth / 2}px)`);
+      slide.querySelector('.card__text').style.setProperty("font-size", '0.8rem');
+      slide.addEventListener("mouseenter",
         function () {
           clearInterval(this.#timer);
-        }.bind(this)
-      );
+        }.bind(this));
       slide.addEventListener("mouseleave", this.restartTimer.bind(this));
     });
+    this.slides[0].querySelector('.card__text').style.setProperty("font-size", '1.3rem');
     this.restartTimer();
   }
 
@@ -120,16 +117,18 @@ class AssortmentView {
   }
 
   moveToSlide(index) {
-    this.slides.forEach((slide) =>
+    this.slides.forEach((slide) =>{
       slide.classList.remove("card__slide-active")
-    );
+      slide.querySelector('.card__text').style.setProperty("font-size", '0.8rem');
+    });
     this.slides[index].classList.add("card__slide-active");
+    this.slides[index].querySelector('.card__text').style.setProperty("font-size", '1.3rem');
     const transformValue = `translateX(-${
       index * (this.#regularWidth + 2 * this.#fontSize) + this.#activeWidth / 2
     }px)`;
-    this.slides.forEach((slide) =>
-      slide.style.setProperty("transform", transformValue)
-    );
+    this.slides.forEach((slide) =>{
+      slide.style.setProperty("transform", transformValue);
+    });
     this.restartTimer();
   }
 
