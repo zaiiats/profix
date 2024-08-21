@@ -7,12 +7,13 @@ class AssortmentView {
   #regularWidth;
   #activeWidth;
   #fontSize;
-  constructor() {
+  constructor(data) {
+    this.data = data;
     this.#carousel = document.querySelector(".carousel");
     this.#prevIds = [];
     this.#numOfCards = parseFloat(this.#carousel.getAttribute('length'));
     this.slides = Array.from(document.querySelectorAll(".card__slide"));
-    this.cards = Array.from(document.querySelectorAll(".card"));
+    this.cards;
     this.#currentIndex = 0;
     this.#timer;
     this.#regularWidth;
@@ -21,11 +22,10 @@ class AssortmentView {
     this.data;
 
     this.#initAssortment();
-    this.#initSvgs();
   }
 
-  async #initAssortment() {
-    await this.#initHtml();
+  #initAssortment() {
+    this.#initHtml();
     this.#initFirstCard();
     this.#getWidthAndFont();
 
@@ -41,17 +41,12 @@ class AssortmentView {
     window.addEventListener("resize", this.#getWidthAndFont.bind(this));
     this.#carousel.addEventListener("click", this.#handleClick.bind(this));
     this.#addSwipeListener();
+    this.#initSvgs();
     this.restartTimer();
   }
 
-  async #initHtml(){
-    try {
-      let request = await fetch("https://profix-58b81a90e302.herokuapp.com/data");
-      this.data = await request.json();
-    } catch (error) {
-      console.error(`Server didn't respond! ${error}`);
-    }
-    
+  #initHtml(){
+
 
     function checkRandomNumber(randomNumber) {
       if (randomNumber < 1) {
@@ -198,10 +193,10 @@ class AssortmentView {
   }
 
   #initSvgs() {
-    this.cards.forEach((card) => {
+    this.cards = Array.from(document.querySelectorAll(".card"))
+    this.cards.forEach(card => {
       let svgLike = card.querySelector(".icon-item--heart");
-      let svgBookmark = card.querySelector(".icon-item--bookmark");
-
+      let svgBookmark = card.querySelector(".icon-item--bookmark");      
       if (card.getAttribute("like") === "yes") {
         svgLike.classList.add("icon-item__heart--opened");
       }

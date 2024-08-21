@@ -3,20 +3,17 @@ class ThemeSwitchFunctionalityView {
   #themeSwitchCheckbox;
   #oval;
   #wrapper;
-  constructor() {
+  constructor(theme) {
+    this.#theme = theme;
     this.#themeSwitchCheckbox = document.querySelector(".theme-switch__checkbox");
     this.#oval = document.querySelector(".theme-switch__oval");
     this.#wrapper = document.querySelector('.wrapper')
     this.#initSwitch();
   }
   #initSwitch(){
-
     if (!document.querySelector(".theme-switch")) return;
-    this.#theme = localStorage.getItem("theme");
     
     if (this.#theme != 'black') {
-      console.log(5);
-      
       this.#changeTheme(this.#theme);
       this.#themeSwitchCheckbox.checked = true;
     } 
