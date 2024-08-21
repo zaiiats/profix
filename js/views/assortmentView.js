@@ -46,7 +46,7 @@ class AssortmentView {
 
   async #initHtml(){
     try {
-      let request = await fetch("https://profix-58b81a90e302.herokuapp.com/data", {mode: 'no-cors'});
+      let request = await fetch("https://profix-58b81a90e302.herokuapp.com/data");
       this.data = await request.json();
     } catch (error) {
       console.error(`Server didn't respond! ${error}`);

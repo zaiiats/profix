@@ -16,7 +16,7 @@ const data = [
   { id: 6, name: "Гвинт", like: "yes", bookmark: "yes" },
 ];
 
-app.get('/data', (req, res) => {
+app.get("/data", (req, res) => {
   res.json(data);
 });
 
