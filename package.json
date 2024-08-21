@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "parcel index.html",
+    "startParcel": "parcel index.html",
+    "start": "node server.js",
     "build": "parcel build index.html && npm run copy-files",
     "compile:sass": "sass sass/main.scss css/style.css --watch",
     "copy-files": "copyfiles -u 1 public/**/* dist/"
