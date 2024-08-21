@@ -1,6 +1,7 @@
 {
   "name": "profix",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html && npm run copy-files",
@@ -22,6 +23,8 @@
     "sass": "^1.77.8"
   },
   "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "leaflet": "^1.9.4"
   }
 }

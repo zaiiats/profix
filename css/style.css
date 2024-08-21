@@ -356,6 +356,11 @@ a:visited {
   transition: all 0.6s ease-in-out;
 }
 
+.carousel-card__text {
+  font-size: 0.8rem;
+  transition: all 0.6s ease-in-out;
+}
+
 .slide-item__label {
   font-size: 2.2rem;
   font-weight: 600;
@@ -1459,14 +1464,14 @@ a:visited {
   }
 }
 
-.card__slide-active {
+.card__slide--active {
   padding: 1.3333333rem;
   height: 30rem;
   width: 25rem;
   opacity: 1;
 }
 @media only screen and (max-width: 600px) {
-  .card__slide-active {
+  .card__slide--active {
     height: 25rem;
     width: 20rem;
   }
@@ -1483,44 +1488,43 @@ a:visited {
 }
 
 .card__action {
-  margin: 0 2rem;
-  position: absolute;
+  top: 0;
+  position: relative;
   display: flex;
-  visibility: hidden;
   flex-direction: row;
   justify-content: space-between;
-  gap: 1rem;
-  top: 1rem;
-  width: 90%;
+  width: 100%;
+  visibility: hidden;
   opacity: 0;
   transition: opacity 1s ease-in-out;
 }
 
-/*.unhovered_icon{
+.unhovered_icon {
   opacity: 0.3;
 }
-.hovered_icon{
+
+.hovered_icon {
   opacity: 1;
 }
-.opened_liked_icon{
-  color: #ff0000;
-}
-.opened_basket_icon{
-  color: #d59500;
+
+.icon-item__heart--opened {
+  fill: #ff0000;
 }
 
-.active_slide > .card > .action_section{
+.icon-item__bookmark--opened {
+  fill: #d59500;
+}
+
+.active_slide > .card {
+  font-size: 1rem;
+}
+
+.card__action--active {
+  display: flex;
   visibility: visible;
   opacity: 1;
 }
-.active_slide > .card{
-  font-size: 1rem;
-}
-.active_slide > .card > .action_section{
-  display: flex;
-}
 
-*/
 .site__content--account {
   display: grid;
   grid-template-columns: 3fr 2fr;
