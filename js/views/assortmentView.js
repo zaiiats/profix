@@ -2,6 +2,7 @@ class AssortmentView {
   #carousel;
   #prevIds;
   #numOfCards;
+  #slides;
   #currentIndex;
   #timer;
   #regularWidth;
@@ -12,7 +13,7 @@ class AssortmentView {
     this.#carousel = document.querySelector(".carousel");
     this.#prevIds = [];
     this.#numOfCards = parseFloat(this.#carousel.getAttribute('length'));
-    this.slides = Array.from(document.querySelectorAll(".card__slide"));
+    this.#slides;
     this.cards;
     this.#currentIndex = 0;
     this.#timer;
@@ -28,8 +29,9 @@ class AssortmentView {
     this.#initHtml();
     this.#initFirstCard();
     this.#getWidthAndFont();
+    
 
-    this.slides.forEach((slide) => {
+    this.#slides.forEach((slide) => {
       slide.style.setProperty("transform",`translateX(-${this.#activeWidth / 2}px)`);
       slide.addEventListener("mouseenter",function () {
           clearInterval(this.#timer)
@@ -46,33 +48,38 @@ class AssortmentView {
   }
 
   #initHtml(){
-
-
     function checkRandomNumber(randomNumber) {
-      if (randomNumber < 1) {
-        randomNumber = this.#numOfCards;
-        return checkRandomNumber.call(this, randomNumber);
-
-      } else if (this.#prevIds.includes(randomNumber)) {
-        randomNumber = randomNumber > 1 ? randomNumber - 1 : this.#numOfCards;
-        return checkRandomNumber.call(this, randomNumber);
-
-      } else return randomNumber;
+      while (randomNumber < 1 || this.#prevIds.includes(randomNumber)) {
+        if (randomNumber < 1) {
+          randomNumber = this.#numOfCards;
+        } else if (this.#prevIds.includes(randomNumber)) {
+          randomNumber = randomNumber > 1 ? randomNumber - 1 : this.#numOfCards;
+        }
+      }
+      return randomNumber;
     }
 
     for (let i = 0; i < this.#numOfCards; i++) {
-      let randomNumber = Math.trunc(Math.random()*this.#numOfCards)+1;
+      let randomNumber = Math.trunc(Math.random() * this.data.length) + 1;
       randomNumber = checkRandomNumber.call(this, randomNumber);
 
-      this.#insertHtml(randomNumber,i);
+      this.#insertCards(i);
+      this.#insertCardInfo(randomNumber,i);
       this.#prevIds.push(randomNumber);
     }
+    
   }
   
-  #insertHtml(randomNumber,i){
+  #insertCards(i){
+    let html = `<div class="card__slide"></div>`
+    document.querySelector('.cards-wrapper').insertAdjacentHTML('beforeend',html);
+    this.#slides = Array.from(document.querySelectorAll(".card__slide")); 
+  }
+
+  #insertCardInfo(randomNumber,i){    
     let current = this.data[randomNumber-1];
     let html = `
-      <a class="card carousel__card" aria-label="card" item="priklad" like="${current.like}" bookmark="${current.bookmark}" href="#">
+      <a class="card carousel__card" aria-label="card" item="priklad" like="${current.like}" bookmark="${current.bookmark}" href="${current.family}#${current.type}">
         <div class="card__action">
           <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--heart svg">
             <path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>
@@ -82,26 +89,26 @@ class AssortmentView {
           </svg>
         </div>
         <div class="card__img-box">
-          <img class="card__img" srcset="../img/samoriz-1x.png 1x, ../img/samoriz-2x.png 2x" alt="samoriz">
+          <img class="card__img" srcset="../img/${current.family}-1x.png 1x, ../img/${current.family}-2x.png 2x" alt="${current.family}">
         </div>
         <div class="card__info">
           <div class="card__divider"></div>
           <div class="carousel-card__text card__text">${current.name}</div>
         </div>
       </a>
-    `
-    this.slides[i].insertAdjacentHTML('beforeend',html)
+    `;
+    this.#slides[i].insertAdjacentHTML('beforeend',html)
   }
 
   #initFirstCard() {
-    let first = this.slides[0];
+    let first = this.#slides[0];
     first.classList.add("card__slide--active");
     first.querySelector(".carousel-card__text").style.setProperty("font-size", "1.3rem");
     first.querySelector(".card__action").classList.add("card__action--active");
   }
 
   #getWidthAndFont() {
-    this.slides.forEach((slide) => {
+    this.#slides.forEach((slide) => {
       slide.style.setProperty('transition','none');
       slide.classList.contains("card__slide--active")
         ? (this.#activeWidth = slide.getBoundingClientRect().width)
@@ -114,15 +121,16 @@ class AssortmentView {
   }
 
   #handleClick(e) {
+    
+    if (e.target.closest(".svg")) {
+      console.log("card.action");
+    }
     if (
-      this.slides.includes(e.target.closest(".card__slide")) &
-      !e.target
-        .closest(".card__slide")
-        ?.classList.contains("card__slide--active")
+      this.#slides.includes(e.target.closest(".card__slide")) &
+      !e.target.closest(".card__slide")?.classList.contains("card__slide--active")
     ) {
-      const clickedIndex = this.slides.indexOf(
-        e.target.closest(".card__slide")
-      );
+      e.preventDefault();
+      const clickedIndex = this.#slides.indexOf(e.target.closest(".card__slide"));
       this.moveToSlide(clickedIndex);
       this.#currentIndex = clickedIndex;
       this.restartTimer();
@@ -139,27 +147,28 @@ class AssortmentView {
 
   moveToSlide(index) {
     const transformValue = `translateX(-${index * (this.#regularWidth + 2 * this.#fontSize) + this.#activeWidth / 2}px)`;
-    this.slides.forEach((slide) => {
+    this.#slides.forEach((slide) => {
+      
       slide.classList.remove("card__slide--active");
       slide.querySelector(".carousel-card__text").style.setProperty("font-size", "0.8rem");
       slide.querySelector(".card__action").classList.remove("card__action--active");
       slide.style.setProperty("transform", transformValue);
     });
-    this.slides[index].classList.add("card__slide--active");
-    this.slides[index].querySelector(".carousel-card__text").style.setProperty("font-size", "1.3rem");
-    this.slides[index].querySelector(".card__action").classList.add("card__action--active");
+    this.#slides[index].classList.add("card__slide--active");
+    this.#slides[index].querySelector(".carousel-card__text").style.setProperty("font-size", "1.3rem");
+    this.#slides[index].querySelector(".card__action").classList.add("card__action--active");
     this.restartTimer();
   }
 
   moveToNextSlide() {
-    this.#currentIndex = (this.#currentIndex + 1) % this.slides.length;
+    this.#currentIndex = (this.#currentIndex + 1) % this.#slides.length;
     this.moveToSlide(this.#currentIndex);
     this.restartTimer();
   }
 
   moveToPrevSlide() {
     this.#currentIndex =
-      (this.#currentIndex - 1 + this.slides.length) % this.slides.length;
+      (this.#currentIndex - 1 + this.#slides.length) % this.#slides.length;
     this.moveToSlide(this.#currentIndex);
     this.restartTimer();
   }
