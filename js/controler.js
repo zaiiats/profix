@@ -1,12 +1,13 @@
 import fetchData from "./model.js";
 
-import AssortmentView from "./views/assortmentView.js";
 import HamburgerFunctionality from "./views/hamburgerView.js";
 import NavLinkFunctionality from "./views/navView.js";
 import PageInitialisation from "./views/pageInitView.js";
 import SlideshowView from "./views/slideshowView.js";
 import TextWriter from "./views/textWriterView.js";
 import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
+import CarouselView from "./views/carouselView.js";
+import AssortmentView from "./views/assortmentView.js";
 
 import {state} from "./model.js"
 
@@ -21,7 +22,9 @@ const startPage = async function (state) {
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
     const createTextWriter = new TextWriter();
+    const carouselView = new CarouselView(state.data);
     const assortmentView = new AssortmentView(state.data);
+
     
   } catch (error) {
     console.error("Error during startPage execution:", error);

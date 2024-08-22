@@ -25,7 +25,7 @@ class SlideshowView {
     this.#addSwipeListener();
   }
 
-  #createDots() {
+  #createDots() {    
     let html = "";
     this.#slides.forEach(
       (slide, i) => (html += `<div class="dot dot--${i + 1}"></div>`)
