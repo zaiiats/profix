@@ -524,7 +524,7 @@ a:visited {
   opacity: 1;
 }
 
-.icon-item__heart--opened {
+.icon-item__like--opened {
   fill: #ff0000;
   stroke: #ff0000;
 }
