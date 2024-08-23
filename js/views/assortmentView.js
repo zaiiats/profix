@@ -101,6 +101,10 @@ class AssortmentView {
   }
 
   #moveToItem(e){
+    console.log('move');
+    console.log(e);
+    
+    
     let bar;
     let url;
     let hash;
