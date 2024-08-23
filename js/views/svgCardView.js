@@ -3,24 +3,29 @@ class SvgCardView {
 
   constructor() {
     this.#svg = document.querySelector('.svg__card')
-    if (this.#svg) this.#initSvgs()
   }
 
   #initSvgs(){
     this.wrapper = document.querySelector(".site__content--assortment");
     this.wrapper.addEventListener('click',this.#clickHandler.bind(this));
     this.svgs = document.querySelectorAll('svg__card');
-    this.svgs.forEach(svg=>{
-      
-    })
-    this.cards
+    this.documentCards = document.querySelectorAll('.card')
+
+    this.documentCards.forEach((card) => {
+      if (card.getAttribute("like") === "yes") {
+        card.querySelector(".icon-item--like").classList.add('icon-item__like--opened');
+      }
+      if (card.getAttribute("bookmark") === "yes") {
+        card.querySelector(".icon-item--bookmark").classList.add('icon-item__bookmark--opened');
+      }
+    });
   }
 
   #clickHandler(e){
     if (e.target.closest(".svg__card") || e.target.classList.contains('svg__card')) {
       let svg = e.target.closest(".svg__card") || e.target.classList.contains("svg__card");
         
-      let svgType = svg.classList.contains('icon-item--heart')?'like':'bookmark';
+      let svgType = svg.classList.contains('icon-item--like')?'like':'bookmark';
       
       e.stopPropagation();
       e.preventDefault();
@@ -56,6 +61,8 @@ class SvgCardView {
   setData(data){
     this.data = data;
     this.cards = this.data;
+    
+    if (this.#svg) this.#initSvgs();
   }
 
 }
