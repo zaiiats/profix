@@ -128,7 +128,7 @@ class AssortmentView {
     console.log(url);
     hash = url.slice(url.indexOf("#"));
     console.log(hash);
-    if (!hash) return;
+    if (hash === '/') return;
     else{
       bar = this.assortment.querySelector(hash);
       console.log(bar);
