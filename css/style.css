@@ -182,22 +182,6 @@ body {
   flex: 1;
 }
 
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
-}
-.header__links-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-}
-
 @font-face {
   font-family: "Imperial_Web";
   src: url("../fonts/Webfont/Imperial_Web.ttf") format("truetype");
@@ -356,11 +340,10 @@ a:visited {
   transition: all 0.6s ease-in-out;
 }
 
-.carousel-card__text {
+/*.carousel-card__text{
   font-size: 0.8rem;
   transition: all 0.6s ease-in-out;
-}
-
+}*/
 .slide-item__label {
   font-size: 2.2rem;
   font-weight: 600;
@@ -1438,6 +1421,13 @@ a:visited {
     gap: 1rem;
   }
 }
+@media only screen and (max-width: 600px) {
+  .site__content--assortment {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+  }
+}
 
 .sidebar {
   background-color: var(--background-smaller);
@@ -1463,6 +1453,7 @@ a:visited {
 }
 
 .carousel-wrapper {
+  min-height: 50rem;
   flex-direction: column;
   align-items: stretch;
   background-color: var(--background-smaller);
@@ -1503,25 +1494,12 @@ a:visited {
   opacity: 0.2;
   transition: all 0.6s ease-in-out;
 }
-@media only screen and (max-width: 600px) {
-  .card__slide {
-    height: 15rem;
-    width: 10rem;
-    padding: 0rem;
-  }
-}
 
 .card__slide--active {
   padding: 1.3333333rem;
   height: 30rem;
   width: 25rem;
   opacity: 1;
-}
-@media only screen and (max-width: 600px) {
-  .card__slide--active {
-    height: 25rem;
-    width: 20rem;
-  }
 }
 
 .carousel__card {
@@ -1551,6 +1529,24 @@ a:visited {
 
 .assortment__name {
   margin: 4rem 0 0;
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+.header__links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .site__content--account {

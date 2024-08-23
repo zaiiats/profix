@@ -74,19 +74,3 @@ body {
   width: 100%;
   flex: 1;
 }
-.header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
-
-  &__links-wrapper {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-  }
-}

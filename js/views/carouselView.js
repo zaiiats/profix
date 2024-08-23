@@ -23,6 +23,7 @@ class AssortmentView {
   }
 
   #initCarousel() {
+    
     this.#numOfCards = parseFloat(this.#carousel.getAttribute("length"));
 
     this.#initHtml();
@@ -162,9 +163,9 @@ class AssortmentView {
     }px)`;
     this.#slides.forEach((slide) => {
       slide.classList.remove("card__slide--active");
-      slide
+      /*slide
         .querySelector(".carousel-card__text")
-        .style.setProperty("font-size", "0.8rem");
+        .style.setProperty("font-size", "0.8rem");*/
       slide
         .querySelector(".card__action")
         .classList.add("card__action--not-active");

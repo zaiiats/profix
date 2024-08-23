@@ -29,29 +29,19 @@ class AssortmentView {
     this.#insertNavAndLabels();
     this.#insertHtml();
 
-    this.assortment.addEventListener(
-      "mouseenter",
-      (e) => {
-        if (e.target.classList.contains("card")) {
-          e.target
-            .querySelector(".card__action")
-            .classList.remove("card__action--not-active");
-        }
-      },
-      true
-    );
+    this.assortment.addEventListener("mouseenter",(e) => {
+      if (e.target.classList.contains('card')) {
+        let card = e.target.closest(".card") || e.target.classList.contains('card')
+        card.querySelector(".card__action").classList.remove("card__action--not-active");
+      }
+    },true);
 
-    this.assortment.addEventListener(
-      "mouseleave",
-      (e) => {
-        if (e.target.classList.contains("card")) {
-          e.target
-            .querySelector(".card__action")
-            .classList.add("card__action--not-active");
-        }
-      },
-      true
-    );
+    this.assortment.addEventListener("mouseleave",(e) => {
+      if (e.target.classList.contains('card')) {
+        let card = e.target.closest(".card") || e.target.classList.contains('card')
+        card.querySelector(".card__action").classList.add("card__action--not-active");
+      }
+    },true);
   }
 
   #insertNavAndLabels() {
@@ -75,7 +65,7 @@ class AssortmentView {
       this.#items.forEach((item) => {
         if (item.label == label) {
           html += `
-            <a productId="${item.id}" class="card carousel__card" aria-label="card" item="priklad" like="${item.like}" bookmark="${item.bookmark}" href="../${item.family}/#${item.type}">
+            <a productId="${item.id}" class="card carousel__card" aria-label="card" item="priklad" like="${item.like}" bookmark="${item.bookmark}">
               <div class="card__action card__action--not-active">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="icon-item--like svg svg__card">
                   <path d="m19.4626 3.99415c-2.6817-1.64492-5.0222-.98204-6.4282.07386-.5766.43295-.8648.64942-1.0344.64942s-.4578-.21647-1.0344-.64942c-1.40598-1.0559-3.74651-1.71878-6.42816-.07386-3.51937 2.15879-4.315719 9.28075 3.80209 15.28925 1.54619 1.1444 2.31927 1.7166 3.66047 1.7166s2.1143-.5722 3.6605-1.7166c8.1178-6.0085 7.3214-13.13046 3.8021-15.28925z"/>

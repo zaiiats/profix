@@ -17,6 +17,11 @@
   @media only screen and (max-width: 800px) {
     gap: 1rem;
   }
+  @media only screen and (max-width: 600px) {
+    gap: 3rem;
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+  }
 }
 
 .sidebar{
@@ -38,6 +43,7 @@
 }
 
 .carousel-wrapper{
+  min-height: 50rem;
   flex-direction: column;
   align-items: stretch;
   background-color: var(--background-smaller);
@@ -75,11 +81,6 @@
   width: 15rem;
   opacity: 0.2; 
   transition: all .6s ease-in-out;
-  @media only screen and (max-width: 600px) {
-    height: 15rem;
-    width: 10rem;
-    padding: 0rem;
-  }
 }
 
 .card__slide--active {
@@ -87,10 +88,6 @@
   height: 30rem;
   width: 25rem;
   opacity: 1;
-  @media only screen and (max-width: 600px) {
-    height: 25rem;
-    width: 20rem;
-  }
 }
 .carousel__card{
   height: 100%;
@@ -121,3 +118,22 @@
   margin: 4rem 0 0;
 }
 
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+  gap: 2rem;
+
+  &__links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
