@@ -5,11 +5,14 @@
   grid-template-rows: 1fr min-content;
   align-items: center;
   border: 0.1rem var(--white-color-text) solid;
-  padding: 1rem;
+  padding: 2rem 1rem 1rem;
   background-color: var(--main-bg-color);
   color: var(--white-color-text);
   transition: all 0.15s ease-in-out;
   overflow: hidden;
+  @media only screen and (max-width: 600px) {
+    padding: 1rem .5rem .5rem;
+  }
 
   &:hover {
     border-color: var(--accent-color);
@@ -83,11 +86,13 @@
   fill: #d59500;
   stroke: #d59500;
 }
-.active_slide > .card{
-  font-size: 1rem;
-}
 .card__action--not-active{
   display: flex;
   visibility: hidden;
   opacity: 0;
+}
+
+.svg__card{
+  height: 3rem;
+  padding: 0.5rem;
 }
