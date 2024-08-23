@@ -39,7 +39,7 @@ class AssortmentView {
     let images = document.querySelectorAll("card__img");
     
     this.checkImagesLoadedAndExecute(images, () => {
-      this.#moveToItem();
+      
     });
 
     console.log(5);
@@ -109,6 +109,7 @@ class AssortmentView {
       this.assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
     });
+    this.#moveToItem();
   }
 
   #moveToItem(e){
