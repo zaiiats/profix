@@ -59,7 +59,7 @@ class AssortmentView {
     let htmlForLabels = "";
 
     this.#labels.forEach((label, i) => {
-      htmlForNav += `<a href="../${this.#family}/#${this.#types[i]}" class="sidebar_item">${label}</a>`;
+      htmlForNav += `<a type="#${this.#types[i]}" class="sidebar_item">${label}</a>`;
       htmlForLabels += `<div class="assortment__name" id="${this.#types[i]}">${label}</div>
         <div class="assortment_bar"></div>`;
     });
@@ -102,6 +102,8 @@ class AssortmentView {
 
   #moveToItem(e){
     console.log('move');
+    console.log(this.sidebar);
+    
     console.log(e);
     
     
@@ -110,7 +112,7 @@ class AssortmentView {
     let hash;
     if (e) {
       e.preventDefault();
-      url = e.target.getAttribute('href')
+      url = e.target.getAttribute('type')
     }
     else url = window.location.href;
 
