@@ -1,12 +1,16 @@
 class AssortmentView {
+  #data;
+  #sidebar;
+  #assortment;
+  #assortmentBar;
   #family;
   #items;
   #types;
   #labels;
 
   constructor() {
-    this.sidebar = document.querySelector(".sidebar");
-    this.assortment = document.querySelector(".assortment");
+    this.#sidebar = document.querySelector(".sidebar");
+    this.#assortment = document.querySelector(".assortment");
     this.#family;
     this.#items = [];
     this.#types = [];
@@ -14,56 +18,70 @@ class AssortmentView {
   }
 
   #initAssortment() {
-    console.log(1);
-    
-    this.#family = this.assortment.getAttribute("family");
-    console.log(2);
-    
-    this.data.map((item) => {
-      if (item.family == this.#family) this.#items.push(item);
-    });
-    this.#items.map((item) => {
-      if (!this.#types.includes(item.type)) {
-        this.#types.push(item.type);
-        this.#labels.push(item.label);
-      }
-    });
-
-    console.log(3);
-    
-    this.#insertSidebarAndLabels();
-    this.#insertHtml();
-    console.log(4);
+    this.#family = this.#assortment.getAttribute("family");
     
 
-    let images = document.querySelectorAll("card__img");
-    
-    this.checkImagesLoadedAndExecute(images, () => {
+    if (this.#family == 'account') {
+      this.likeItems = [];
+      this.bookmarkItems = [];
+      this.#data.map((item) => {
+        if (item.like == 'yes') this.likeItems.push(item);
+        if (item.bookmark == 'yes') this.bookmarkItems.push(item);
+
+      });
+      this.#labels = ['like','bookmark']
+      this.#items = [...this.likeItems, ...this.bookmarkItems];
+      console.log(this.#items);
+      this.#insertHtml('account')
+
+    } else {
+
+      this.#data.map((item) => {
+        if (item.family == this.#family) this.#items.push(item);
+      });
       
-    });
+      this.#items.map((item) => {
+        if (!this.#types.includes(item.type)) {
+          this.#types.push(item.type);
+          this.#labels.push(item.label);
+        }
+      });
 
-    console.log(5);
+      this.#insertSidebarAndLabels();
+      this.#insertHtml();
+
+      this.#sidebar.addEventListener("click", this.#moveToItem.bind(this));
+      setTimeout(this.#moveToItem.bind(this), 1000);
+    }
+
+    this.#assortment.addEventListener(
+      "mouseenter",
+      (e) => {
+        if (e.target.classList.contains("card")) {
+          let card =
+            e.target.closest(".card") || e.target.classList.contains("card");
+          card
+            .querySelector(".card__action")
+            .classList.remove("card__action--not-active");
+        }
+      },
+      true
+    );
+
+    this.#assortment.addEventListener(
+      "mouseleave",
+      (e) => {
+        if (e.target.classList.contains("card")) {
+          let card =
+            e.target.closest(".card") || e.target.classList.contains("card");
+          card
+            .querySelector(".card__action")
+            .classList.add("card__action--not-active");
+        }
+      },
+      true
+    );
     
-
-    this.assortment.addEventListener("mouseenter",(e) => {
-      if (e.target.classList.contains('card')) {
-        let card = e.target.closest(".card") || e.target.classList.contains('card')
-        card.querySelector(".card__action").classList.remove("card__action--not-active");
-      }
-    },true);
-
-    this.assortment.addEventListener("mouseleave",(e) => {
-      if (e.target.classList.contains('card')) {
-        let card = e.target.closest(".card") || e.target.classList.contains('card')
-        card.querySelector(".card__action").classList.add("card__action--not-active");
-      }
-    },true);
-
-    this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
-    console.log(6);
-    
-    setTimeout(this.#moveToItem.bind(this),1000);
-
   }
 
   #insertSidebarAndLabels() {
@@ -73,19 +91,18 @@ class AssortmentView {
     this.#labels.forEach((label, i) => {
       htmlForSidebar += `<a type="#${this.#types[i]}" class="sidebar__item">${label}</a>`;
       htmlForLabels += `<div class="assortment__name" id="${this.#types[i]}">${label}</div>
-        <div class="assortment_bar"></div>`;
+      <div class="assortment__bar"></div>`;
     });
-    this.sidebar.insertAdjacentHTML("beforeend", htmlForSidebar);
-    this.assortment.insertAdjacentHTML("beforeend", htmlForLabels);
+    this.#sidebar.insertAdjacentHTML("beforeend", htmlForSidebar);
+    this.#assortment.insertAdjacentHTML("beforeend", htmlForLabels);
   }
 
-  #insertHtml() {
+  #insertHtml(option) {
     let html = "";
-    this.assortmentBar = document.querySelectorAll(".assortment_bar");
+    this.#assortmentBar = document.querySelectorAll(".assortment__bar");
     this.#labels.forEach((label, i) => {
-      let currentItems = [];
       this.#items.forEach((item) => {
-        if (item.label == label) {
+        if (item.label == label || item[label] == 'yes') {
           html += `
             <a productId="${item.id}" class="card" aria-label="card" item="priklad" like="${item.like}" bookmark="${item.bookmark}">
               <div class="card__action card__action--not-active">
@@ -107,36 +124,28 @@ class AssortmentView {
           `;
         }
       });
-      this.assortmentBar[i].insertAdjacentHTML("beforeend", html);
+      this.#assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
     });
   }
 
-  #moveToItem(e){
-    console.log('move');
-    
-    console.log(e);
-    
-    
+  #moveToItem(e) {
     let bar;
     let url;
     let hash;
     if (e) {
       e.preventDefault();
-      url = e.target.getAttribute('type')
-    }
-    else url = window.location.href;
-    console.log(url);
+      url = e.target.getAttribute("type");
+    } else url = window.location.href;
     hash = url.slice(url.indexOf("#"));
-    console.log(hash);
-    if (hash === '/') return;
-    else{
-      bar = this.assortment.querySelector(hash);
-      console.log(bar);
-
+    if (hash === "/") return;
+    else {
+      bar = this.#assortment.querySelector(hash);
       if (bar) {
-        const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-        
+        const y =
+          bar.getBoundingClientRect().top +
+          window.scrollY -
+          9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
         window.scroll({
           top: y,
           behavior: "smooth",
@@ -146,35 +155,9 @@ class AssortmentView {
   }
 
   setData(data) {
-    this.data = data;
+    this.#data = data;
     if (document.querySelector(".assortment")) this.#initAssortment();
   }
-
-
-  checkImagesLoadedAndExecute(images, callback) {
-    let loadedImagesCount = 0;
-
-    images.forEach(img => {
-      if (img.complete && img.naturalHeight !== 0) {
-        loadedImagesCount++;
-      } else {
-        img.addEventListener('load', () => {
-          loadedImagesCount++;
-          if (loadedImagesCount === images.length) {
-            callback();
-          }
-        });
-      }
-    });
-
-    if (loadedImagesCount === images.length) {
-      callback();
-    }
-  }
-
-
-
-
 }
 
 export default AssortmentView;

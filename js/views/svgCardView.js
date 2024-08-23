@@ -7,6 +7,7 @@ class SvgCardView {
 
   #initSvgs(){
     this.wrapper = document.querySelector(".site__content--assortment");
+    if (!this.wrapper) this.wrapper = document.querySelector(".site__content--account");
     this.wrapper.addEventListener('click',this.#clickHandler.bind(this));
     this.svgs = document.querySelectorAll('svg__card');
     this.documentCards = document.querySelectorAll('.card')
@@ -53,16 +54,23 @@ class SvgCardView {
     else {
       svg.classList.remove(`icon-item__${svgType}--opened`);
     }
-    
-    localStorage.setItem('data',JSON.stringify(this.cards))
+    let data = JSON.stringify(this.cards)
+    this.#putData(data);
   }
 
 
   setData(data){
     this.data = data;
     this.cards = this.data;
-    
     if (this.#svg) this.#initSvgs();
+  }
+
+  sendData(callback){
+    this.callback = callback;
+  }
+
+  #putData(key){
+    this.callback(`data`, key);
   }
 
 }

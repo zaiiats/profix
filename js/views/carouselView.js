@@ -1,4 +1,5 @@
 class AssortmentView {
+  #data;
   #carousel;
   #prevIds;
   #numOfCards;
@@ -13,17 +14,15 @@ class AssortmentView {
     this.#prevIds = [];
     this.#numOfCards;
     this.#slides;
-    this.cards;
     this.#currentIndex = 0;
     this.#timer;
     this.#regularWidth;
     this.#activeWidth;
     this.#fontSize;
-    this.data;
+    this.#data;
   }
 
   #initCarousel() {
-    
     this.#numOfCards = parseFloat(this.#carousel.getAttribute("length"));
 
     this.#initHtml();
@@ -41,14 +40,14 @@ class AssortmentView {
           clearInterval(this.#timer);
         }.bind(this)
       );
-      slide.addEventListener("mouseleave", this.restartTimer.bind(this));
+      slide.addEventListener("mouseleave", this.#restartTimer.bind(this));
     });
 
-    this.moveToSlide(0);
+    this.#moveToSlide(0);
     window.addEventListener("resize", this.#getWidthAndFont.bind(this));
     this.#carousel.addEventListener("click", this.#handleClick.bind(this));
     this.#addSwipeListener();
-    this.restartTimer();
+    this.#restartTimer();
   }
 
   #initHtml() {
@@ -64,7 +63,7 @@ class AssortmentView {
     }
 
     for (let i = 0; i < this.#numOfCards; i++) {
-      let randomNumber = Math.trunc(Math.random() * this.data.length) + 1;
+      let randomNumber = Math.trunc(Math.random() * this.#data.length) + 1;
       randomNumber = checkRandomNumber.call(this, randomNumber);
 
       this.#insertCards(i);
@@ -82,7 +81,7 @@ class AssortmentView {
   }
 
   #insertCardInfo(randomNumber, i) {
-    let current = this.data[randomNumber - 1];
+    let current = this.#data[randomNumber - 1];
     let html = `
       <a productId="${current.id}" class="card carousel__card" aria-label="card" item="priklad" like="${current.like}" bookmark="${current.bookmark}" href="${current.family}/#${current.type}">
         <div class="card__action card__action--not-active">
@@ -128,7 +127,7 @@ class AssortmentView {
     this.#fontSize = parseFloat(
       getComputedStyle(document.documentElement).fontSize
     );
-    this.restartTimer();
+    this.#restartTimer();
   }
 
   #handleClick(e) {
@@ -143,29 +142,26 @@ class AssortmentView {
       const clickedIndex = this.#slides.indexOf(
         e.target.closest(".card__slide")
       );
-      this.moveToSlide(clickedIndex);
+      this.#moveToSlide(clickedIndex);
       this.#currentIndex = clickedIndex;
-      this.restartTimer();
+      this.#restartTimer();
     }
     if (e.target.closest(".slideshow-wrapper__arrow--previous")) {
-      this.moveToPrevSlide();
-      this.restartTimer();
+      this.#moveToPrevSlide();
+      this.#restartTimer();
     }
     if (e.target.closest(".slideshow-wrapper__arrow--next")) {
-      this.moveToNextSlide();
-      this.restartTimer();
+      this.#moveToNextSlide();
+      this.#restartTimer();
     }
   }
 
-  moveToSlide(index) {
+  #moveToSlide(index) {
     const transformValue = `translateX(-${
       index * (this.#regularWidth + 2 * this.#fontSize) + this.#activeWidth / 2
     }px)`;
     this.#slides.forEach((slide) => {
       slide.classList.remove("card__slide--active");
-      /*slide
-        .querySelector(".carousel-card__text")
-        .style.setProperty("font-size", "0.8rem");*/
       slide
         .querySelector(".card__action")
         .classList.add("card__action--not-active");
@@ -178,25 +174,25 @@ class AssortmentView {
     this.#slides[index]
       .querySelector(".card__action")
       .classList.remove("card__action--not-active");
-    this.restartTimer();
+    this.#restartTimer();
   }
 
-  moveToNextSlide() {
+  #moveToNextSlide() {
     this.#currentIndex = (this.#currentIndex + 1) % this.#slides.length;
-    this.moveToSlide(this.#currentIndex);
-    this.restartTimer();
+    this.#moveToSlide(this.#currentIndex);
+    this.#restartTimer();
   }
 
-  moveToPrevSlide() {
+  #moveToPrevSlide() {
     this.#currentIndex =
       (this.#currentIndex - 1 + this.#slides.length) % this.#slides.length;
-    this.moveToSlide(this.#currentIndex);
-    this.restartTimer();
+    this.#moveToSlide(this.#currentIndex);
+    this.#restartTimer();
   }
 
-  restartTimer() {
+  #restartTimer() {
     clearInterval(this.#timer);
-    this.#timer = setInterval(this.moveToNextSlide.bind(this), 5000);
+    this.#timer = setInterval(this.#moveToNextSlide.bind(this), 5000);
   }
 
   #addSwipeListener() {
@@ -214,16 +210,16 @@ class AssortmentView {
   }
 
   #handleSwipeGesture(startX, endX) {
-    const swipeThreshold = 20;
+    const swipeThreshold = 50;
     if (startX - endX > swipeThreshold) {
-      this.moveToNextSlide();
+      this.#moveToNextSlide();
     } else if (endX - startX > swipeThreshold) {
-      this.moveToPrevSlide();
+      this.#moveToPrevSlide();
     }
   }
 
   setData(data) {
-    this.data = data;
+    this.#data = data;
     if (this.#carousel) this.#initCarousel();
   }
 }

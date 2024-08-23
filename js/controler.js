@@ -11,6 +11,7 @@ import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 import CarouselView from "./views/carouselView.js";
 import AssortmentView from "./views/assortmentView.js";
 import SvgCardView from "./views/svgCardView.js";
+import ExitView from "./views/exitView.js"
 
 
 const startPage = async function (state) {
@@ -19,7 +20,6 @@ const startPage = async function (state) {
     const pageInit = new PageInitialisation();
     await pageInit.init();
     
-    const themeSwitchFunc = new ThemeSwitchFunctionalityView(state.theme);
     const hamburgerFunc = new HamburgerFunctionality();
     const navLinkFunc = new NavLinkFunctionality();
     const slideshowFunc = new SlideshowView();
@@ -28,8 +28,13 @@ const startPage = async function (state) {
     carouselView.setData(state.data);
     const assortmentView = new AssortmentView();    
     assortmentView.setData(state.data);
+    const themeSwitchFunc = new ThemeSwitchFunctionalityView();
+    themeSwitchFunc.sendData(localStorage.setItem.bind(localStorage));
+    themeSwitchFunc.setData(state.theme);
     const svgCardView = new SvgCardView();    
+    svgCardView.sendData(localStorage.setItem.bind(localStorage));
     svgCardView.setData(state.data);
+    const exitView = new ExitView();
 
   } catch (error) {
     console.error("Error during startPage execution:", error);

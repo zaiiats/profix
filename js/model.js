@@ -3,7 +3,7 @@ export const state = {
   data: {},
   theme: {},
 };
-state.theme = localStorage.getItem("theme");
+state.theme = localStorage.getItem("theme") || 'black';
 
 export async function fetchData() {
   try {

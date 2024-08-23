@@ -2,16 +2,13 @@ class ThemeSwitchFunctionalityView {
   #themeSwitchCheckbox;
   #oval;
   #wrapper;
-  constructor(theme) {
-    this.theme = theme;
+  constructor() {
     this.#themeSwitchCheckbox = document.querySelector(".theme-switch__checkbox");
     this.#oval = document.querySelector(".theme-switch__oval");
     this.#wrapper = document.querySelector('.wrapper')
-    this.#initSwitch();
-  }
-  #initSwitch(){
-    if (!document.querySelector(".theme-switch")) return;
     
+  }
+  #initSwitch(){    
     if (this.theme != 'black') {
       this.#changeTheme(this.theme);
       this.#themeSwitchCheckbox.checked = true;
@@ -61,8 +58,7 @@ class ThemeSwitchFunctionalityView {
       });
     }
 
-    localStorage.setItem("theme", theme);
-    
+    this.#putData(theme);
   }
 
   setMultipleProperties(properties) {
@@ -71,6 +67,19 @@ class ThemeSwitchFunctionalityView {
     for (const [property, value] of Object.entries(properties)) {
       root.style.setProperty(property, value);
     }
+  }
+
+  setData(theme){
+    this.theme = theme;
+    if (document.querySelector(".theme-switch")) this.#initSwitch();;
+  }
+
+  sendData(callback){
+    this.callback = callback;
+  }
+
+  #putData(key){
+    this.callback(`theme`, key);
   }
 }
 

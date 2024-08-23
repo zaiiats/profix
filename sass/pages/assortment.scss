@@ -31,15 +31,16 @@
     width: 100%;
     padding: 1rem;
   }
-}
-.sidebar__item{
-  font-size: 1.3rem;
-  display: block;
-  padding: 2rem 0.5rem;
-  cursor: pointer;
-  @media only screen and (max-width: 800px) {
-    width: 100%;
-    padding: 2rem 0;
+
+  &__item{
+    font-size: 1.3rem;
+    display: block;
+    padding: 2rem 0.5rem;
+    cursor: pointer;
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      padding: 2rem 0;
+    }
   }
 }
 
@@ -51,17 +52,29 @@
   overflow: hidden;
   display: flex;
 }
-.carousel__heading{
-  flex: 0;
-  padding: 2rem 0 0;
-}
+ 
 .carousel{
   width: 100%;
   position: relative;
   overflow: hidden;
   align-self: stretch;
   flex: 1;
+
+  &__heading{
+    flex: 0;
+    padding: 2rem 0 0;
+  }
+
+  &__card{
+    height: 100%;
+    width: 100%;
+    @media only screen and (max-width: 600px) {
+      padding: 0.5rem;
+    }
+  }
 }
+
+
 .cards-wrapper{
   height: 100%;
   gap: 2rem;
@@ -82,19 +95,12 @@
   width: 15rem;
   opacity: 0.2; 
   transition: all .6s ease-in-out;
-}
 
-.card__slide--active {
-  padding: 1.3333333rem;
-  height: 30rem;
-  width: 25rem;
-  opacity: 1;
-}
-.carousel__card{
-  height: 100%;
-  width: 100%;
-  @media only screen and (max-width: 600px) {
-    padding: 0.5rem;
+  &--active {
+    padding: 1.3333333rem;
+    height: 30rem;
+    width: 25rem;
+    opacity: 1;
   }
 }
 
@@ -103,7 +109,9 @@
 
 
 
-.assortment_bar{
+
+
+.assortment__bar{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); 
   grid-gap: 3rem;

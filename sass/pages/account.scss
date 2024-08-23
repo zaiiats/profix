@@ -1,0 +1,74 @@
+.site__content--account {
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+  @media only screen and (max-width: 500px) {
+    
+  }
+}
+
+.account__section{
+ 
+  padding: 4rem;
+  background-color: var(--background-smaller);
+
+  &--account{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 0 0;
+  }
+  @media only screen and (max-width: 800px) {
+    padding: 1rem;
+  }
+}
+
+.account-icon__account{
+
+  height: 10rem;
+  width: 10rem;
+}
+
+.account__text{
+  font-size: 1.3rem;
+}
+
+.pop-up{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position:fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 998;
+
+  &__background{
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-bigger);
+    left: 0;
+    top: 0;
+    z-index: 999;
+  }
+  &__wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 60vh;
+    width: 60vw;
+    z-index: 1000;
+  }
+}
+.buttons__wrapper{
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+}
+.account__button{
+}
