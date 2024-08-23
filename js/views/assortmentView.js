@@ -52,6 +52,8 @@ class AssortmentView {
     },true);
 
     this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
+    console.log(this.sidebar);
+    
   }
 
   #insertNavAndLabels() {
@@ -117,6 +119,7 @@ class AssortmentView {
     else url = window.location.href;
 
     hash = url.slice(url.indexOf("#"));
+    console.log(hash);
     bar = this.assortment.querySelector(hash);
 
     if (bar) {
