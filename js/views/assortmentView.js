@@ -28,6 +28,7 @@ class AssortmentView {
 
     this.#insertNavAndLabels();
     this.#insertHtml();
+    this.#moveToItem();
 
     this.assortment.addEventListener("mouseenter",(e) => {
       if (e.target.classList.contains('card')) {
@@ -42,6 +43,8 @@ class AssortmentView {
         card.querySelector(".card__action").classList.add("card__action--not-active");
       }
     },true);
+
+    this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
   }
 
   #insertNavAndLabels() {
@@ -87,6 +90,27 @@ class AssortmentView {
       });
       this.assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
+    });
+  }
+
+  #moveToItem(e){
+    let bar;
+    let url;
+    let hash;
+    if (e) {
+      e.preventDefault();
+      url = e.target.getAttribute('href')
+    }
+    else url = window.location.href;
+    
+    hash = url.slice(url.indexOf("#"));
+    bar = this.assortment.querySelector(hash);
+    
+    const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+    
+    window.scroll({
+      top: y,
+      behavior: "smooth",
     });
   }
 
