@@ -24,15 +24,12 @@ class AssortmentView {
     if (this.#family == 'account') {
       this.likeItems = [];
       this.bookmarkItems = [];
-      this.#data.map((item) => {
-        if (item.like == 'yes') this.likeItems.push(item);
-        if (item.bookmark == 'yes') this.bookmarkItems.push(item);
 
+      this.#labels = ["like", "bookmark"];
+      this.#data.map((item) => {
+        if (item.like == 'yes' || item.bookmark == 'yes') this.#items.push(item);
       });
-      this.#labels = ['like','bookmark']
-      this.#items = [...this.likeItems, ...this.bookmarkItems];
-      console.log(this.#items);
-      this.#insertHtml('account')
+      this.#insertHtml()
 
     } else {
 
@@ -51,7 +48,7 @@ class AssortmentView {
       this.#insertHtml();
 
       this.#sidebar.addEventListener("click", this.#moveToItem.bind(this));
-      setTimeout(this.#moveToItem.bind(this), 1000);
+      setTimeout(this.#moveToItem.bind(this), 500);
     }
 
     this.#assortment.addEventListener(
@@ -97,7 +94,7 @@ class AssortmentView {
     this.#assortment.insertAdjacentHTML("beforeend", htmlForLabels);
   }
 
-  #insertHtml(option) {
+  #insertHtml() {
     let html = "";
     this.#assortmentBar = document.querySelectorAll(".assortment__bar");
     this.#labels.forEach((label, i) => {
@@ -124,6 +121,9 @@ class AssortmentView {
           `;
         }
       });
+      if (!html) {
+        this.#assortmentBar[i].insertAdjacentHTML("beforeend", "Нема вибраних елементів (");
+      }
       this.#assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
     });

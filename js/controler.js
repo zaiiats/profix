@@ -35,6 +35,9 @@ const startPage = async function (state) {
     svgCardView.sendData(localStorage.setItem.bind(localStorage));
     svgCardView.setData(state.data);
     const exitView = new ExitView();
+    exitView.sendData(localStorage.clear.bind(localStorage));
+    exitView.setData(state);
+
 
   } catch (error) {
     console.error("Error during startPage execution:", error);

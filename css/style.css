@@ -385,29 +385,27 @@ a:visited {
   line-height: 120%;
 }
 
-.copyright__text--main, .carousel__heading {
+.copyright__text--main, .carousel__heading, .assortment__name {
   font-size: 2.2rem;
   text-align: center;
-}
-
-.assortment__name {
-  text-align: center;
-  font-size: 2.2rem;
 }
 
 .label {
   font-size: 2.2rem;
+  text-align: center;
 }
 
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
   padding: 1.2rem 3.5rem;
   border-radius: 0.2rem;
   font-size: 1.5rem;
   font-weight: 500;
   transition: all 0.2s ease-in-out;
+  cursor: pointer;
 }
 @media only screen and (max-width: 800px) {
   .button {
@@ -1402,6 +1400,7 @@ a:visited {
   flex-direction: column;
   margin-top: 3rem;
 }
+
 .account__section {
   padding: 4rem;
   background-color: var(--background-smaller);
@@ -1415,7 +1414,7 @@ a:visited {
 }
 @media only screen and (max-width: 800px) {
   .account__section {
-    padding: 1rem;
+    padding: 4rem 1rem;
   }
 }
 
@@ -1429,7 +1428,7 @@ a:visited {
 }
 
 .pop-up {
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   position: fixed;
@@ -1457,12 +1456,37 @@ a:visited {
   width: 60vw;
   z-index: 1000;
 }
+@media only screen and (max-width: 800px) {
+  .pop-up__wrapper {
+    height: 95vh;
+    width: 95vw;
+  }
+}
 
 .buttons__wrapper {
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
+}
+@media only screen and (max-width: 800px) {
+  .buttons__wrapper {
+    gap: 1rem;
+  }
+}
+
+.pop-up__svg--close {
+  position: absolute;
+  right: 20%;
+  padding: 1rem;
+  height: 4rem;
+  width: 4rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 800px) {
+  .pop-up__svg--close {
+    right: 5%;
+  }
 }
 
 .site__assortment {
