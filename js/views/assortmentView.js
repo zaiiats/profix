@@ -28,7 +28,14 @@ class AssortmentView {
 
     this.#insertNavAndLabels();
     this.#insertHtml();
-    this.#moveToItem();
+
+    let images = document.querySelectorAll("card__img");
+    
+    this.checkImagesLoadedAndExecute(images, () => {
+      this.#moveToItem();
+    });
+
+
 
     this.assortment.addEventListener("mouseenter",(e) => {
       if (e.target.classList.contains('card')) {
@@ -102,22 +109,50 @@ class AssortmentView {
       url = e.target.getAttribute('href')
     }
     else url = window.location.href;
-    
+
     hash = url.slice(url.indexOf("#"));
     bar = this.assortment.querySelector(hash);
-    
-    const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-    
-    window.scroll({
-      top: y,
-      behavior: "smooth",
-    });
+
+    if (bar) {
+      const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+      
+      window.scroll({
+        top: y,
+        behavior: "smooth",
+      });
+    }
   }
 
   setData(data) {
     this.data = data;
     if (document.querySelector(".assortment")) this.#initAssortment();
   }
+
+
+  checkImagesLoadedAndExecute(images, callback) {
+    let loadedImagesCount = 0;
+
+    images.forEach(img => {
+      if (img.complete && img.naturalHeight !== 0) {
+        loadedImagesCount++;
+      } else {
+        img.addEventListener('load', () => {
+          loadedImagesCount++;
+          if (loadedImagesCount === images.length) {
+            callback();
+          }
+        });
+      }
+    });
+
+    if (loadedImagesCount === images.length) {
+      callback();
+    }
+  }
+
+
+
+
 }
 
 export default AssortmentView;
