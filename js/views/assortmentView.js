@@ -14,7 +14,10 @@ class AssortmentView {
   }
 
   #initAssortment() {
+    console.log(1);
+    
     this.#family = this.assortment.getAttribute("family");
+    console.log(2);
     
     this.data.map((item) => {
       if (item.family == this.#family) this.#items.push(item);
@@ -26,8 +29,12 @@ class AssortmentView {
       }
     });
 
+    console.log(3);
+    
     this.#insertNavAndLabels();
     this.#insertHtml();
+    console.log(4);
+    
 
     let images = document.querySelectorAll("card__img");
     
@@ -35,7 +42,8 @@ class AssortmentView {
       this.#moveToItem();
     });
 
-
+    console.log(5);
+    
 
     this.assortment.addEventListener("mouseenter",(e) => {
       if (e.target.classList.contains('card')) {
@@ -53,6 +61,7 @@ class AssortmentView {
 
     this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
     console.log(this.sidebar);
+    console.log(6);
     
   }
 
@@ -104,7 +113,6 @@ class AssortmentView {
 
   #moveToItem(e){
     console.log('move');
-    console.log(this.sidebar);
     
     console.log(e);
     
@@ -117,10 +125,13 @@ class AssortmentView {
       url = e.target.getAttribute('type')
     }
     else url = window.location.href;
-
+    console.log(url);
     hash = url.slice(url.indexOf("#"));
     console.log(hash);
     bar = this.assortment.querySelector(hash);
+    console.log(bar);
+    
+
 
     if (bar) {
       const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
