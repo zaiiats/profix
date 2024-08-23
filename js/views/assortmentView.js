@@ -60,9 +60,10 @@ class AssortmentView {
     },true);
 
     this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
-    console.log(this.sidebar);
     console.log(6);
     
+    setTimeout(this.#moveToItem.bind(this),500);
+
   }
 
   #insertNavAndLabels() {
@@ -109,7 +110,6 @@ class AssortmentView {
       this.assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
     });
-    this.#moveToItem();
   }
 
   #moveToItem(e){
