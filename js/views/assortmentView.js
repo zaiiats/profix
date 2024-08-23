@@ -31,7 +31,7 @@ class AssortmentView {
 
     console.log(3);
     
-    this.#insertNavAndLabels();
+    this.#insertSidebarAndLabels();
     this.#insertHtml();
     console.log(4);
     
@@ -62,20 +62,20 @@ class AssortmentView {
     this.sidebar.addEventListener('click',this.#moveToItem.bind(this))
     console.log(6);
     
-    setTimeout(this.#moveToItem.bind(this),500);
+    setTimeout(this.#moveToItem.bind(this),1000);
 
   }
 
-  #insertNavAndLabels() {
-    let htmlForNav = "";
+  #insertSidebarAndLabels() {
+    let htmlForSidebar = "";
     let htmlForLabels = "";
 
     this.#labels.forEach((label, i) => {
-      htmlForNav += `<a type="#${this.#types[i]}" class="sidebar_item">${label}</a>`;
+      htmlForSidebar += `<a type="#${this.#types[i]}" class="sidebar__item">${label}</a>`;
       htmlForLabels += `<div class="assortment__name" id="${this.#types[i]}">${label}</div>
         <div class="assortment_bar"></div>`;
     });
-    this.sidebar.insertAdjacentHTML("beforeend", htmlForNav);
+    this.sidebar.insertAdjacentHTML("beforeend", htmlForSidebar);
     this.assortment.insertAdjacentHTML("beforeend", htmlForLabels);
   }
 
