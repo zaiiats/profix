@@ -128,18 +128,19 @@ class AssortmentView {
     console.log(url);
     hash = url.slice(url.indexOf("#"));
     console.log(hash);
-    bar = this.assortment.querySelector(hash);
-    console.log(bar);
-    
+    if (!hash) return;
+    else{
+      bar = this.assortment.querySelector(hash);
+      console.log(bar);
 
-
-    if (bar) {
-      const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
-      
-      window.scroll({
-        top: y,
-        behavior: "smooth",
-      });
+      if (bar) {
+        const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        
+        window.scroll({
+          top: y,
+          behavior: "smooth",
+        });
+      }
     }
   }
 
