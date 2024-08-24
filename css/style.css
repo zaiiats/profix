@@ -1597,7 +1597,6 @@ a:visited {
   .assortment__bar {
     grid-gap: 2rem;
     padding: 2rem;
-    grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
   }
 }
 

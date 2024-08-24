@@ -35,7 +35,7 @@ class ExitView {
       target.closest(".pop-up__close") ||
       target.closest(".pop-up__background")
     ) this.#popUp.style.display = "none";
-    if (target.closest(".pop-up__button--delete")) this.#deleteData();
+    if (target.closest(".pop-up__button--delete")) this.#deleteData('data');
   }
 
   #moveToItem(type) {   
@@ -59,14 +59,14 @@ class ExitView {
     }
   }
 
-  #deleteData() {
+  #deleteData(key) {
     console.log("Deleting data...");
-    this.#callback();
+    this.#callback(key);
     window.location.href = window.location.href.split("#")[0];
   }
 
-  setData(state) {
-    this.state = state;
+  setData(data) {
+    this.data = data;
     if (this.#exitButton) this.#initExitView();
   }
 

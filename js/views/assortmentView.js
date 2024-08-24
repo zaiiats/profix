@@ -20,19 +20,15 @@ class AssortmentView {
   #initAssortment() {
     this.#family = this.#assortment.getAttribute("family");
     
-
     if (this.#family == 'account') {
       this.likeItems = [];
       this.bookmarkItems = [];
-
       this.#labels = ["like", "bookmark"];
-      this.#data.map((item) => {
+      this.#data.map(item => {
         if (item.like == 'yes' || item.bookmark == 'yes') this.#items.push(item);
       });
-      this.#insertHtml()
-
-    } else {
-
+      this.#insertHtml();} 
+    else {
       this.#data.map((item) => {
         if (item.family == this.#family) this.#items.push(item);
       });
@@ -52,31 +48,21 @@ class AssortmentView {
     }
 
     this.#assortment.addEventListener(
-      "mouseenter",
-      (e) => {
+      "mouseenter", e => {
         if (e.target.classList.contains("card")) {
-          let card =
-            e.target.closest(".card") || e.target.classList.contains("card");
-          card
-            .querySelector(".card__action")
-            .classList.remove("card__action--not-active");
+          let card = e.target.closest(".card") || e.target.classList.contains("card");
+          card.querySelector(".card__action").classList.remove("card__action--not-active");
         }
-      },
-      true
+      },true
     );
 
     this.#assortment.addEventListener(
-      "mouseleave",
-      (e) => {
+      "mouseleave", e => {
         if (e.target.classList.contains("card")) {
-          let card =
-            e.target.closest(".card") || e.target.classList.contains("card");
-          card
-            .querySelector(".card__action")
-            .classList.add("card__action--not-active");
+          let card =e.target.closest(".card") || e.target.classList.contains("card");
+          card.querySelector(".card__action").classList.add("card__action--not-active");
         }
-      },
-      true
+      },true
     );
     
   }
@@ -87,7 +73,7 @@ class AssortmentView {
 
     this.#labels.forEach((label, i) => {
       htmlForSidebar += `<a type="#${this.#types[i]}" class="sidebar__item">${label}</a>`;
-      htmlForLabels += `<div class="assortment__name" id="${this.#types[i]}">${label}</div>
+      htmlForLabels += `<div class="assortment__name label" id="${this.#types[i]}">${label}</div>
       <div class="assortment__bar"></div>`;
     });
     this.#sidebar.insertAdjacentHTML("beforeend", htmlForSidebar);
@@ -98,7 +84,7 @@ class AssortmentView {
     let html = "";
     this.#assortmentBar = document.querySelectorAll(".assortment__bar");
     this.#labels.forEach((label, i) => {
-      this.#items.forEach((item) => {
+      this.#items.forEach(item => {
         if (item.label == label || item[label] == 'yes') {
           html += `
             <a productId="${item.id}" class="card" aria-label="card" item="priklad" like="${item.like}" bookmark="${item.bookmark}">
@@ -121,9 +107,13 @@ class AssortmentView {
           `;
         }
       });
+
       if (!html) {
-        this.#assortmentBar[i].insertAdjacentHTML("beforeend", "Нема вибраних елементів (");
+        this.#assortmentBar[i].insertAdjacentHTML("beforeend", "Немає вибраних елементів (");
+        this.#assortmentBar[i].style.fontSize = '1.6rem';
+        this.#assortmentBar[i].style.gridTemplateColumns = '1fr';
       }
+
       this.#assortmentBar[i].insertAdjacentHTML("beforeend", html);
       html = "";
     });
@@ -142,10 +132,7 @@ class AssortmentView {
     else {
       bar = this.#assortment.querySelector(hash);
       if (bar) {
-        const y =
-          bar.getBoundingClientRect().top +
-          window.scrollY -
-          9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+        const y = bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
         window.scroll({
           top: y,
           behavior: "smooth",

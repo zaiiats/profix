@@ -35,8 +35,8 @@ const startPage = async function (state) {
     svgCardView.sendData(localStorage.setItem.bind(localStorage));
     svgCardView.setData(state.data);
     const accountView = new AccountView();
-    accountView.sendData(localStorage.clear.bind(localStorage));
-    accountView.setData(state);
+    accountView.sendData(localStorage.removeItem.bind(localStorage));
+    accountView.setData(state.data);
 
 
   } catch (error) {
