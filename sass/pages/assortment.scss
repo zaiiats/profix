@@ -5,6 +5,26 @@
     padding: 7rem 1rem;
   }
 }
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+  gap: 2rem;
+
+  &__links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
 .site__content--assortment{
   display: grid;
   align-items: stretch;
@@ -73,7 +93,6 @@
   }
 }
 
-
 .cards-wrapper{
   height: 100%;
   gap: 2rem;
@@ -103,13 +122,6 @@
   }
 }
 
-
-
-
-
-
-
-
 .assortment__bar{
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); 
@@ -122,26 +134,7 @@
     grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); 
   }
 }
+
 .assortment__name{
   margin: 4rem 0 0;
-}
-
-
-.header {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  grid-template-rows: 1fr;
-  align-items: center;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
-  gap: 2rem;
-
-  &__links-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
 }

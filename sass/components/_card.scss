@@ -18,6 +18,7 @@
     border-color: var(--accent-color);
     background-color: var(--accent-color-translucent);
     box-shadow: 0 0 4rem var(--black-color-text);
+
     & .card__divider {
       background-color: var(--accent-color);
     }
@@ -60,24 +61,24 @@
   &__text {
     text-align: center;
   }
-}
 
-.card__action{
-  position: absolute;
-  top: 0;
-  width: 100%;
-  display: flex;
-  padding: 1rem;
-  justify-content: space-between;
-  flex-direction: row;
-  opacity: 1;
-  transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
-  visibility: visible;
-
-  &--not-active{
+  &__action{
+    position: absolute;
+    top: 0;
+    width: 100%;
     display: flex;
-    opacity: 0;
-    visibility: hidden;
+    padding: 1rem;
+    justify-content: space-between;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+    visibility: visible;
+  
+    &--not-active{
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 

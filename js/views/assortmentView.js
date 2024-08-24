@@ -48,7 +48,7 @@ class AssortmentView {
       this.#insertHtml();
 
       this.#sidebar.addEventListener("click", this.#moveToItem.bind(this));
-      setTimeout(this.#moveToItem.bind(this), 500);
+      setTimeout(this.#moveToItem.bind(this), 100);
     }
 
     this.#assortment.addEventListener(

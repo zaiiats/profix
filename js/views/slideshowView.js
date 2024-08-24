@@ -7,6 +7,7 @@ class SlideshowView {
   #imgDelivery;
   #slideshow;
   #slidesBox;
+
   constructor() {
     this.#slides = Array.from(document.querySelectorAll(".slide"));
     this.#prev = document.querySelector(".slideshow-wrapper__arrow--previous");
@@ -14,10 +15,10 @@ class SlideshowView {
     this.#imgDelivery = document.querySelector(".slide-item__img--delivery");
     this.#slideshow = document.querySelector(".slideshow-wrapper");
     this.#slidesBox = document.querySelector(".slides");
-    this.#initSlideshow();
+    if (this.#slideshow) this.#initSlideshow();
   }
+
   #initSlideshow(){
-    if (!this.#slideshow) return;
     this.#createDots();
     this.#setHeight();
     this.#checkHeight();
@@ -27,19 +28,19 @@ class SlideshowView {
 
   #createDots() {    
     let html = "";
-    this.#slides.forEach(
-      (slide, i) => (html += `<div class="dot dot--${i + 1}"></div>`)
+    this.#slides.forEach((slide, i) => 
+      html += `<div class="dot dot--${i + 1}"></div>`
     );
-    document
-      .querySelector(".dots-wrapper")
-      .insertAdjacentHTML("beforeend", html);
+    document.querySelector(".dots-wrapper").insertAdjacentHTML("beforeend", html);
     this.#dots = document.querySelectorAll(".dot");
   }
+
   #checkHeight() {
     window.addEventListener("resize", () => {
       this.#setHeight();
     });
   }
+
   #setHeight() {
     let biggestHeight = Array.from(this.#slides).reduce((max, slide) => {
       const slideHeight = slide.getBoundingClientRect().height;
@@ -58,6 +59,7 @@ class SlideshowView {
       dot.addEventListener("click", (e) => this.#handleClick(e, i));
     });
   }
+  
   #handleClick(e, i) {
     if (i + 1) this.#currentSlide = i;
     if (e.target?.closest('.slideshow-wrapper__arrow--previous') === this.#prev) this.#currentSlide--;
@@ -67,30 +69,25 @@ class SlideshowView {
     if (this.#currentSlide === this.#slides.length) this.#currentSlide = 0;
     this.#moveToSlide(this.#currentSlide);
   }
+
   #moveToSlide(i) {
     this.#slides.forEach((slide) => slide.classList.add("slide--hidden"));
     this.#slides[i].classList.remove("slide--hidden");
     this.#dots.forEach((dot) => dot.classList.add("dot--hidden"));
     this.#dots[i].classList.remove("dot--hidden");
     this.#setImg(i);
+
     if (i === 1) {
-      this.#imgDelivery.style.setProperty(
-        "animation",
-        "moveInDeliveryImage .5s ease-in-out"
-      );
+      this.#imgDelivery.style.setProperty("animation","moveInDeliveryImage .5s ease-in-out");
       this.#imgDelivery.style.setProperty("opacity", "1");
     } else {
-      this.#imgDelivery.style.setProperty(
-        "animation",
-        "moveOutDeliveryImage .5s ease-in-out"
-      );
+      this.#imgDelivery.style.setProperty("animation","moveOutDeliveryImage .5s ease-in-out");
       this.#imgDelivery.style.setProperty("opacity", "0");
     }
   }
+
   #setImg(i) {
-    this.#slideshow.style.setProperty(
-      "background-image",
-      `linear-gradient(var(--background-bigger), var(--background-bigger)) ,url('/img/slideshow_img_${i+1}.jpg')`
+    this.#slideshow.style.setProperty("background-image",`linear-gradient(var(--background-bigger), var(--background-bigger)) ,url('/img/slideshow_img_${i+1}.jpg')`
     );   
   }
 
@@ -107,8 +104,10 @@ class SlideshowView {
       this.#handleSwipeGesture(touchstartX, touchendX);
     });
   }
+
   #handleSwipeGesture(startX, endX) {
     const swipeThreshold = 50;
+    
     if (startX - endX > swipeThreshold) {
       this.#currentSlide++;
       this.#handleClick(this.#currentSlide);

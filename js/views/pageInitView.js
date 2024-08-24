@@ -2,11 +2,12 @@ class PageInitialisation {
   constructor() {}
 
   async init() {
-    await this.initNav();
-    await this.initFooter();
-    this.initAnimation();
+    await this.#initNav();
+    await this.#initFooter();
+    this.#initAnimation();
   }
-  async initNav() {
+
+  async #initNav() {
     try {
       const response = await fetch("/elements/nav.html");
       const data = await response.text();
@@ -16,7 +17,7 @@ class PageInitialisation {
     }
   }
 
-  async initFooter() {
+  async #initFooter() {
     try {
       const response = await fetch("/elements/footer.html");
       const data = await response.text();
@@ -26,12 +27,10 @@ class PageInitialisation {
     }
   }
 
-  initAnimation() {
+  #initAnimation() {
     let hexagonSection = document.querySelector(".hex-wrapper");
     document.querySelector(".welcome-page")?.style.setProperty("opacity", "1");
-    document
-      .querySelector(".sections-wrapper")
-      ?.style.setProperty("opacity", "1");
+    document.querySelector(".sections-wrapper")?.style.setProperty("opacity", "1");
     hexagonSection?.style.setProperty("left", "0");
   }
 }

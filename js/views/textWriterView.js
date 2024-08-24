@@ -1,4 +1,5 @@
 class TextWriter {
+  #listOfWords;
   #heading;
   #text = "";
   #isBlinking = true;
@@ -6,19 +7,17 @@ class TextWriter {
   #typingTimeout = 200;
   #waitTimeout = 3000;
   #i = 0;
-  #heightOfCursor;
 
   constructor() {
-    this.listOfWords = ["будівництва", "оселі", "продажу"];
+    this.#listOfWords = ["будівництва", "оселі", "продажу"];
     this.#heading = document.querySelector(".text-writer__heading--highlited");
     this.#cursor = document.querySelector(".text-writer__cursor");
-    this.#mainFunc();
-
+    if (this.#cursor) this.#mainFunc();
   }
-  async #mainFunc() {    
-    if (!this.#cursor) return;
+
+  async #mainFunc() {
     try {
-      for (let i = 0; i < this.listOfWords.length; i++) {
+      for (let i = 0; i < this.#listOfWords.length; i++) {
         await this.#changeWord(i);
       }
       this.#mainFunc();
@@ -42,10 +41,10 @@ class TextWriter {
     return new Promise((resolve) => {
       const addLetter = () => {
         setTimeout(() => {
-          this.#text += this.listOfWords[wordIndex][this.#i];
+          this.#text += this.#listOfWords[wordIndex][this.#i];
           this.#heading.textContent = this.#text;
           this.#i++;
-          if (this.#i < this.listOfWords[wordIndex].length) {
+          if (this.#i < this.#listOfWords[wordIndex].length) {
             addLetter();
           } else {
             this.#i = 0;
@@ -82,7 +81,7 @@ class TextWriter {
           this.#text = this.#text.slice(0, -1);
           this.#heading.textContent = this.#text;
           this.#i++;
-          if (this.#i < this.listOfWords[wordIndex].length) {
+          if (this.#i < this.#listOfWords[wordIndex].length) {
             addMinus();
           } else {
             this.#i = 0;

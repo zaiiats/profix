@@ -1,16 +1,19 @@
 class ThemeSwitchFunctionalityView {
+  #theme;
   #themeSwitchCheckbox;
   #oval;
   #wrapper;
+  #deliveryImage;
   constructor() {
     this.#themeSwitchCheckbox = document.querySelector(".theme-switch__checkbox");
     this.#oval = document.querySelector(".theme-switch__oval");
-    this.#wrapper = document.querySelector('.wrapper')
-    
+    this.#wrapper = document.querySelector('.wrapper');
+    this.#deliveryImage = document.querySelector(".slide-item__img--delivery");  
   }
+
   #initSwitch(){    
-    if (this.theme != 'black') {
-      this.#changeTheme(this.theme);
+    if (this.#theme != 'black') {
+      this.#changeTheme(this.#theme);
       this.#themeSwitchCheckbox.checked = true;
     } 
 
@@ -19,15 +22,16 @@ class ThemeSwitchFunctionalityView {
       if (!e.target.checked) this.#changeTheme.apply(this,['black']);
     })
   }
+
   #changeTheme(theme){
     this.#oval.classList.toggle("theme-switch__oval--active");
     if (theme === 'white') {
       document.querySelector('body').style.fontWeight = '500';
       this.#wrapper.style.setProperty('background','url(../img/white_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
-      if (document.querySelector(".slide-item__img--delivery")) document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';
+      if (this.#deliveryImage) this.#deliveryImage.srcset = 'img/delivery_black-1x.png 1x, img/delivery_black-2x.png 2x';
 
-      this.setMultipleProperties({
+      this.#setMultipleProperties({
         "--white-color-text": "#000",
         "--black-color-text": "#eee",
         "--main-bg-color": "#eff4ff",
@@ -42,9 +46,9 @@ class ThemeSwitchFunctionalityView {
       document.querySelector("body").style.fontWeight = "normal";
       this.#wrapper.style.setProperty('background','url(../img/black_pattern.png) repeat');
       this.#wrapper.style.setProperty("background-size", "20rem auto");
-      if (document.querySelector(".slide-item__img--delivery")) document.querySelector(".slide-item__img--delivery").srcset = 'img/delivery_white-1x.png 1x, img/delivery_white-2x.png 2x';
+      if (this.#deliveryImage) this.#deliveryImage.srcset = 'img/delivery_white-1x.png 1x, img/delivery_white-2x.png 2x';
 
-      this.setMultipleProperties({
+      this.#setMultipleProperties({
         "--white-color-text": "#eee",
         "--black-color-text": "#111",
         "--main-bg-color": "#04070E",
@@ -59,7 +63,7 @@ class ThemeSwitchFunctionalityView {
     this.#putData(theme);
   }
 
-  setMultipleProperties(properties) {
+  #setMultipleProperties(properties) {
     const root = document.documentElement;
 
     for (const [property, value] of Object.entries(properties)) {
@@ -68,7 +72,7 @@ class ThemeSwitchFunctionalityView {
   }
 
   setData(theme){
-    this.theme = theme;
+    this.#theme = theme;
     if (document.querySelector(".theme-switch")) this.#initSwitch();;
   }
 
@@ -80,6 +84,5 @@ class ThemeSwitchFunctionalityView {
     this.callback(`theme`, key);
   }
 }
-
 
 export default ThemeSwitchFunctionalityView;

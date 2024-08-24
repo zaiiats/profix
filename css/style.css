@@ -304,10 +304,6 @@ a:visited {
   }
 }
 
-.text--secondary {
-  font-size: 1.3rem;
-}
-
 .theme-switch__svg {
   fill: var(--white-color-text);
   stroke-width: 0.15rem;
@@ -366,19 +362,14 @@ a:visited {
   }
 }
 
-.label--smaller {
-  font-size: 1.6rem;
-}
-
-.carousel__heading, .assortment__name {
-  font-size: 2.2rem;
-  text-align: center;
-}
-
 .label {
   font-size: 2.2rem;
   text-align: center;
   line-height: 120%;
+}
+
+.label--smaller {
+  font-size: 1.6rem;
 }
 
 .button {
@@ -478,7 +469,6 @@ a:visited {
 .card__text {
   text-align: center;
 }
-
 .card__action {
   position: absolute;
   top: 0;
@@ -1175,6 +1165,7 @@ a:visited {
 @media only screen and (max-width: 800px) {
   .welcome-page__main-section {
     width: 100%;
+    justify-content: space-evenly;
     padding: 4rem 3rem;
   }
 }
@@ -1475,6 +1466,24 @@ a:visited {
   }
 }
 
+.header {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+  gap: 2rem;
+}
+.header__links-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
 .site__content--assortment {
   display: grid;
   align-items: stretch;
@@ -1594,24 +1603,6 @@ a:visited {
 
 .assortment__name {
   margin: 4rem 0 0;
-}
-
-.header {
-  display: grid;
-  grid-template-columns: 1fr max-content;
-  grid-template-rows: 1fr;
-  align-items: center;
-  flex: 0;
-  flex-direction: row;
-  padding: 2rem 0;
-  gap: 2rem;
-}
-.header__links-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-  flex-wrap: wrap;
 }
 
 .site__content--contacts {

@@ -1,4 +1,5 @@
 class SvgCardView {
+  #wrapper
   #svg;
 
   constructor() {
@@ -6,13 +7,11 @@ class SvgCardView {
   }
 
   #initSvgs(){
-    this.wrapper = document.querySelector(".site__content--assortment");
-    if (!this.wrapper) this.wrapper = document.querySelector(".site__content--account");
-    this.wrapper.addEventListener('click',this.#clickHandler.bind(this));
-    this.svgs = document.querySelectorAll('svg__card');
-    this.documentCards = document.querySelectorAll('.card')
+    this.#wrapper = document.querySelector(".site__content--assortment");
+    if (!this.#wrapper) this.#wrapper = document.querySelector(".site__content--account");
+    this.#wrapper.addEventListener('click',this.#clickHandler.bind(this));
 
-    this.documentCards.forEach((card) => {
+    document.querySelectorAll('.card').forEach((card) => {
       if (card.getAttribute("like") === "yes") {
         card.querySelector(".icon-item--like").classList.add('icon-item__like--opened');
       }
@@ -24,13 +23,12 @@ class SvgCardView {
 
   #clickHandler(e){
     if (e.target.closest(".svg__card") || e.target.classList.contains('svg__card')) {
-      let svg = e.target.closest(".svg__card") || e.target.classList.contains("svg__card");
-        
-      let svgType = svg.classList.contains('icon-item--like')?'like':'bookmark';
-      
       e.stopPropagation();
       e.preventDefault();
-      const itemId = svg.closest(".card").getAttribute("productId");
+      
+      let svg = e.target.closest(".svg__card") || e.target.classList.contains("svg__card");
+      let svgType = svg.classList.contains('icon-item--like')?'like':'bookmark';
+      let itemId = svg.closest(".card").getAttribute("productId");
       this.#checkData(itemId,svgType,svg)
     }
   }
@@ -48,16 +46,11 @@ class SvgCardView {
   }
 
   #svgAction(action,svgType,svg){
-    if (action === 'open') {
-      svg.classList.add(`icon-item__${svgType}--opened`);
-    }
-    else {
-      svg.classList.remove(`icon-item__${svgType}--opened`);
-    }
+    if (action === 'open') svg.classList.add(`icon-item__${svgType}--opened`);
+    else svg.classList.remove(`icon-item__${svgType}--opened`);
     let data = JSON.stringify(this.cards)
     this.#putData(data);
   }
-
 
   setData(data){
     this.data = data;
@@ -72,7 +65,6 @@ class SvgCardView {
   #putData(key){
     this.callback(`data`, key);
   }
-
 }
 
 export default SvgCardView;

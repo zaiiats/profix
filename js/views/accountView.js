@@ -2,48 +2,55 @@ class ExitView {
   #callback;
   #exitButton;
   #popUp;
-  #closeButton;
-  #deleteButton;
-  #svgClose;
-  #background;
+  #dropdown;
 
   constructor() {
     this.#exitButton = document.querySelector(".account__section--exit");
     this.#popUp = document.querySelector(".pop-up");
-    this.#closeButton = document.querySelector(".pop-up__button--close");
-    this.#deleteButton = document.querySelector(".pop-up__button--delete");
-    this.#svgClose = document.querySelector(".pop-up__close");
-    this.#background = document.querySelector(".pop-up__background");
+    this.#dropdown = document.querySelectorAll('.nav-item__links--dropdown')[2];
   }
 
   #initExitView() {
-    this.#exitButton.addEventListener("click", this.#handleClick.bind(this));
-    setTimeout(this.#moveToItem.bind(this), 500);
+    setTimeout(this.#moveToItem.bind(this), 100);
+    this.#dropdown.addEventListener("click", this.#handleClick.bind(this));
+    this.#exitButton.addEventListener("click", ()=>this.#popUp.style.display = "flex");
+    this.#popUp.addEventListener('click',this.#handleClick.bind(this));
   }
 
   #handleClick(e) {
-    this.#popUp.style.display = "flex";
+    const target = e.target;
+    const navItem = target.closest('.icon-item');
+    
+    if (navItem) {
+      let svgItem = navItem.querySelector('.svg');
+      e.preventDefault()
+      
+      if (svgItem.classList.contains('icon-item--heart')) this.#moveToItem('like')
+      if (svgItem.classList.contains('icon-item--bookmark')) this.#moveToItem('bookmark')
+      if (navItem.classList.contains('icon-item__exit')) this.#moveToItem('exit')
+    }
 
-    this.#addCloseListener(this.#closeButton, this.#svgClose, this.#background);
-    this.#deleteButton.addEventListener("click", this.#deleteData.bind(this));
-  }
-  #addCloseListener(...item) {
-    item.forEach((item) => {
-      item.addEventListener("click", ()=>this.#popUp.style.display = "none");
-    });
+    if (
+      target.closest(".pop-up__button--close") ||
+      target.closest(".pop-up__close") ||
+      target.closest(".pop-up__background")
+    ) this.#popUp.style.display = "none";
+    if (target.closest(".pop-up__button--delete")) this.#deleteData();
   }
 
-  #moveToItem() {
-    let url = window.location.href;
-    let hash = url.slice(url.indexOf("#"));
+  #moveToItem(type) {   
+    let hash; 
+    if (type) hash = `#${type}`;
+    else{
+      let url = window.location.href;
+      hash = url.slice(url.indexOf("#"));
+    }
     if (hash === "/") return;
     else {
       let bar = document.querySelector(hash);
       if (bar) {
         const y =
-          bar.getBoundingClientRect().top +
-          window.scrollY -
-          9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
+          bar.getBoundingClientRect().top + window.scrollY - 9 * parseFloat(getComputedStyle(document.documentElement).fontSize);
         window.scroll({
           top: y,
           behavior: "smooth",
