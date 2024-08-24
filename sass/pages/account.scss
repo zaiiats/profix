@@ -1,48 +1,40 @@
 .site__content--account {
+  background-color: var(--background-smaller);
   display: flex;
   flex-direction: column;
   margin-top: 3rem;
+  gap: 4rem;
+  padding: 6rem 4rem;
 }
 
-.account__section{
- 
-  padding: 4rem;
-  background-color: var(--background-smaller);
+.account__section--account {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
 
-  &--account{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    padding: 4rem 0 0;
+.account__account-icon {
+  height: 15rem;
+  width: 15rem;
+  @media only screen and (max-width: 500px) {
+    height: 10rem;
+    width: 10rem;
   }
-  @media only screen and (max-width: 800px) {
-    padding: 4rem 1rem;
-  }
 }
 
-.account-icon__account{
-  height: 10rem;
-  width: 10rem;
-}
-
-.account__text{
-  font-size: 1.3rem;
-}
-
-.pop-up{
+.pop-up {
   display: none;
   align-items: center;
   justify-content: center;
-  position:fixed;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
   z-index: 998;
-  
 
-  &__background{
+  &__background {
     position: fixed;
     height: 100vh;
     width: 100vw;
@@ -51,38 +43,39 @@
     top: 0;
     z-index: 999;
   }
-  &__wrapper{
+
+  &-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    height: 60vh;
+    height: 40vh;
     width: 60vw;
     z-index: 1000;
     @media only screen and (max-width: 800px) {
-      height: 95vh;
+      height: 65vh;
       width: 95vw;
     }
   }
-}
-.buttons__wrapper{
-  width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
-  @media only screen and (max-width: 800px) {
-    gap: 1rem;
-  }
-}
 
-.pop-up__svg--close{
-  position: absolute;
-  right: 20%;
-  padding: 1rem;
-  height: 4rem;
-  width: 4rem;
-  cursor: pointer;
-  @media only screen and (max-width: 800px) {
-    right: 5%;
+  &__close {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    padding: 1rem;
+    cursor: pointer;
+    @media only screen and (max-width: 800px) {
+      right: 5%;
+    }
+  }
+
+  &__buttons-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    @media only screen and (max-width: 800px) {
+      gap: 1rem;
+    }
   }
 }

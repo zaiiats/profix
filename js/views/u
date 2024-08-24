@@ -99,3 +99,22 @@ it loads html of general index.html not the one i specified
     <footer class="footer"></footer>
   </div>
 </body>
+
+
+
+<html lang="uk">
+
+Профікс - найкраща компанія з продажу кріпильних систем у західній частині України. Приєднуйтесь до нас зараз і випробуйте найнадійніші, сучасні та прості у використанні інструменти
+
+
+
+.label{
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+HTML: en,ratings,delivery,news
+
+CSCC: account
+
+JS: accountView

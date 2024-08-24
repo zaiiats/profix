@@ -11,7 +11,7 @@ import ThemeSwitchFunctionalityView from "./views/themeSwitchFuncView.js";
 import CarouselView from "./views/carouselView.js";
 import AssortmentView from "./views/assortmentView.js";
 import SvgCardView from "./views/svgCardView.js";
-import ExitView from "./views/exitView.js"
+import AccountView from "./views/accountView.js"
 
 
 const startPage = async function (state) {
@@ -34,9 +34,9 @@ const startPage = async function (state) {
     const svgCardView = new SvgCardView();    
     svgCardView.sendData(localStorage.setItem.bind(localStorage));
     svgCardView.setData(state.data);
-    const exitView = new ExitView();
-    exitView.sendData(localStorage.clear.bind(localStorage));
-    exitView.setData(state);
+    const accountView = new AccountView();
+    accountView.sendData(localStorage.clear.bind(localStorage));
+    accountView.setData(state);
 
 
   } catch (error) {
