@@ -1,6 +1,5 @@
 import {fetchData} from "./model.js";
 import {state} from "./model.js"
-import 'core-js/stable'
 
 import HamburgerFunctionality from "./views/hamburgerView.js";
 import NavLinkFunctionality from "./views/navView.js";

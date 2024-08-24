@@ -24,7 +24,6 @@
     "sass": "^1.77.8"
   },
   "dependencies": {
-    "core-js": "^3.38.1",
     "cors": "^2.8.5",
     "express": "^4.19.2"
   }
