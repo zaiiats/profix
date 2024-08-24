@@ -1,4 +1,3 @@
-// For bussiness logic and state
 export const state = {
   data: {},
   theme: {},
