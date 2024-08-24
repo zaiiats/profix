@@ -4,8 +4,7 @@
 }
 @font-face {
   font-family: "Montserrat"; 
-  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
 }
 
 body {
@@ -38,12 +37,7 @@ a:visited {
   text-decoration:underline !important;
 }
 
-.icon-item--svg {
-  stroke: var(--white-color-text);
-}
-
 .hamburger-menu__link {
-  color: var(--white-color-text);
   font-weight: bolder;
   font-size: 2rem;
 }
@@ -77,7 +71,6 @@ a:visited {
     font-size: 3.5rem;
   }
 }
-
 .text-writer__placeholder {
   @media only screen and (max-width: 1200px) {
     font-size: 5.5rem;
@@ -91,34 +84,28 @@ a:visited {
     font-size: 3.5rem;
   }
 }
-
 .text-writer__cursor {
-    height: 6rem;
-    width: 0.4rem;
-    background-color: var(--white-color-text);
-    @media only screen and (max-width: 1200px) {
-      height: 5rem;
-    }
-     @media only screen and (max-width: 500px) {
-      height: 4rem;
-    }
-    @media only screen and (max-width: 400px) {
-      height: 3rem;
-    }
+  height: 6rem;
+  width: 0.4rem;
+  background-color: var(--white-color-text);
+  @media only screen and (max-width: 1200px) {
+    height: 5rem;
   }
+    @media only screen and (max-width: 500px) {
+    height: 4rem;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 3rem;
+  }
+}
 
 .text--secondary {
-  font-size: 1.4rem;
-  font-weight: 500;
-  color: var(--beige-color-text);
-  letter-spacing: 0.1rem;
-  line-height: 120%;
+  font-size: 1.3rem;
 }
 
 .theme-switch__svg {
   fill: var(--white-color-text);
   stroke-width: 0.15rem;
-
 }
 
 .hex__text{
@@ -149,7 +136,14 @@ a:visited {
 }
 
 
-
+.text{
+  font-size: 1.3rem;
+  line-height: 120%;
+}
+.text--centred{
+  font-size: 1.3rem;
+  text-align: center;
+}
 .header{
   font-size: 1.3rem;
 }
@@ -161,19 +155,10 @@ a:visited {
     font-size: 3.5rem;
   }
 }
-
-.map__text,.schedule__main{
-  font-size: 1.3rem;
-  text-align: center;
-}
-.contacts{
-  font-size:1.4rem;
-}
-
-.site__content--copyright,.about__text{
+.label--smaller{
   font-size: 1.6rem;
 }
-.copyright__text--main,.carousel__heading,.assortment__name{
+.carousel__heading,.assortment__name{
   font-size: 2.2rem;
   text-align: center;
 }

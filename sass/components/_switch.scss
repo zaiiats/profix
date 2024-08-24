@@ -30,9 +30,9 @@
 
   &__checkbox {
     position: absolute;
+    z-index: 3;
     top: 0;
     left: 0;
-    z-index: 3;
     height: 100%;
     width: 100%;
     opacity: 0;
@@ -41,8 +41,8 @@
 
   &__oval {
     position: absolute;
-    left: -0.005rem;
     z-index: 1;
+    left: -0.005rem;
     height: 100%;
     width: 50%;
     border: var(--accent-color) 0.2rem solid;

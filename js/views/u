@@ -102,9 +102,16 @@ it loads html of general index.html not the one i specified
 
 
 
+
+
 <html lang="uk">
 
 Профікс - найкраща компанія з продажу кріпильних систем у західній частині України. Приєднуйтесь до нас зараз і випробуйте найнадійніші, сучасні та прості у використанні інструменти
+
+./index.html
+
+
+
 
 
 
@@ -113,8 +120,12 @@ it loads html of general index.html not the one i specified
   text-align: center;
 }
 
-HTML: en,ratings,delivery,news
+assortment, dist, js, sass
 
-CSCC: account
+HTML: about, account, contacts, copyright, delivery, en, news, ratings, index
 
-JS: accountView
+CSCC: about, account, contacts, copyright, button, functions, mixins, utilities, variables, animations, base, card, switch, title, _about, _assortment, _welcome, copyright, 
+
+JS: accountView, server 
+
+Folders: about, account, components, contacts, copyright, css, delivery, elements, en, fonts, img, news, ratings, package.json

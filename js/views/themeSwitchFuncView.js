@@ -29,7 +29,6 @@ class ThemeSwitchFunctionalityView {
 
       this.setMultipleProperties({
         "--white-color-text": "#000",
-        "--beige-color-text": "#222",
         "--black-color-text": "#eee",
         "--main-bg-color": "#eff4ff",
         "--background-smaller": "rgba(255,255,255,0.6)",
@@ -47,7 +46,6 @@ class ThemeSwitchFunctionalityView {
 
       this.setMultipleProperties({
         "--white-color-text": "#eee",
-        "--beige-color-text": "#c6ccdb",
         "--black-color-text": "#111",
         "--main-bg-color": "#04070E",
         "--background-smaller": "rgba(0,0,0,0.4)",

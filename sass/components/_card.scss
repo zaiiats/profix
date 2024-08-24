@@ -1,6 +1,6 @@
 .card {
-  display: grid;
   position: relative;
+  display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr min-content;
   align-items: center;
@@ -28,12 +28,12 @@
     max-width: 80%;
 
     &-box {
+      min-height: 10rem;
       display: flex;
       align-items: center;
       justify-content: center;
       align-self: stretch;
       justify-self: stretch;
-      min-height: 10rem;
     }
   }
 
@@ -46,42 +46,46 @@
     flex-direction: column;
     padding: 1rem 0 0;
   }
+
   &__divider {
     position: relative;
-    width: 80%;
     height: 0.1rem;
+    width: 80%;
     display: inline;
     margin: 0 0 1rem;
     background-color: var(--white-color-text);
     transition: all 0.15s ease-in-out;
   }
+
   &__text {
     text-align: center;
   }
 }
 
 .card__action{
-  padding: 1rem;
-  top: 0;
   position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  top: 0;
   width: 100%;
-  visibility: visible;
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  flex-direction: row;
   opacity: 1;
   transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+  visibility: visible;
 
   &--not-active{
     display: flex;
-    visibility: hidden;
     opacity: 0;
+    visibility: hidden;
   }
 }
+
 .icon-item__like--opened{
   fill: #ff0000;
   stroke: #ff0000;
 }
+
 .icon-item__bookmark--opened{
   fill: #d59500;
   stroke: #d59500;

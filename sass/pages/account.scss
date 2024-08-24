@@ -1,16 +1,16 @@
 .site__content--account {
-  background-color: var(--background-smaller);
   display: flex;
   flex-direction: column;
-  margin-top: 3rem;
   gap: 4rem;
+  margin-top: 3rem;
   padding: 6rem 4rem;
+  background-color: var(--background-smaller);
 }
 
 .account__section--account {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  flex-direction: column;
   gap: 2rem;
 }
 
@@ -24,34 +24,34 @@
 }
 
 .pop-up {
-  display: none;
-  align-items: center;
-  justify-content: center;
   position: fixed;
+  z-index: 998;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
-  z-index: 998;
+  display: none;
+  align-items: center;
+  justify-content: center;
 
   &__background {
     position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
     height: 100vh;
     width: 100vw;
     background-color: var(--background-bigger);
-    left: 0;
-    top: 0;
-    z-index: 999;
   }
 
   &-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    z-index: 1000;
     height: 40vh;
     width: 60vw;
-    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
     @media only screen and (max-width: 800px) {
       height: 65vh;
       width: 95vw;
