@@ -12,9 +12,9 @@ class HamburgerFunctionality {
     this.#line2 = document.querySelector(".hamburger-menu__line-2");
     this.#line3 = document.querySelector(".hamburger-menu__line-3");
     this.#initHamburger();
-  }
+  }  
 
-  #initHamburger() {    
+  #initHamburger() {
     this.#checkbox.addEventListener("change", this.#checkboxCheck.bind(this));
   }
 
