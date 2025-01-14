@@ -1,0 +1,36 @@
+.button{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1.2rem 3.5rem;
+  border-radius: 0.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+
+  @media only screen and (max-width: 800px) {
+    padding: 1.2rem 3rem;    
+  }
+  @media only screen and (max-width: 400px) {
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+  }
+
+  &--filled{
+    background-color: var(--accent-color);
+    text-transform: uppercase;
+    &:hover{
+      background-color: var(--accent-color-darker);
+    }
+  }
+  
+  &--not-filled{
+    border: 0.1rem var(--accent-color) solid;
+    background-color: transparent;
+    &:hover{
+      background-color:var(--accent-color-translucent);
+    }
+  }
+}

@@ -1,0 +1,81 @@
+.site__content--account {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  margin-top: 3rem;
+  padding: 6rem 4rem;
+  background-color: var(--background-smaller);
+}
+
+.account__section--account {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.account__account-icon {
+  height: 15rem;
+  width: 15rem;
+  @media only screen and (max-width: 500px) {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+
+.pop-up {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  &__background {
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: var(--background-bigger);
+  }
+
+  &-wrapper {
+    z-index: 1000;
+    height: 40vh;
+    width: 60vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+    @media only screen and (max-width: 800px) {
+      height: 65vh;
+      width: 95vw;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    padding: 1rem;
+    cursor: pointer;
+    @media only screen and (max-width: 800px) {
+      right: 5%;
+    }
+  }
+
+  &__buttons-wrapper {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    @media only screen and (max-width: 800px) {
+      gap: 1rem;
+    }
+  }
+}

@@ -1,0 +1,98 @@
+.card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr min-content;
+  align-items: center;
+  border: 0.1rem var(--white-color-text) solid;
+  padding: 2rem 1rem 1rem;
+  background-color: var(--main-bg-color);
+  color: var(--white-color-text);
+  transition: all 0.15s ease-in-out;
+  overflow: hidden;
+  @media only screen and (max-width: 600px) {
+    padding: 1rem .5rem .5rem;
+  }
+
+  &:hover {
+    border-color: var(--accent-color);
+    background-color: var(--accent-color-translucent);
+    box-shadow: 0 0 4rem var(--black-color-text);
+
+    & .card__divider {
+      background-color: var(--accent-color);
+    }
+  }
+
+  &__img {
+    max-height: 80%;
+    max-width: 80%;
+
+    &-box {
+      min-height: 10rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: stretch;
+      justify-self: stretch;
+    }
+  }
+
+  &__info {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-self: end;
+    flex-direction: column;
+    padding: 1rem 0 0;
+  }
+
+  &__divider {
+    position: relative;
+    height: 0.1rem;
+    width: 80%;
+    display: inline;
+    margin: 0 0 1rem;
+    background-color: var(--white-color-text);
+    transition: all 0.15s ease-in-out;
+  }
+
+  &__text {
+    text-align: center;
+  }
+
+  &__action{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    padding: 1rem;
+    justify-content: space-between;
+    flex-direction: row;
+    opacity: 1;
+    transition: opacity 0.6s ease-in-out, visibility 0.6s ease-in-out;
+    visibility: visible;
+  
+    &--not-active{
+      display: flex;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+}
+
+.icon-item__like--opened{
+  fill: #ff0000;
+  stroke: #ff0000;
+}
+
+.icon-item__bookmark--opened{
+  fill: #d59500;
+  stroke: #d59500;
+}
+
+.svg__card{
+  height: 3rem;
+  padding: 0.5rem;
+}

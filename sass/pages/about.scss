@@ -1,0 +1,34 @@
+.site__content--about{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  @media only screen and (max-width: 600px) {
+    gap: 6rem; 
+    padding: 3rem 0;
+  }
+}
+
+.about{
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 3rem;
+  @media only screen and (max-width: 400px) {
+    flex-direction: column;
+  }
+
+  &__img{
+    width: 40%;
+    @media only screen and (max-width: 400px) {
+      width: 60%;  
+    }
+  }
+
+  &:nth-child(even){
+    flex-direction: row-reverse;
+    @media only screen and (max-width: 400px) {
+      flex-direction: column;
+    }
+  }
+}

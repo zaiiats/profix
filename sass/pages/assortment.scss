@@ -1,0 +1,139 @@
+.site__assortment{
+  width: 90%;
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    padding: 7rem 1rem;
+  }
+}
+
+.header {
+  display: grid;
+  grid-template-columns: 1fr max-content;
+  grid-template-rows: 1fr;
+  align-items: center;
+  flex: 0;
+  flex-direction: row;
+  padding: 2rem 0;
+  gap: 2rem;
+
+  &__links-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+}
+
+.site__content--assortment{
+  display: grid;
+  align-items: stretch;
+  justify-content: center;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 1fr;
+  gap: 3rem;
+  margin-top: 3rem;
+  @media only screen and (max-width: 800px) {
+    gap: 1rem;
+  }
+  @media only screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    gap: 3rem;
+  }
+}
+
+.sidebar{
+  padding: 3rem;
+  background-color: var(--background-smaller);
+  @media only screen and (max-width: 800px) {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  &__item{
+    display: block;
+    font-size: 1.3rem;
+    padding: 2rem 0.5rem;
+    cursor: pointer;
+    @media only screen and (max-width: 800px) {
+      width: 100%;
+      padding: 2rem 0;
+    }
+  }
+}
+
+.carousel-wrapper{
+  min-height: 50rem;
+  flex-direction: column;
+  align-items: stretch;
+  background-color: var(--background-smaller);
+  overflow: hidden;
+  display: flex;
+}
+ 
+.carousel{
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  align-self: stretch;
+  flex: 1;
+
+  &__heading{
+    flex: 0;
+    padding: 2rem 0 0;
+  }
+
+  &__card{
+    height: 100%;
+    width: 100%;
+    @media only screen and (max-width: 600px) {
+      padding: 0.5rem;
+    }
+  }
+}
+
+.cards-wrapper{
+  height: 100%;
+  gap: 2rem;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 0 0 50%;
+  
+}
+
+.card__slide{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-shrink: 0;
+  height: 20rem;
+  width: 15rem;
+  opacity: 0.2; 
+  transition: all .6s ease-in-out;
+
+  &--active {
+    padding: 1.3333333rem;
+    height: 30rem;
+    width: 25rem;
+    opacity: 1;
+  }
+}
+
+.assortment__bar{
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); 
+  grid-gap: 3rem;
+  padding: 3rem;
+  width: 100%;
+  @media only screen and (max-width: 800px) {
+    grid-gap: 2rem;
+    padding: 2rem;
+  }
+}
+
+.assortment__name{
+  margin: 4rem 0 0;
+}

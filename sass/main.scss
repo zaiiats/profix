@@ -1,0 +1,25 @@
+@import "abstract/functions";
+@import "abstract/mixins";
+@import "abstract/variables";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+
+@import "components/button";
+@import "components/card";
+@import "components/switch";
+@import "components/title.scss";
+
+@import "layout/about";
+@import "layout/assortment";
+@import "layout/footer";
+@import "layout/nav";
+@import "layout/welcome";
+
+@import "pages/about";
+@import "pages/account";
+@import "pages/assortment";
+@import "pages/contacts";
+@import "pages/copyright";

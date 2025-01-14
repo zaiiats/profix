@@ -1,0 +1,29 @@
+.title {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  overflow-x: hidden;
+  font-size: 3rem;
+
+  &__triangle {
+    width: 0;
+    border: 2rem transparent solid;
+    border-right: 2rem var(--grey-color-translucent) solid;
+  }
+
+  &__triangle--left {
+    border-left: 2rem var(--grey-color-translucent) solid;
+    border-right: 2rem transparent solid;
+    overflow: hidden;
+  }
+
+  &__text {
+    height: 4rem;
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--grey-color-translucent);
+  }
+}

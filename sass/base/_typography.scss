@@ -1,0 +1,169 @@
+@font-face {
+  font-family: "Imperial_Web"; 
+  src: url("../fonts/Webfont/Imperial_Web.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Montserrat"; 
+  src: url("../fonts/Montserrat/Montserrat-VariableFont_wght.ttf") format("truetype");
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: var(--white-color-text);
+  letter-spacing: 0.1rem;
+  font-weight: normal;
+}
+
+a:link,
+a:visited {
+  color: var(--white-color-text);
+  text-decoration: none;
+}
+
+.svg {
+  height: 2rem;
+  fill: none;
+  stroke: var(--white-color-text);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.15rem;
+}
+
+.nav-item__svg-dropdown{
+  fill: var(--white-color-text);
+  stroke-width: 0.05rem;
+}
+
+.nav-item__link--userName {
+  text-decoration:underline !important;
+}
+
+.hamburger-menu__link {
+  font-weight: bolder;
+  font-size: 2rem;
+}
+
+.heading--primary {
+  font-size: 5rem;
+  color: var(--beige-color-text);
+  letter-spacing: 0.15rem;
+  @media only screen and (max-width: 1200px) {
+    font-size: 4rem;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 3.5rem;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 3rem;
+  }
+}
+
+.heading--highlited {
+  font-family: "Imperial_Web";
+  font-size: 6.5rem;
+  color: var(--white-color-text);
+  @media only screen and (max-width: 1200px) {
+    font-size: 5.5rem;
+  }
+  @media only screen and (max-width: 500px) {
+    font-size: 4.5rem;
+  }
+  @media only screen and (max-width: 400px) {
+    font-size: 3.5rem;
+  }
+}
+
+.text-writer__placeholder {
+  @media only screen and (max-width: 1200px) {
+    font-size: 5.5rem;
+  }
+
+  @media only screen and (max-width: 500px) {
+    font-size: 4.5rem;
+  }
+
+  @media only screen and (max-width: 400px) {
+    font-size: 3.5rem;
+  }
+}
+
+.text-writer__cursor {
+  height: 6rem;
+  width: 0.4rem;
+  background-color: var(--white-color-text);
+  @media only screen and (max-width: 1200px) {
+    height: 5rem;
+  }
+    @media only screen and (max-width: 500px) {
+    height: 4rem;
+  }
+  @media only screen and (max-width: 400px) {
+    height: 3rem;
+  }
+}
+
+.theme-switch__svg {
+  fill: var(--white-color-text);
+  stroke-width: 0.15rem;
+}
+
+.hex__text{
+  text-transform: uppercase;
+  color: var(--white-color-text);
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.title__text {
+  font-family: "Imperial_Web";
+  font-size: 2.2rem;
+}
+
+.card__text{
+  font-size: 1.3rem;
+  transition: all 0.6s ease-in-out;
+}
+
+.slide-item__label {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
+.footer__text {
+  padding: 1.4rem 0 0;
+  font-family: "Imperial_Web";
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.text{
+  font-size: 1.3rem;
+  line-height: 120%;
+}
+
+.text--centred{
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.header{
+  font-size: 1.3rem;
+}
+
+.heading{
+  font-size: 4.5rem;
+  text-align: center;
+  @media only screen and (max-width: 500px) {
+    font-size: 3.5rem;
+  }
+}
+
+.label{
+  font-size: 2.2rem;
+  text-align: center;
+  line-height: 120%;
+}
+
+.label--smaller{
+  font-size: 1.6rem;
+}
